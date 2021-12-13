@@ -21,11 +21,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/navbar.php';
             <aside id="admin-sidebar">
                 <nav class="list-group list-group-flush">
                     <a href="/admin"
-                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/crud/admin/'); ?>">Dashboard</a>
+                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/admin/'); ?>">Dashboard</a>
                     <a href="/admin/users"
-                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/crud/admin/users/'); ?>">Utilisateurs</a>
+                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/admin/users/'); ?>">Utilisateurs</a>
                     <a href="/admin/posts"
-                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/crud/admin/posts/'); ?>">Publications</a>
+                       class="list-group-item list-group-item-secondary list-group-item-action <?php echo addCurrentClassUri('/admin/posts/'); ?>">Publications</a>
                 </nav>
             </aside>
 
