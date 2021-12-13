@@ -1,7 +1,7 @@
     <?php
 
-    require $_SERVER['DOCUMENT_ROOT'] . '/crud/functions/helpers.php';
-    require $_SERVER['DOCUMENT_ROOT'] . '/crud/functions/users.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+    require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
     $id = $_GET['id'];
 
@@ -18,6 +18,6 @@
         $UserId = updateUser($id, $data);
 
         // On redirige l'utilisateur sur la page de l'article
-        header("Location: /crud/users/show.php?id=$UserId");
+        header("Location: /users/show.php?id=$UserId");
         exit();
     }

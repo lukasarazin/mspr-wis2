@@ -1,5 +1,5 @@
 <?php
-require_once '../functions/posts.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
 $post = getPost($_GET['id']);
 $author = getPostAuthor($post);
@@ -9,7 +9,7 @@ $page = [
     'description' => $post['excerpt'],
 ];
 
-require_once '../template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
     <main id="main">
 
@@ -19,7 +19,7 @@ require_once '../template-parts/layout/header.php'; ?>
                 <h1 class="h1"><?php echo $post['title']; ?></h1>
 
                 <span>Publié le <time><?php echo $post['created_at'] = date('d F Y'); ?></time> par
-                    <a href="/crud/users/show.php?id=<?php echo $author['id']; ?>"
+                    <a href="/users/show.php?id=<?php echo $author['id']; ?>"
                        rel="author"><?php echo $author['username']; ?>
                     </a>
                 </span>
@@ -29,10 +29,10 @@ require_once '../template-parts/layout/header.php'; ?>
                 <?php echo $post['body']; ?>
 
                 <div class="comments-wrapper">
-                    <?php require_once '../comments/show.php' ?>
+                    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
                 </div>
                 <div class="create-comment">
-                    <?php require_once '../comments/create.php' ?>
+                    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
                 </div>
 
             </div>
@@ -40,4 +40,4 @@ require_once '../template-parts/layout/header.php'; ?>
 
     </main>
 
-<?php require_once '../template-parts/layout/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>

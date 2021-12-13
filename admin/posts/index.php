@@ -2,14 +2,14 @@
 
 $page = ['title' => 'Toutes les publications'];
 
-require_once '../../functions/posts.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
 $posts = getPosts();
 
-require_once '../../template-parts/layout/admin/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/header.php';
 ?>
 
-    <a href="admin/posts/create.php" class="btn btn-outline-primary mt-2 float-end">Ajouter une publication</a>
+    <a href="/admin/posts/create.php" class="btn btn-outline-primary mt-2 float-end">Ajouter une publication</a>
 
     <main id="main">
 
@@ -29,14 +29,14 @@ require_once '../../template-parts/layout/admin/header.php';
                 <tr>
                     <td><?php echo $post['id']; ?></td>
                     <td>
-                        <a href="admin/posts/edit.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a>
+                        <a href="/admin/posts/edit.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a>
                     </td>
                     <td><?php echo getValue($author['username']) ? $author['username'] : '-'; ?></td>
                     <td><?php echo $post['published_at']; ?></td>
                     <td>
-                        <a href="admin/posts/edit.php?id=<?php echo $post['id']; ?>"
+                        <a href="/admin/posts/edit.php?id=<?php echo $post['id']; ?>"
                            class="btn btn-sm btn-outline-warning">Edit</a>
-                        <a href="posts/show.php?id=<?php echo $post['id']; ?>&preview=true"
+                        <a href="/posts/show.php?id=<?php echo $post['id']; ?>&preview=true"
                            class="btn btn-sm btn-outline-info">Preview</a>
                     </td>
                 </tr>
@@ -46,4 +46,4 @@ require_once '../../template-parts/layout/admin/header.php';
 
     </main>
 
-<?php require_once '../../template-parts/layout/admin/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/footer.php'; ?>

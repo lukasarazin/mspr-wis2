@@ -2,12 +2,12 @@
 
 $page = ['title' => 'Ajouter un article'];
 
-require_once '../../template-parts/layout/admin/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/header.php'; ?>
 
     <main id="main">
 
         <div class="form-wrapper mt-5 mx-auto" style="max-width: 800px;">
-            <form action="api/posts/store.php" method="POST">
+            <form action="/api/posts/store.php" method="POST">
 
                 <div class="form-group mb-3">
                     <label for="title" class="form-label">Titre de l'article</label>
@@ -33,4 +33,4 @@ require_once '../../template-parts/layout/admin/header.php'; ?>
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector: '#body', plugins: ['autoresize']});</script>
 
-<?php require_once '../../template-parts/layout/admin/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/footer.php'; ?>

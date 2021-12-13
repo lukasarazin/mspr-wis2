@@ -1,11 +1,11 @@
 <?php
 
-require_once '../../functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $users = getUsers();
 $page = ['title' => 'Liste des utilisateurs'];
 
-require_once '../../template-parts/layout/admin/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/header.php'; ?>
 
     <main id="main">
 
@@ -37,4 +37,4 @@ require_once '../../template-parts/layout/admin/header.php'; ?>
 
     </main>
 
-<?php require_once '../../template-parts/layout/admin/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/footer.php'; ?>

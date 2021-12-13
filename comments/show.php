@@ -1,15 +1,15 @@
 <?php
-require_once '../functions/comments.php';
-require_once '../functions/helpers.php';
-require_once '../functions/users.php';
-require_once '../functions/dates.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/dates.php';
 
 $comment = getComment($_GET['id']);
 
 // foreach ()
 $comments = getPostComments($post['id']);
 
-require_once '../template-parts/layout/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 ?>
 
@@ -20,7 +20,7 @@ require_once '../template-parts/layout/header.php';
 
         <?php foreach ($comments as $comment): ?>
 
-            <?php require '../template-parts/comments.php'; ?>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/comments.php'; ?>
         <?php endforeach; ?>
     </div>
 </section>

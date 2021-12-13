@@ -42,14 +42,14 @@ $current_time = time();
                     <time><small style="font-size: 70%;"><?php echo $TimeAgo ?></small></time>
                     <?php endif; ?>
                     <?php if (isAdmin($auth) && ($authorComment['email'] = $auth['email'])) : ?>
-                    <form action="comments/edit.php?id=<?php echo $comment['id']; ?>"
+                    <form action="/comments/edit.php?id=<?php echo $comment['id']; ?>"
                           method="POST">
                         <button class="btn" type="submit">
                             <i class="fas fa-pen" style="color: grey; padding-left: 4px; margin-right: -5px;"></i>
                         </button>
                     </form
 
-                    <form action="api/comments/delete.php?id=<?php echo $comment['id']; ?>"
+                    <form action="/api/comments/delete.php?id=<?php echo $comment['id']; ?>"
                           method="POST">
                         <button class="btn" type="submit">
                             <i class="fas fa-trash" style="color: red;"></i>

@@ -1,7 +1,7 @@
 <?php
 
-require_once '../functions/helpers.php';
-require_once '../functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 if ($id = getValue($_GET['id'])) {
     $user = getUser($id);
@@ -11,7 +11,7 @@ if ($id = getValue($_GET['id'])) {
 
 $posts = getUserPosts($user['id']);
 
-require_once '../template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
     <main id="main">
 
@@ -27,7 +27,7 @@ require_once '../template-parts/layout/header.php'; ?>
                                                height="200"
                                                loading="lazy"
                         >
-                        <form action="api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
+                        <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
                             <fieldset class="mb-3">
                                 <legend>Pseudo</legend>
                                 <input type="text" name="username" id="username"
@@ -59,7 +59,7 @@ require_once '../template-parts/layout/header.php'; ?>
                                 <div class="row g-4">
                                     <?php foreach ($posts as $post): ?>
                                         <div class="col-md-6 col-lg-4">
-                                            <?php require '../template-parts/post.php'; ?>
+                                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
@@ -76,4 +76,4 @@ require_once '../template-parts/layout/header.php'; ?>
 
     </main>
 
-<?php require_once '../template-parts/layout/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
