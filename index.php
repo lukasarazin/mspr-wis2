@@ -2,7 +2,7 @@
 
 $page = ['title' => 'Accueil'];
 
-require_once './template-parts/layout/header.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 ?>
 
     <main id="main">
@@ -30,4 +30,4 @@ require_once './template-parts/layout/header.php';
 
     </main>
 
-<?php require_once './template-parts/layout/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
