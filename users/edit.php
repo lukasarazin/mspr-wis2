@@ -27,7 +27,7 @@ require_once '../template-parts/layout/header.php'; ?>
                                                height="200"
                                                loading="lazy"
                         >
-                        <form action="/crud/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
+                        <form action="api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
                             <fieldset class="mb-3">
                                 <legend>Pseudo</legend>
                                 <input type="text" name="username" id="username"
