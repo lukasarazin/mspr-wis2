@@ -1,0 +1,81 @@
+.post-item {
+  position: relative;
+  background-color: $light;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+  .post-header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    .profil-img {
+      z-index: 2;
+    }
+
+    a.author-name {
+      z-index: 3;
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+
+    a.edit-link {
+      z-index: 4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      svg {
+        display: block;
+        width: 1rem;
+        height: auto;
+      }
+    }
+  }
+
+  .post-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .post-body {
+    padding: 1rem;
+
+    .time-published {
+      font-size: 13px;
+      color: inherit;
+    }
+
+    p {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .post-footer {
+    padding: 0 1rem 1rem 1rem;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

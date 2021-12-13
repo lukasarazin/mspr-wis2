@@ -1,0 +1,24 @@
+#auth-content {
+
+  .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  .lost-mdp a {
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .connexion-footer {
+
+    .inscription-possibility {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      align-content: center;
+    }
+  }
+}

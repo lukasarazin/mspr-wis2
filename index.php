@@ -7,22 +7,34 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
     <main id="main">
 
-        <section class="py-5 bg-danger text-white">
+        <section class="py-5">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="content-wrapper">
-                            <h1 class="h1">Bienvenue sur "Nom du réseau""</h1>
-                            <p>Si je rédige ce paragraphe c'est uniquement parce que je ne veux pas le même que tout le monde.
-                                Lire ceci n'a aucune utilité à part être diverti par un texte vraiment passionnant ne parlant d'aucun sujet précis.
-                                Je vais à présent arrêter d'écrire des phrases pour mieux me concentrer sur le reste des étapes à réaliser en php.
+                <div class="container">
+                    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
-                            </p>
-                            <a href="posts" class="btn btn-outline-white">Voir les publications</a>
+                    $posts = getPosts();
 
+                    require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+
+                    <section class="py-5">
+                        <div class="container">
+
+                            <div class="action-wrapper mb-5 d-flex justify-content-between align-items-center align-content-center">
+                                <h3>Liste des publications (publiées par tous les inscrits sur le réseau)</h3>
+
+                            </div>
+                            <div class="posts-wrapper">
+                                <div class="row g-4">
+                                    <?php foreach ($posts as $post): ?>
+                                        <div class="col-md-6 col-lg-4">
+                                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
 
             </div>
@@ -31,3 +43,4 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
     </main>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
+

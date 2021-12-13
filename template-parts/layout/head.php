@@ -18,6 +18,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <meta name="description" content="<?php echo $page['description']; ?>">
     <?php endif; ?>
     <link href="/assets/css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- error_reporting(0);
 

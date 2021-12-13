@@ -24,7 +24,7 @@ if (!empty($_POST)) {
 
     // Si introuvable -> Back with error
     if (!$user) {
-        header('Location: ../../login.php?error=true');
+        header('Location: /login.php?error=true');
         exit;
     }
 
@@ -35,6 +35,6 @@ if (!empty($_POST)) {
     ];
 
     // On redigige vers l'accueil
-    header('Location: ../../');
+    header('Location: /');
     exit;
 }

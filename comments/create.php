@@ -11,7 +11,7 @@ if ($auth): ?>
             <div class="d-flex flex-row align-items-start">
                 <img class="user-img rounded-circle"
                      src="<?php echo getAvatarUrl($auth['email']); ?>"
-                     alt="Photo de oscar"
+                     alt="Photo de profil"
                      title="Photo de profil"
                      loading="lazy"
                      width="30">
