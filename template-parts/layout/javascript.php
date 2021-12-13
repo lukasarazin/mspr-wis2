@@ -1,0 +1,1 @@
+<script src="/crud/assets/js/app.js"></script>
