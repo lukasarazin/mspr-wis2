@@ -15,38 +15,38 @@ $auth = getAuth();
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./">Accueil</a>
+                        <a class="nav-link" href="/">Accueil</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="posts">Feed</a>
+                        <a class="nav-link" href="/posts">Feed</a>
                     </li>
 
                     <?php if ($auth): ?>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="users/show.php"><?php echo $auth['username']; ?></a>
+                               href="/users/show.php"><?php echo $auth['username']; ?></a>
                         </li>
                         <?php if (isAdmin($auth)): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="admin">Admin</a>
+                                <a class="nav-link" href="/admin">Admin</a>
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a href="#" class="nav-link"
+                            <a href="/" class="nav-link"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="api/auth/logout.php" method="POST"
+                            <form id="logout-form" action="/api/auth/logout.php" method="POST"
                                   style="display: none">
                                 <button type="submit" class="nav-link">Submit</button>
                             </form>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="register.php">Inscription</a>
+                            <a class="nav-link" href="/register.php">Inscription</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="login.php">Connexion</a>
+                            <a class="nav-link" href="/login.php">Connexion</a>
                         </li>
                     <?php endif; ?>
 

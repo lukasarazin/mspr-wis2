@@ -32,7 +32,7 @@ require_once '../template-parts/layout/header.php'; ?>
                             <h1 class="h1"><?php echo $user['username']; ?>
                                 <a href="users/edit.php?id=<?php echo $user['id']; ?>">
 
-                                    <img src="/crud/assets/svg/pen.svg" alt="edit" width="20" height="20">
+                                    <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
 
                                     <img src="assets/svg/pen.svg" alt="edit" width="20" height="20">
 

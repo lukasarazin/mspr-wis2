@@ -1,10 +1,10 @@
 <?php
-require_once '../functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $auth = getAuth();
 
 if ($auth): ?>
-    <form action="api/comments/store.php" method="POST">
+    <form action="/api/comments/store.php" method="POST">
         <input type="hidden" id="post_id" name="post_id" value="<?php echo $post['id']; ?>">
         <label for="textarea" class="mb-3">Laisser un commentaire</label>
         <div class="bg-light p-2">

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/database.php';
 
 /**
  * On ajoute un comment à la BDD

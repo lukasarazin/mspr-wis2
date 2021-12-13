@@ -1,8 +1,8 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . '/crud/functions/helpers.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/crud/functions/posts.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/crud/functions/users.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $auth = getAuth();
 
@@ -20,6 +20,6 @@ if (getValue($_POST) && isAdmin($auth)) {
     $postId = storePost($data);
 
     // On redirige l'utilisateur sur la page de l'article
-    header("Location: /crud/posts/show.php?id=$postId");
+    header("Location: /posts/show.php?id=$postId");
     exit;
 }

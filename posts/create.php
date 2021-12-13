@@ -7,7 +7,7 @@ $page = ['title' => 'Ajouter un article'];
     <main id="main">
 
         <div class="form-wrapper mt-5 mx-auto" style="max-width: 800px;">
-            <form action="/crud/api/posts/store.php" method="POST">
+            <form action="/api/posts/store.php" method="POST">
 
                 <div class="form-group mb-3">
                     <label for="title" class="form-label">Titre de l'article</label>
