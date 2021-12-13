@@ -69,4 +69,3 @@ $current_time = time();
     </div>
 </div>
 
-</div>
