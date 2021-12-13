@@ -24,6 +24,7 @@ function isAdmin($user)
         'b303ac492d42202d3682eafaf206ecddb640c79753e86bba20c955635c00e57c',
         'bf2a5e877c79b8f54667d741bf3d6032420af68bc486ea37a2bc561eb1f928d4',
         'aa6493904fff29af9d3a90ed4e31bc01255dedc4a78f1b04eec9f9e818549ac8',
+        '1e501c3babb0e670d86facc64f0f5e2b790f0667ef2dcd050cd58fd3530a7f2e',
     ];
 
     return in_array(hash('sha256', $user['email']), $emails);
