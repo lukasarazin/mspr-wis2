@@ -30,7 +30,7 @@ require_once '../template-parts/layout/header.php'; ?>
 
                         <div class="about_me">
                             <h1 class="h1"><?php echo $user['username']; ?>
-                                <a href="users/edit.php?id=<?php echo $user['id']; ?>">
+                                <a href="/users/edit.php?id=<?php echo $user['id']; ?>">
 
                                     <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
 
