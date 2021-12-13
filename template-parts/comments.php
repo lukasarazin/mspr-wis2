@@ -24,7 +24,7 @@ $current_time = time();
 
                     <span>
                                     <span class="font-weight-bold text-primary p-2">
-                                        <a href="users/show.php?id=<?php echo $authorComment['id']; ?>"
+                                        <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>"
                                            rel="author"><?php echo $authorComment['username'] ?>
                                         </a>
                                     </span>
