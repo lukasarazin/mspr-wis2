@@ -25,6 +25,15 @@ $auth = getAuth();
 
                     <?php if (getValue($auth)): ?>
                         <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <span class="visually-hidden">Images aimées</span>
+                                <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if (getValue($auth)): ?>
+                        <li class="nav-item">
                             <a class="nav-link"
                                href="/users/show.php"><?php echo $auth['username']; ?></a>
                         </li>
