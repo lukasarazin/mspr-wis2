@@ -32,10 +32,10 @@ middleware('auth');
 
                 <?php echo $post['body']; ?>
 
-                <div class="comments-wrapper">
+                <div class="subscribes-wrapper">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
                 </div>
-                <div class="create-comment">
+                <div class="create-subcribe">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
                 </div>
 

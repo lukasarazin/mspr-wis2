@@ -66,6 +66,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                             <a href="/" class="btn btn-primary">S'abonner</a>
                         </div>
 
+                       <!-- <div class="comments-wrapper">
+                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
+                        </div>
+                        <div class="create-comment">
+                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
+                        </div> -->
+
                             <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
                                 <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
                                     publication</a>
