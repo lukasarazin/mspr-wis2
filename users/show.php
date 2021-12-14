@@ -10,8 +10,9 @@ if ($id = getValue($_GET['id'])) {
 }
 
 $posts = getUserPosts($user['id']);
+$count = count($posts);
 
-require_once '../template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
     <main id="main">
 
@@ -31,7 +32,7 @@ require_once '../template-parts/layout/header.php'; ?>
 
                     </div>
                     <div class="stats-profil">
-                        <strong>20</strong>
+                        <strong><?= $count ?></strong>
                         <p>Publications</p>
                     </div>
                     <div class="stats-profil">
@@ -76,4 +77,4 @@ require_once '../template-parts/layout/header.php'; ?>
 
     </main>
 
-<?php require_once '../template-parts/layout/footer.php'; ?>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
