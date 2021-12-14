@@ -42,13 +42,13 @@ $current_time = time();
 
     <div class="post-img">
         <a href="/posts/show.php?id=<?php echo $post['id'] ?>" class="stretched-link">
-            <img src="/assets/img/chien-jaune.jpg" class="card-img-top" alt="un chateau fort très fort">
+            <img src="<?php echo $post['thumbnail']; ?>" class="card-img-top" alt="un chateau fort très fort">
             <?php // echo $post['title']; ?>
         </a>
     </div>
 
     <div class="post-body">
-        <p><?php echo $post['excerpt']; ?></p>
+        <p><?php echo $post['body']; ?></p>
         <div class="time-published">
             <?php if ($post['updated_at'] !== $post['created_at']) : ?>
                 <time><small><?php echo $timePostAgoFromUpdate ?></small></time>

@@ -4,11 +4,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 $post = getPost($_GET['id']);
 $author = getPostAuthor($post);
 
-$page = [
-    'title' => $post['title'],
-    'description' => $post['excerpt'],
-];
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 middleware('auth');
@@ -20,22 +15,24 @@ middleware('auth');
         <section class="py-5">
             <div class="container">
 
-                <h1 class="h1"><?php echo $post['title']; ?></h1>
-
                 <span>Publié le <time><?php echo $post['created_at'] = date('d F Y'); ?></time> par
                     <a href="/users/show.php?id=<?php echo $author['id']; ?>"
                        rel="author"><?php echo $author['username']; ?>
                     </a>
                 </span>
 
-                <p class="lead"><?php echo $post['excerpt']; ?></p>
 
-                <?php echo $post['body']; ?>
+                <p><?php echo $post['body']; ?></p>
 
-                <div class="subscribes-wrapper">
+                <img src="<?php echo $post['thumbnail']; ?>" alt="">
+
+                <hr>
+
+                <div class="comments-wrapper">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
                 </div>
-                <div class="create-subcribe">
+
+                <div class="create-comment">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
                 </div>
 

@@ -10,11 +10,13 @@ $auth = getAuth();
 
 if (getValue($_POST)) {
 
+
+    $imagePath = uploadImage($_FILES['image']);
+
     // On prépare les données depuis le formulaire
     $data = [
-        'title' => getValue($_POST['title']),
-        'excerpt' => getValue($_POST['excerpt']),
         'body' => getValue($_POST['body']),
+        'thumbnail' => $imagePath,
         'user_id' => $auth['id'],
     ];
 

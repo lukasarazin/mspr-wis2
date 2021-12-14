@@ -26,10 +26,9 @@ function getPosts()
 function storePost($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('INSERT INTO posts (title, excerpt, body, user_id) VALUES (:title, :excerpt, :body, :user_id)');
-    $stmt->bindParam(':title', $data['title']);
-    $stmt->bindParam(':excerpt', $data['excerpt']);
+    $stmt = $dbh->prepare('INSERT INTO posts (body, thumbnail, user_id) VALUES (:body, :thumbnail, :user_id)');
     $stmt->bindParam(':body', $data['body']);
+    $stmt->bindParam(':thumbnail', $data['thumbnail']);
     $stmt->bindParam(':user_id', $data['user_id']);
     $stmt->execute();
 
