@@ -1,13 +1,13 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/subscribes.php';
 
 middleware('auth');
 
 $id = $_GET['id'];
 
-deleteComment($id);
+deleteSubscribe($id);
 
 header('Location: /');
 
