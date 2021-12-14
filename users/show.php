@@ -1,13 +1,17 @@
 <?php
 
-require_once '../functions/helpers.php';
-require_once '../functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+
+middleware('auth');
 
 if ($id = getValue($_GET['id'])) {
     $user = getUser($id);
 } else {
     $user = getAuth();
 }
+
 
 $posts = getUserPosts($user['id']);
 $count = count($posts);
@@ -46,25 +50,31 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                 </div>
 
                 <div class="container">
-                <div class="about_me d-flex">
-                    <h4 class="h4"><?php echo $user['username']; ?></h4>
-                    <a href="/users/edit.php?id=<?php echo $user['id']; ?>" class="px-4 pt-3">
-                        <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
-                    </a>
+                    <div class="about_me d-flex">
+                        <h4 class="h4"><?php echo $user['username']; ?></h4>
+                        <a href="/users/edit.php?id=<?php echo $user['id']; ?>" class="px-4 pt-3">
+                            <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
+                        </a>
+                    </div>
+
+                    <span>biography</span>
                 </div>
 
-                <span>biography</span>
-            </div>
                 <section id="posts_profil">
                     <div class="container">
-                        <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
-                            <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
-                                publication</a>
+                        <div class="mx-auto mt-4">
+                            <a href="/" class="btn btn-primary">S'abonner</a>
                         </div>
+
+                            <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
+                                <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
+                                    publication</a>
+                            </div>
+
                         <div class="row g-4">
                             <?php foreach ($posts as $post): ?>
                                 <div class="col-md-6 col-lg-4">
-                                    <?php require '../template-parts/post.php'; ?>
+                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>

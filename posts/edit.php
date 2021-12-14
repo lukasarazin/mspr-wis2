@@ -5,6 +5,9 @@ $post = getPost($_GET['id']);
 $page = ['title' => "Modifier l'article"];
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
+
+middleware('auth');
+
 ?>
 
     <form action="/api/posts/delete.php?id=<?php echo $post['id']; ?>" method="POST" class="mt-2 float-end">

@@ -2,7 +2,7 @@
 
 $auth = getAuth();
 ?>
-
+<?php if (getValue($auth)): ?>
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -14,17 +14,16 @@ $auth = getAuth();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
 
+                    <?php if (getValue($auth)): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Accueil</a>
+                        <a class="nav-link" href="/">
+                            <span class="visually-hidden">Accueil</span>
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/home.svg.php'; ?>
+                        </a>
                     </li>
+                    <?php endif; ?>
 
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="/posts">Feed</a>
-                    </li>
--->
-
-                    <?php if ($auth): ?>
+                    <?php if (getValue($auth)): ?>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="/users/show.php"><?php echo $auth['username']; ?></a>
@@ -56,3 +55,4 @@ $auth = getAuth();
         </div>
     </nav>
 </header>
+<?php endif; ?>

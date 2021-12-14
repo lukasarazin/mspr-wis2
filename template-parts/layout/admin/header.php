@@ -1,16 +1,12 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
-
-if (!isAdmin(getAuth())) {
-    header('Location: /crud');
-    exit;
-}
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/head.php';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/navbar.php';
+
+middleware('admin');
 
 ?>
 

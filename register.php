@@ -2,7 +2,10 @@
 
 $page = ['title' => 'Inscription'];
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
+
+middleware('guest');
+?>
 
 <main id="main">
 
@@ -15,7 +18,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                     <h1 class="h2 mb-0">Inscription</h1>
                 </div>
                 <div class="card-body">
-                    <form action="api/users/store.php" method="POST">
+                    <form action="api/auth/register.php" method="POST">
 
                         <div class="mb-3">
                             <label class="form-label" for="username">Nom d'utilisateur</label>

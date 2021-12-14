@@ -3,6 +3,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
+middleware('guest');
+
 // On check si y'a des données
 if (!empty($_POST)) {
 

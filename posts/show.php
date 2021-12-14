@@ -9,7 +9,11 @@ $page = [
     'description' => $post['excerpt'],
 ];
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
+
+middleware('auth');
+
+?>
 
     <main id="main">
 

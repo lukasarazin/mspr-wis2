@@ -4,6 +4,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
+middleware('auth');
+
 $auth = getAuth();
 
 if (getValue($_POST)) {

@@ -3,6 +3,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
+middleware('auth');
+
 if ($id = getValue($_GET['id'])) {
     $user = getUser($id);
 } else {

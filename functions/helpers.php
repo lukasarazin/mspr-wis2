@@ -35,3 +35,9 @@ function getAvatarUrl($email)
 {
     return 'https://www.gravatar.com/avatar/' . md5($email) . '?s=400';
 }
+
+function middleware($name){
+
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/middleware/' . $name . '.php';
+
+}
