@@ -16,7 +16,10 @@ $auth = getAuth();
 
                     <?php if (getValue($auth)): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Accueil</a>
+                        <a class="nav-link" href="/">
+                            <span class="visually-hidden">Accueil</span>
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/home.svg.php'; ?>
+                        </a>
                     </li>
                     <?php endif; ?>
 
