@@ -60,3 +60,9 @@ $current_time = time();
     </div>
 
 </article>
+
+<div style="text-align: center">
+    <form action="index.php">
+        <button type="submit" href="index.php" class="btn btn-success like-button">LIKE</button>
+    </form>
+</div>
