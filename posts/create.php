@@ -24,7 +24,7 @@ if (isset($_FILES['thumbnail']) && is_uploaded_file($_FILES['thumbnail']['tmp_na
     move_unfile_form_data($origine, $uploads);
 
 }
-require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 middleware('auth');
 ?>

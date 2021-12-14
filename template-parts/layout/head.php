@@ -11,8 +11,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="/assets/img/instagram-logo.jpg" type="image/x-icon">
-    <link rel="icon" href="/assets/img/instagram-logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="/assets/img/logo.png" type="image/x-icon">
     <title><?php echo getValue($page['title']) ? $page['title'] : 'Page sans titre'; ?> | Nom du réseau</title>
     <?php if (getValue($page['description'])): ?>
         <meta name="description" content="<?php echo $page['description']; ?>">

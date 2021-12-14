@@ -6,6 +6,7 @@ $auth = getAuth();
 <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+            <img src="/assets/img/logo.png" alt="" width="50" height="50">
             <a class="navbar-brand" href="/">Pet Swap</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

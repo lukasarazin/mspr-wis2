@@ -36,8 +36,6 @@ function getSubscribes()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-
 function deleteSubscribe($id)
 {
     $dbh = connectDB();
