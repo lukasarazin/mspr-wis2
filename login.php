@@ -1,9 +1,9 @@
 <?php
-
 $page = ['title' => 'Connexion'];
 
 require_once 'template-parts/layout/header.php';
 
+middleware('guest');
 ?>
 
     <main id="main">
@@ -35,11 +35,7 @@ require_once 'template-parts/layout/header.php';
 
                             <div class="card-content">
 
-                                <div class="mb-3">
-                                    <input class="mx-lg-1 rounded-3 " type="checkbox" name="remember" id="remember">
-                                    <label class="form-label" for="remember">Rester connecté</label>
-                                    <!-- utilisation de la fonction setcookie non réussie -->
-                                </div>
+
 
                                 <div class="mb-3 lost-mdp">
                                     <a href="">Mot de passe oublié ?</a>

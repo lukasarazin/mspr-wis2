@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/database.php';
 
 
-function    getAuth()
+function getAuth()
 {
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
