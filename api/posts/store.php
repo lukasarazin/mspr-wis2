@@ -6,7 +6,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $auth = getAuth();
 
-if (getValue($_POST) && isAdmin($auth)) {
+if (getValue($_POST)) {
 
     // On prépare les données depuis le formulaire
     $data = [
