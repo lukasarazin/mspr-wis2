@@ -1,0 +1,14 @@
+.profil-hero {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  .stats-profil {
+    text-align: center;
+
+    strong {
+      font-size: 25px;
+    }
+  }
+}
