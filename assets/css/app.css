@@ -11281,6 +11281,22 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.wrapper .posts-wrapper {
+  margin: auto;
+}
+.wrapper .posts-wrapper .post-type {
+  margin: 2rem 0;
+}
+
+#main-hero {
+  padding: 0;
+}
+#main-hero .container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
 .post-item {
   position: relative;
   background-color: #f8f9fa;
@@ -11375,4 +11391,8 @@ textarea.form-control-lg {
 }
 .profil-hero .stats-profil strong {
   font-size: 25px;
+}
+
+.title-wrapper h3, .title-wrapper .h3 {
+  text-align: center;
 }

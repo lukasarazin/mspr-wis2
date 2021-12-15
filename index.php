@@ -6,42 +6,40 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 middleware('auth');
 ?>
 
-    <main id="main">
+<main id="main">
 
-        <section class="py-5">
-            <div class="container">
+    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
-                <div class="container">
-                    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+    $posts = getPosts();
 
-                    $posts = getPosts();
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
-                    require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+    <section id="main-hero">
+        <div class="container">
 
-                    <section class="py-5">
-                        <div class="container">
+        </div>
+    </section>
 
-                            <div class="action-wrapper mb-5 d-flex justify-content-between align-items-center align-content-center">
-                                <h3>Liste des publications (publiées par tous les inscrits sur le réseau)</h3>
+    <section id="main-body" class="py-5">
+        <div class="container">
 
-                            </div>
-                            <div class="posts-wrapper">
-                                <div class="row g-4">
-                                    <?php foreach ($posts as $post): ?>
-                                        <div class="col-md-6 col-lg-4">
-                                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
+            <div class="title-wrapper mb-5">
+                <h3>VOTRE FEED</h3>
             </div>
-        </section>
 
-    </main>
+            <div class="wrapper">
+                <div class="posts-wrapper col-lg-4">
+                    <?php foreach ($posts as $post): ?>
+                        <div class="post-type">
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
 
@@ -51,6 +49,7 @@ middleware('auth');
     function addDarkmodeWidget() {
         new Darkmode().showWidget();
     }
+
     window.addEventListener('load', addDarkmodeWidget);
 
     const options = {

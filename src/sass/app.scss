@@ -5,11 +5,17 @@
 
 // Layout
 @import "layout/navbar";
+@import "layout/posts-wrapper";
+
+// Sections
+
+@import "sections/main-hero";
 
 // Components
 @import "components/post";
 @import "components/card-login";
 @import "components/profil-hero";
+@import "components/title";
 
 // Pages
 
