@@ -1,13 +1,8 @@
 <?php
-
-
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
 $post = getPost($_GET['id']);
 $author = getPostAuthor($post);
-
-$page = ['title' => 'Publication de ' . $author['username']];
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 

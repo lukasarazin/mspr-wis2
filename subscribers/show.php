@@ -1,13 +1,13 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/subscribers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/dates.php';
 
-$comment = getComment($_GET['id']);
+$subscriber = getSubscriber($_GET['id']);
 
 // foreach ()
-$comments = getPostComments($post['id']);
+$subscribers = getUserSubscribers($user['id']);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
@@ -18,9 +18,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 <section>
     <div class="container mt-5">
 
-        <?php foreach ($comments as $comment): ?>
-
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/comments.php'; ?>
+        <?php foreach ($subscribers as $subscriber): ?>
+            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/subscribers.php'; ?>
         <?php endforeach; ?>
     </div>
 </section>

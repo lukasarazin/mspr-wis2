@@ -19,7 +19,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
     <div class="container mt-5">
 
         <?php foreach ($comments as $comment): ?>
-
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/comments.php'; ?>
         <?php endforeach; ?>
     </div>

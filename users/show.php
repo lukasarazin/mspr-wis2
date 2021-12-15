@@ -12,11 +12,22 @@ if ($id = getValue($_GET['id'])) {
     $user = getAuth();
 }
 
-
+$post = getPost($_GET['id']);
+$auth = getAuth();
+$authorPost = getPostAuthor($post);
+// $authorUser = getUserAuthor($user);
 $posts = getUserPosts($user['id']);
 $count = count($posts);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
+
+<?php if ($auth['id'] === $authorPost['id']):
+    $page = ['title' => 'Mes publications'];
+else:
+    $page = ['title' => 'Profil de ' . $user['username']];
+endif; ?>
+
+
 
     <main id="main">
 
@@ -45,7 +56,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                     </div>
                     <div class="stats-profil">
                         <strong>228</strong>
-                        <p>Abonnements</p>
+                        <a href=""><p>Abonnements</p></a>
                     </div>
                 </div>
 
@@ -62,21 +73,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
                 <section id="posts_profil">
                     <div class="container">
-                        <div class="mx-auto mt-4">
-                            <a href="/" class="btn btn-primary">S'abonner</a>
+
+                        <div class="subscribers-wrapper">
+                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/show.php' ?>
+
+                        </div>
+                        <div class="create-subscribers">
+                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/create.php' ?>
                         </div>
 
-                       <!-- <div class="comments-wrapper">
-                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
+                        <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
+                            <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
+                                publication</a>
                         </div>
-                        <div class="create-comment">
-                            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
-                        </div> -->
-
-                            <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
-                                <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
-                                    publication</a>
-                            </div>
 
                         <div class="row g-4">
                             <?php foreach ($posts as $post): ?>

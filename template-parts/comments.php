@@ -15,24 +15,25 @@ $current_time = time();
         <div class="card mt-5 p-3">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row align-items-center">
-                    <img class="user-img rounded-circle"
-                         src="<?php echo getAvatarUrl($authorComment['email']); ?>"
-                         alt="Photo de profil"
-                         title="Photo de profil"
-                         loading="lazy"
-                         width="30">
-
+                    <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>">
+                        <img class="user-img rounded-circle"
+                             src="<?php echo getAvatarUrl($authorComment['email']); ?>"
+                             alt="Photo de profil"
+                             title="Photo de profil"
+                             loading="lazy"
+                             width="30">
+                    </a>
                     <span>
-                                    <span class="font-weight-bold text-primary p-2">
-                                        <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>"
-                                           rel="author"><?php echo $authorComment['username'] ?>
-                                        </a>
-                                    </span>
+                        <span class="font-weight-bold text-primary p-2">
+                            <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>"
+                               rel="author"><?php echo $authorComment['username'] ?>
+                            </a>
+                        </span>
 
-                                    <small class="font-weight-bold">
-                                        <span><?php echo $comment['body'] ?></span>
-                                    </small>
-                            </span>
+                        <small class="font-weight-bold">
+                            <span><?php echo $comment['body'] ?></span>
+                        </small>
+                    </span>
                 </div>
 
                 <div class="d-flex flex-row align-items-center">

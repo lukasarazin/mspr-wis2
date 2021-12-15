@@ -1,10 +1,11 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/subscribers.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+
 middleware('auth');
+
 $auth = getAuth();
 
 if (getValue($_POST)) {
@@ -13,13 +14,12 @@ if (getValue($_POST)) {
     $data = [
         'username' => getValue($_POST['username']),
         'user_id' => $auth['id'],
-        'post_id' => getValue($_POST['post_id']),
     ];
 
     // On créé l'article et on le stock en base
-    $subscribeId = storeSubscribe($data);
+    $subscriberId = storeSubscriber($data);
 
     // On redirige l'utilisateur sur la page de l'article
-    header("Location: /");
+    header("Location: /users/show");
     exit;
 }
