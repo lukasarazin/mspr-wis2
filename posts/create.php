@@ -1,32 +1,7 @@
 <?php
 
-$page = ['title' => 'Ajouter un article'];
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';?>
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    echo $_FILES['thumbnail']['name'];/* nom du fichier */
-
-    echo $_FILES['thumbnail']['type']; /* type du fichier */
-
-    echo $_FILES['thumbnail']['size']; /* taille en octets */
-
-    echo $_FILES['thumbnail']['tmp_name']; /* emplacement du fichier temporaire sur le serveur */
-
-    echo $_FILES['thumbnail']['error']; /* code erreur du téléchargement */
-}
-$uploads = '/uploads/';
-
-if (isset($_FILES['thumbnail']) && is_uploaded_file($_FILES['thumbnail']['tmp_name'])) {
-    $origine = $_FILES['thumbnail']['tmp_name'];
-
-    $uploads = $_FILES['thumbnail']['name'];
-
-    move_unfile_form_data($origine, $uploads);
-
-}
-require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
-
-?>
 
 <main id="main">
 

@@ -80,6 +80,8 @@ function updateUser($id, $data)
     $stmt->bindParam(':username', $data['username']);
     $stmt->bindParam(':first_name', $data['first_name']);
     $stmt->bindParam(':last_name', $data['last_name']);
+    $stmt->bindParam(':avatar', $data['avatar']);
+
     $stmt->execute();
 
     return $id;
@@ -146,7 +148,7 @@ function getSubscribeAuthor($subscribe)
 function getUserSubscribers($id)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM subscribers WHERE user_id = :id');
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE user_id = :id');
     $stmt->bindParam(':id', $id);
     $stmt->execute();
 

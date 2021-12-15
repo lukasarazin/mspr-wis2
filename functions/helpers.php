@@ -54,3 +54,11 @@ function uploadImage($image)
 
     return '/uploads/' . $filename;
 }
+
+function removeImage($path)
+{
+        $dbh = connectDB();
+        $stmt = $dbh->prepare('DELETE avatar FROM users WHERE id = :id LIMIT 1');
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+}
