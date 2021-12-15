@@ -20,17 +20,6 @@ middleware('auth');
 
             <form action="/api/posts/update.php?id=<?php echo $post['id']; ?>" method="POST">
 
-                <div class="form-group mb-3">
-                    <label for="title" class="form-label">Titre de l'article</label>
-                    <input type="text" id="title" name="title" class="form-control"
-                           value="<?php echo $post['title']; ?>" required>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="excerpt" class="form-label">Résumé</label>
-                    <textarea rows="3" id="excerpt" name="excerpt" class="form-control"
-                              required><?php echo $post['excerpt']; ?></textarea>
-                </div>
 
                 <div class="form-group mb-3">
                     <label for="body" class="form-label">Contenu</label>
@@ -38,11 +27,16 @@ middleware('auth');
                               class="form-control"><?php echo $post['body']; ?></textarea>
                 </div>
 
+                <div class="mb-3">
+                    <img src="<?php echo $post['thumbnail']; ?>" alt="">
+                </div>
+
                 <button type="submit" class="btn btn-outline-success">Mettre à jour</button>
 
             </form>
 
         </div>
+
 
     </main>
 
