@@ -16,9 +16,9 @@ $post = getPost($_GET['id']);
 $auth = getAuth();
 $authorPost = getPostAuthor($post);
 $posts = getUserPosts($user['id']);
-$subscription = getUserSubscribers($user['id']);
+$subscriptions = getUserSubscribers($user['id']);
 $count = count($posts);
-$countfollowing = count($subscription);
+$countfollowing = count($subscriptions);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
@@ -28,8 +28,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 else:
     $page = ['title' => 'Profil de ' . $user['username']];
 endif; */ ?>
-
-
 
     <main id="main">
 
@@ -56,10 +54,12 @@ endif; */ ?>
                         <data value="692">692</data>
                         <p>Abonnés</p>
                     </div>
+
                     <div class="stats-profil">
                         <data value="<?= $countfollowing ?>"><?= $countfollowing ?></data>
                         <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnements</a>
                     </div>
+
                 </div>
 
                 <div class="container">
@@ -76,11 +76,13 @@ endif; */ ?>
                 <section id="posts_profil">
                     <div class="container">
 
-                     <div class="mx-auto mt-4">
+                        <div class="mx-auto mt-4">
                             <?php if (($auth['id']) !== $user['id']): ?>
-                                <form action="/api/users/follow.php?id=<?php echo $auth['id']; ?>" method="POST" class="mt-4">
-                                    <input type="hidden" id="subscriber_id" name="subscriber_id" value="<?php echo $user['id']; ?>">
-                                    <button class="btn btn-primary btn-sm mx-auto shadow-none" type="submit">
+                                <form action="/api/users/follow.php?id=<?php echo $auth['id']; ?>" method="POST"
+                                      class="mt-4">
+                                    <input type="hidden" id="subscriber_id" name="subscriber_id"
+                                           value="<?php echo $user['id']; ?>">
+                                    <button class="btn btn-primary btn-sm mx-auto shadow-none mb-5" type="submit">
                                         S'abonner
                                     </button>
                                 </form>
@@ -95,10 +97,12 @@ endif; */ ?>
                             <?php // require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/create.php' ?>
                         </div>
 
-                        <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
-                            <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
-                                publication</a>
-                        </div>
+                        <?php if (($auth['id']) === $user['id']): ?>
+                            <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
+                                <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
+                                    publication</a>
+                            </div>
+                        <?php endif; ?>
 
                         <div class="row g-4">
                             <?php foreach ($posts as $post): ?>

@@ -146,7 +146,7 @@ function getSubscribeAuthor($subscribe)
 function getUserSubscribers($id)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM subscribers WHERE user_id = :id');
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE user_id = :id');
     $stmt->bindParam(':id', $id);
     $stmt->execute();
 
