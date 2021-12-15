@@ -23,12 +23,13 @@ $countfollowing = count($subscriptions);
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
 
-<?php /* if ($auth['id'] === $authorPost['id']):
+    /* <?php  if ($auth['id'] === $authorPost['id']):
     $page = ['title' => 'Mes publications'];
 else:
     $page = ['title' => 'Profil de ' . $user['username']];
-endif; */ ?>
+endif;
 
+?>
     <main id="main">
 
         <section class="py-5" id="profil">
@@ -38,7 +39,7 @@ endif; */ ?>
 
                     <div>
                         <img class="img-fluid img-profil rounded-circle"
-                             src="<?php echo getAvatarUrl($user['email']); ?>"
+                        <img src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
                              alt="Photo de <?php echo $user['username']; ?>"
                              title="Photo de profil"
                              width="80"

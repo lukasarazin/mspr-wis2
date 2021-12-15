@@ -22,13 +22,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                 <div class="row">
                     <div class="col-md-2">
                         <img class="img-fluid img-profil"
-                                               src="<?php echo getAvatarUrl($user['email']); ?>"
+                                             <img src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
                                                alt="Photo de <?php echo $user['username']; ?>"
                                                title="Photo de profil"
                                                width="200"
                                                height="200"
-                                               loading="lazy"
-                        >
+                                               loading="lazy">
+                        <div class="mb-3">
+                            <label for="image" class="form-label"></label>
+                            <input class="form-control" id="image" type="file" accept=".png,.jpg,.jpeg" name="image">
+                        </div>
+
                         <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
                             <fieldset class="mb-3">
                                 <legend>Pseudo</legend>

@@ -80,6 +80,8 @@ function updateUser($id, $data)
     $stmt->bindParam(':username', $data['username']);
     $stmt->bindParam(':first_name', $data['first_name']);
     $stmt->bindParam(':last_name', $data['last_name']);
+    $stmt->bindParam(':avatar', $data['avatar']);
+
     $stmt->execute();
 
     return $id;
