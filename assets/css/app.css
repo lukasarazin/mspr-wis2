@@ -11391,6 +11391,11 @@ textarea.form-control-lg {
   align-items: center;
   align-content: center;
 }
+#auth-content .connexion-footer .inscription-possibility a {
+  text-decoration: none;
+  padding: 2px;
+  color: black;
+}
 
 .profil-hero {
   display: flex;
