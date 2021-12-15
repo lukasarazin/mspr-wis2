@@ -1,8 +1,11 @@
 <?php
 
 
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/like.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/database.php';
 
 $post = getPost($_GET['id']);
 $author = getPostAuthor($post);
@@ -28,7 +31,8 @@ middleware('auth');
 
                 <p><?php echo $post['body']; ?></p>
 
-                <img src="<?php echo $post['thumbnail']; ?>" alt="" width="400" height="400" title="Pulication de <?php echo $author['username']; ?>"/>
+                <img src="<?php echo $post['thumbnail']; ?>" alt="" width="400" height="400"
+                     title="Pulication de <?php echo $author['username']; ?>"/>
 
                 <hr>
 
@@ -40,6 +44,12 @@ middleware('auth');
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
                 </div>
 
+            </div>
+
+            <div style="text-align: center">
+                <form action="/api/likes/store.php?id=<?= $post['id']; ?>" method="POST">
+                    <button type="submit" class="btn btn-success like-button">LIKE</button>
+                </form>
             </div>
         </section>
 
