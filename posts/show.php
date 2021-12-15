@@ -2,7 +2,6 @@
 
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/like.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/database.php';
