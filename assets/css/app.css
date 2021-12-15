@@ -11365,6 +11365,9 @@ textarea.form-control-lg {
   width: 100%;
 }
 
+#auth-content .card-header {
+  background-color: #d7ffc7;
+}
 #auth-content .card-content {
   display: flex;
   justify-content: space-between;
@@ -11374,6 +11377,13 @@ textarea.form-control-lg {
 #auth-content .lost-mdp a {
   text-decoration: none;
   font-size: 13px;
+}
+#auth-content .card-body .btn-log {
+  border: solid 2px #d7ffc7;
+  background-color: white;
+}
+#auth-content .card-body .btn-log:hover {
+  background-color: #d7ffc7;
 }
 #auth-content .connexion-footer .inscription-possibility {
   display: flex;
@@ -11401,4 +11411,5 @@ textarea.form-control-lg {
 
 body {
   background-color: #f8f9fa;
+  font-family: Montserrat;
 }
