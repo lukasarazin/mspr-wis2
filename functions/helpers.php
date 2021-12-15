@@ -33,7 +33,7 @@ function isAdmin($user)
 
 function getAvatarUrl($email)
 {
-    return 'https://www.gravatar.com/avatar/' . md5($email) . '?s=400';
+    return 'https://www.gravatar.com/avatar/' . md5($email) . '?s=400&default=mp';
 }
 
 function middleware($name)

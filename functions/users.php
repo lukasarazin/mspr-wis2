@@ -124,6 +124,16 @@ function unfollow($data)
     return $stmt->execute();
 }
 
+function getSubscriptions($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getFollowers($data)
 {
     $dbh = connectDB();
@@ -134,16 +144,25 @@ function getFollowers($data)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getSubscribeAuthor($subscribe)
+function getFollowingAuthor($follow)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :user_id LIMIT 1');
-    $stmt->bindParam(':user_id', $subscribe['user_id']);
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :subscribe_id LIMIT 1');
+    $stmt->bindParam(':subscribe_id', $follow['subscribe_id']);
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+function getSubscribeAuthor($subscribe)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :subscriber_id LIMIT 1');
+    $stmt->bindParam(':subscriber_id', $subscribe['subscriber_id']);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
 function getUserSubscribers($id)
 {
@@ -156,3 +175,35 @@ function getUserSubscribers($id)
 }
 
 
+function getSubscribersUser($id)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE subscriber_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+function storeLike($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('INSERT INTO likes (post_id, user_id) VALUES (:post_id, :user_id)');
+    $stmt->bindParam(':post_id', $data['post_id']);
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return true;
+}
+
+function getLikes($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

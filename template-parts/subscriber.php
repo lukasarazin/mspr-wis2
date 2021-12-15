@@ -21,11 +21,10 @@ $user = getUser($user_id);
                              width="30">
                     </a>
 
-                        <span class="font-weight-bold text-primary p-2">
+                    <span class="font-weight-bold text-primary p-2">
                             <a href="/users/show.php?id=<?php echo $authorSubscribe['id']; ?>"
                                rel="author"><?php echo $user['username']; ?>
                             </a>
                         </span>
                 </div>
-
 </article>

@@ -18,6 +18,6 @@ if (getValue($_POST)) {
     unfollow($data);
 
     // On redirige l'utilisateur sur la page de l'article
-    header("Location: /users/show");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
 }

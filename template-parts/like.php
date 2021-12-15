@@ -1,21 +1,20 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/dates-post.php';
+
+if ($id = getValue($_GET['id'])) {
+    $user = getUser($id);
+} else {
+    $user = getAuth();
+}
 
 $auth = getAuth();
+$post = getPost($_GET['id']);
+$posts = getUserPosts($user['id']);
 $authorPost = getPostAuthor($post);
 $timePost = $post['created_at'];
 $timeupdate = $post['updated_at'];
 $timePostAgo = createdPostTime($timePost);
 $timePostAgoFromUpdate = upadtedPostTime($timeupdate);
 $current_time = time();
-if ($id = getValue($_GET['id'])) {
-    $user = getUser($id);
-} else {
-    $user = getAuth();
-}
 
 ?>
 
@@ -54,7 +53,7 @@ if ($id = getValue($_GET['id'])) {
 
     <div class="post-body">
         <p><?php echo $post['body']; ?></p>
-        <a class="nav-link mb-3" href="/api/users/like.php?id=<?php echo $auth['id']; ?>">
+        <a class="nav-link mb-3" href="/">
             <span class="visually-hidden">Images aimées</span>
             <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
         </a>

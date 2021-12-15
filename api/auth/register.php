@@ -56,6 +56,6 @@ if (!empty($_POST)) {
     ];
 
     // On redirige vers la home
-    header('Location: ../../');
+    header('Location: /');
     exit;
 }

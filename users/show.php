@@ -17,9 +17,11 @@ $auth = getAuth();
 $authorPost = getPostAuthor($post);
 $posts = getUserPosts($user['id']);
 $subscriptions = getUserSubscribers($user['id']);
-$unfollow = getValue($_POST['subscriber_id']);
+$subscribers = getSubscribersUser($user['id']);
+$follow = follow(['subscribe_id']);
 $count = count($posts);
 $countfollowing = count($subscriptions);
+$countfollowers = count($subscribers);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
@@ -31,7 +33,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
             <div class="profil-hero">
 
                 <div>
-                    <img class="img-fluid img-profil rounded-circle"
                     <img src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
                          alt="Photo de <?php echo $user['username']; ?>"
                          title="Photo de profil"
@@ -49,8 +50,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                     <?php endif; ?>
                 </div>
                 <div class="stats-profil">
-                    <data value="692">692</data>
-                    <p>Abonnés</p>
+                    <data value="<?= $countfollowers ?>"><?= $countfollowers ?></data>
+                    <?php if ($countfollowers === 1): ?>
+                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné</a>
+                    <?php else: ?>
+                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonnés</a>
+                    <?php endif; ?>
                 </div>
 
                 <div class="stats-profil">
@@ -78,33 +83,32 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
             <section id="posts_profil">
                 <div class="container">
 
-                    <div class="mx-auto mt-4">
-                        <?php if (($auth['id']) !== $user['id']): ?>
-                            <form action="/api/users/follow.php?id=<?php echo $auth['id']; ?>" method="POST"
-                                  class="mt-4">
-                                <input type="hidden" id="subscriber_id" name="subscriber_id"
-                                       value="<?php echo $user['id']; ?>">
-                                <button id="follow" class="btn btn-primary btn-sm mx-auto shadow-none mb-4"
-                                        type="submit">
-                                    S'abonner
-                                </button>
-                            </form>
-                        <?php endif; ?>
-                    </div>
+                        <div class="mx-auto" id="toggle-unfollow">
+                            <?php if (($auth['id']) !== $user['id']): ?>
+                                <form action="/api/users/unfollow.php?id=<?php echo $auth['id']; ?>" method="POST">
+                                    <input type="hidden" id="subscriber_id" name="subscriber_id"
+                                           value="<?php echo $user['id']; ?>">
+                                    <button id="unfollow" class="btn btn-danger btn-sm mx-auto shadow-none mb-5"
+                                            type="submit">
+                                        Se désabonner
+                                    </button>
+                                </form>
+                            <?php endif; ?>
+                        </div>
 
-                    <div class="mx-auto">
-                        <?php if (($auth['id']) !== $user['id']): ?>
-                            <form action="/api/users/unfollow.php?id=<?php echo $auth['id']; ?>" method="POST">
-                                <input type="hidden" id="subscriber_id" name="subscriber_id"
-                                       value="<?php echo $user['id']; ?>">
-                                <button id="unfollow" class="btn btn-danger btn-sm mx-auto shadow-none mb-5"
-                                        type="submit">
-                                    Se désabonner
-                                </button>
-                            </form>
-                        <?php endif; ?>
-                    </div>
-
+                        <div class="mx-auto mt-4" id="toggle">
+                            <?php if (($auth['id']) !== $user['id']): ?>
+                                <form action="/api/users/follow.php?id=<?php echo $auth['id']; ?>" method="POST"
+                                      class="mt-4">
+                                    <input type="hidden" id="subscriber_id" name="subscriber_id"
+                                           value="<?php echo $user['id']; ?>">
+                                    <button id="follow" class="btn btn-primary btn-sm mx-auto shadow-none mb-4"
+                                            type="submit">
+                                        S'abonner
+                                    </button>
+                                </form>
+                            <?php endif; ?>
+                        </div>
 
                     <div class="subscribers-wrapper">
                         <?php // require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/show.php' ?>
@@ -144,21 +148,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
     document.addEventListener('DOMContentLoaded', function () {
 
         let button = document.getElementById('follow');
+        let form = document.getElementById('toggle');
 
-
-        if (button) {
+        if (button && form) {
             button.addEventListener('click', function () {
 
-                if (bool === 0) {
-                    button.innerHTML = "voir plus";
-                    bool = 1;
-                } else {
-                    button.innerHTML = "voir moins";
-                    bool = 0;
-                }
+                form.hidden = true;
 
-                square.classList.remove('rounded-circle');
-                (GetId("curseur").style.display=="hidden")
+            });
+        }
+
+        let buttonUnfollow = document.getElementById('unfollow');
+        let formUnfollow = document.getElementById('toggle-unfollow');
+
+        if (buttonUnfollow && formUnfollow) {
+            buttonUnfollow.addEventListener('click', function () {
+
+                formUnfollow.hidden = false;
 
             });
         }

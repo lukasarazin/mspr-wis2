@@ -1,23 +1,23 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/like.php';
 
 middleware('auth');
 
 $auth = getAuth();
 
+if (getValue($_POST)) {
+
     // On prépare les données depuis le formulaire
     $data = [
+        'post_id' => getValue($_POST['post_id']),
         'user_id' => $auth['id'],
-        'post_id' => $_GET['id'],
     ];
 
-    // On créé le like et on le stock en base
-    $likeId = storeLike($data);
+    storeLike($data);
 
-    // On redirige l'utilisateur sur la page d'accueil
-    header("Location: /");
+    // On redirige l'utilisateur sur la page de l'article
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
+}

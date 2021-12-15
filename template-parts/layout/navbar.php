@@ -1,5 +1,10 @@
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
+if ($id = getValue($_GET['id'])) {
+    $user = getUser($id);
+} else {
+    $user = getAuth();
+}
 $auth = getAuth();
 ?>
 <?php if (getValue($auth)): ?>
@@ -26,7 +31,7 @@ $auth = getAuth();
 
                     <?php if (getValue($auth)): ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">
+                            <a class="nav-link" href="/likes.php?id=<?php echo $user['id']; ?>">
                                 <span class="visually-hidden">Images aimées</span>
                                 <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
                             </a>
