@@ -18,10 +18,12 @@ $authorPost = getPostAuthor($post);
 $posts = getUserPosts($user['id']);
 $subscriptions = getUserSubscribers($user['id']);
 $subscribers = getSubscribersUser($user['id']);
+$likes = getUserLikes($user['id']);
 $follow = follow(['subscribe_id']);
 $count = count($posts);
 $countfollowing = count($subscriptions);
 $countfollowers = count($subscribers);
+$countlikes = count($likes);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 

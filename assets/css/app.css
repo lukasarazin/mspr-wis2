@@ -11299,7 +11299,7 @@ textarea.form-control-lg {
 
 .post-item {
   position: relative;
-  background-color: white;
+  background-color: #d7ffc7;
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
@@ -11349,7 +11349,6 @@ textarea.form-control-lg {
 }
 .post-item .post-body {
   padding: 1rem;
-  background-color: #d7ffc7;
 }
 .post-item .post-body .time-published {
   font-size: 13px;

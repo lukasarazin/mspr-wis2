@@ -4,6 +4,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/comments.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/dates-post.php';
 
+if ($id = getValue($_GET['id'])) {
+    $user = getUser($id);
+} else {
+    $user = getAuth();
+}
+
 $auth = getAuth();
 $authorPost = getPostAuthor($post);
 $timePost = $post['created_at'];
@@ -11,11 +17,9 @@ $timeupdate = $post['updated_at'];
 $timePostAgo = createdPostTime($timePost);
 $timePostAgoFromUpdate = upadtedPostTime($timeupdate);
 $current_time = time();
-if ($id = getValue($_GET['id'])) {
-    $user = getUser($id);
-} else {
-    $user = getAuth();
-}
+$likes = getUserLikes($user['id']);
+$countlikes = count($likes);
+
 
 ?>
 
@@ -53,11 +57,26 @@ if ($id = getValue($_GET['id'])) {
     </div>
 
     <div class="post-body">
-        <p><?php echo $post['body']; ?></p>
-        <a class="nav-link mb-3" href="/api/users/like.php?id=<?php echo $auth['id']; ?>">
-            <span class="visually-hidden">Images aimées</span>
-            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
-        </a>
+
+        <div class="mx-auto">
+                <form action="/api/users/like.php?id=<?php echo $auth['id']; ?>" method="POST">
+                    <input type="hidden" id="like" name="like"
+                           value="<?php echo $user['id']; ?>">
+                    <span class="visually-hidden">Images aimées</span>
+                    <button id="like" class="btn nav-link mb-3"
+                            type="submit">
+                        <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
+                    </button>
+
+                </form>
+
+                <data value="<?= $countlikes ?>"><?= $countlikes ?> J'aime</data>
+
+            <p><?php echo $post['body']; ?></p>
+
+        </div>
+
+
         <div class="time-published">
             <?php if ($post['updated_at'] !== $post['created_at']) : ?>
                 <time><small><?php echo $timePostAgoFromUpdate ?></small></time>

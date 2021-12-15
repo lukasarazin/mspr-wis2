@@ -6,7 +6,7 @@ $user_id = $_GET['id'];
 $data = ['user_id' => $user_id];
 
 $likes = getLikes($data);
-
+var_dump($likes);
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 ?>

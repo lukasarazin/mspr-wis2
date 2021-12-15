@@ -1,7 +1,7 @@
 <?php
 
 $auth = getAuth();
-$authorSubscribe = getSubscribeAuthor($subscription);
+$authorSubscribe = getFollowingAuthor($subscription);
 $user_id = $subscription['subscriber_id'];
 $user = getUser($user_id);
 

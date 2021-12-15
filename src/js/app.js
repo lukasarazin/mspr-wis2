@@ -1,5 +1,7 @@
 require('./bootstrap');
 
+require('./lottie');
+
 
 
 

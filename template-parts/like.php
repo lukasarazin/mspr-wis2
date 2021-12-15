@@ -9,7 +9,10 @@ if ($id = getValue($_GET['id'])) {
 $auth = getAuth();
 $post = getPost($_GET['id']);
 $posts = getUserPosts($user['id']);
+$authorLike = getLikeAuthor($like);
 $authorPost = getPostAuthor($post);
+$user_id = $like['post_id'];
+$user = getUser($user_id);
 $timePost = $post['created_at'];
 $timeupdate = $post['updated_at'];
 $timePostAgo = createdPostTime($timePost);
@@ -22,9 +25,9 @@ $current_time = time();
     <div class="post-header">
 
         <div class="profil-img">
-            <a href="/users/show.php?id=<?php echo $authorPost['id']; ?>">
+            <a href="/users/show.php?id=<?php echo $user['id']; ?>">
                 <img class="user-img rounded-circle"
-                     src="<?php echo getAvatarUrl($authorPost['email']); ?>"
+                     src="<?php echo getAvatarUrl($user['email']); ?>"
                      alt="Photo de profil"
                      title="Photo de profil"
                      loading="lazy"
@@ -32,8 +35,8 @@ $current_time = time();
             </a>
         </div>
 
-        <a class="author-name" href="/users/show.php?id=<?php echo $authorPost['id']; ?>"
-           rel="author"><?php echo $authorPost['username'] ?></a>
+        <a class="author-name" href="/users/show.php?id=<?php echo $authorLike['id']; ?>"
+           rel="author"><?php echo $user['username'] ?></a>
 
         <?php if ($auth['id'] === $authorPost['id'] || isAdmin($auth)): ?>
 
@@ -46,8 +49,8 @@ $current_time = time();
 
     <div class="post-img">
         <a href="/posts/show.php?id=<?php echo $post['id'] ?>">
-            <img src="<?php echo $post['thumbnail']; ?>" class="card-img-top" title="Publication de <?php echo $authorPost['username'] ?>"
-                 alt="publication de <?php echo $authorPost['username'] ?>">
+            <img src="<?php echo $post['thumbnail']; ?>" class="card-img-top" title="Publication de <?php echo $authorLike['username'] ?>"
+                 alt="publication de <?php echo $authorLike['username'] ?>">
         </a>
     </div>
 

@@ -2,7 +2,7 @@
 
 $auth = getAuth();
 $authorSubscribe = getSubscribeAuthor($subscription);
-$user_id = $subscription['subscriber_id'];
+$user_id = $subscription['user_id'];
 $user = getUser($user_id);
 
 ?>

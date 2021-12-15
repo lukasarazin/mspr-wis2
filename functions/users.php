@@ -147,8 +147,8 @@ function getFollowers($data)
 function getFollowingAuthor($follow)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :subscribe_id LIMIT 1');
-    $stmt->bindParam(':subscribe_id', $follow['subscribe_id']);
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :subscriber_id LIMIT 1');
+    $stmt->bindParam(':subscriber_id', $follow['subscriber_id']);
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -157,8 +157,8 @@ function getFollowingAuthor($follow)
 function getSubscribeAuthor($subscribe)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :subscriber_id LIMIT 1');
-    $stmt->bindParam(':subscriber_id', $subscribe['subscriber_id']);
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :user_id LIMIT 1');
+    $stmt->bindParam(':user_id', $subscribe['user_id']);
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -195,7 +195,7 @@ function storeLike($data)
     $stmt->bindParam(':user_id', $data['user_id']);
     $stmt->execute();
 
-    return true;
+    return $dbh->lastInsertId();
 }
 
 function getLikes($data)
@@ -206,4 +206,26 @@ function getLikes($data)
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getUserLikes($id)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getLikeAuthor($like)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE id = :post_id LIMIT 1');
+    $stmt->bindParam(':post_id', $like['post_id']);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
