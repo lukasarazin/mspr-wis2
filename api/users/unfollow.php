@@ -1,7 +1,6 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/subscribers.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 middleware('auth');
@@ -12,12 +11,11 @@ if (getValue($_POST)) {
 
     // On prépare les données depuis le formulaire
     $data = [
-        'username' => getValue($_POST['username']),
+        'subscriber_id' => getValue($_POST['subscriber_id']),
         'user_id' => $auth['id'],
     ];
 
-    // On créé l'article et on le stock en base
-    $subscriberId = storeSubscriber($data);
+    unfollow($data);
 
     // On redirige l'utilisateur sur la page de l'article
     header("Location: /users/show");

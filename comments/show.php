@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/dates.php';
 $comment = getComment($_GET['id']);
 
 // foreach ()
-$comments = getPostComments($post['id']);
+$comments = getPostComments($follow['id']);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 

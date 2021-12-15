@@ -102,11 +102,55 @@ function getUserPosts($id)
 }
 
 
+function follow($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('INSERT INTO follow (user_id, subscriber_id) VALUES (:user_id, :subscriber_id)');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->bindParam(':subscriber_id', $data['subscriber_id']);
+    $stmt->execute();
+
+    return true;
+}
+
+function unfollow($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('DELETE FROM follow WHERE user_id = :user_id AND subscriber_id = :subscriber_id LIMIT 1');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->bindParam(':subscriber_id', $data['subscriber_id']);
+    return $stmt->execute();
+}
+
+function getFollowers($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getSubscribeAuthor($subscribe)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE id = :user_id LIMIT 1');
+    $stmt->bindParam(':user_id', $subscribe['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 
 
+function getUserSubscribers($id)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM subscribers WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
 
-
-
-
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
