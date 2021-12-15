@@ -35,7 +35,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
             <div class="profil-hero">
 
                 <div>
-                    <img src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
+                    <img src="<?php echo $user['avatar']; ?>" alt="" width="40" height="40"
                          alt="Photo de <?php echo $user['username']; ?>"
                          title="Photo de profil"
                          width="80"
