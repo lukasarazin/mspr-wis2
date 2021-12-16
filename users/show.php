@@ -78,13 +78,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                         <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
                     </a>
                 </div>
-
-                <span>biography</span>
             </div>
+
+            <p class="mt-4 mx-auto"><?php echo $user['biography']; ?></p>
 
             <section id="posts_profil">
                 <div class="container">
-
+                    <?php if (isFollowed($user['id'])): ?>
                         <div class="mx-auto" id="toggle-unfollow">
                             <?php if (($auth['id']) !== $user['id']): ?>
                                 <form action="/api/users/unfollow.php?id=<?php echo $auth['id']; ?>" method="POST">
@@ -97,7 +97,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                 </form>
                             <?php endif; ?>
                         </div>
-
+                    <?php else: ?>
                         <div class="mx-auto mt-4" id="toggle">
                             <?php if (($auth['id']) !== $user['id']): ?>
                                 <form action="/api/users/follow.php?id=<?php echo $auth['id']; ?>" method="POST"
@@ -111,7 +111,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                 </form>
                             <?php endif; ?>
                         </div>
-
+                    <?php endif; ?>
                     <div class="subscribers-wrapper">
                         <?php // require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/show.php' ?>
 
@@ -145,31 +145,3 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
 
-<script>
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        let button = document.getElementById('follow');
-        let form = document.getElementById('toggle');
-
-        if (button && form) {
-            button.addEventListener('click', function () {
-
-                form.hidden = true;
-
-            });
-        }
-
-        let buttonUnfollow = document.getElementById('unfollow');
-        let formUnfollow = document.getElementById('toggle-unfollow');
-
-        if (buttonUnfollow && formUnfollow) {
-            buttonUnfollow.addEventListener('click', function () {
-
-                formUnfollow.hidden = false;
-
-            });
-        }
-    });
-
-</script>

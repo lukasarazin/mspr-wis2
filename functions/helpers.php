@@ -64,3 +64,5 @@ function removeImage($path)
 
     return true;
 }
+
+

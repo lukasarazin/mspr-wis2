@@ -40,9 +40,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                             </div>
 
                             <fieldset class="mb-3">
-                                <legend>Pseudo</legend>
+                                <legend>Nom d'utilisateur</legend>
                                 <input type="text" name="username" id="username"
                                        value="<?php echo $user['username']; ?>">
+                            </fieldset>
+
+                            <fieldset class="mb-3">
+                                <legend>Résumé de votre profil</legend>
+                                <textarea name="biography" id="biography"
+                                       value="<?php echo $user['biography']; ?>"></textarea>
+                            </fieldset>
+
+                            <fieldset class="mb-3">
+                                <legend>Site web</legend>
+                                <input type="url" name="link" id="link"
+                                       value="<?php echo $user['first_name']; ?>">
                             </fieldset>
 
                             <fieldset class="mb-3">
