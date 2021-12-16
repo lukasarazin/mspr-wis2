@@ -6,12 +6,13 @@
 // Layout
 @import "layout/navbar";
 @import "layout/posts-wrapper";
-@import "layout/post-update-wrapper";
 
 // Sections
 
 @import "sections/main-hero";
 @import "sections/subscription-content";
+@import "sections/post-update-wrapper";
+@import "sections/posts-show-content";
 
 // Components
 @import "components/post";
