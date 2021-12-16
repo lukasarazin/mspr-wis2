@@ -29,9 +29,18 @@ middleware('guest');
 
                             <div class="mb-3">
                                 <label class="form-label" for="password">Mot de passe</label>
-                                <input type="password" class="form-control" name="password" id="password"
-                                       maxlength="255" minlength="6" required>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" name="password"
+                                           id="password" maxlength="255" minlength="6"
+                                           required>
+                                    <button type="button" class="input-group-text btn btn-sm btn-outline-secondary"
+                                            id="toggle-password">
+                                        <img src="assets/img/open.png" class="eye eye-open" alt="oeil-ouvert">
+                                        <img src="assets/img/close.png" class="eye eye-close" alt="oeil-fermé">
+                                    </button>
+                                </div>
                             </div>
+
 
                             <div class="card-content">
                                 <div class="mb-3 lost-mdp">
@@ -58,5 +67,24 @@ middleware('guest');
         </section>
 
     </main>
+
+    <script src="src/js/alert.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            let input = document.getElementById('password');
+            let button = document.getElementById('toggle-password');
+
+            button.addEventListener('click', function () {
+                button.classList.toggle('active');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                } else {
+                    input.type = 'password'
+                }
+            });
+
+        })
+    </script>
 
 <?php require_once 'template-parts/layout/footer.php'; ?>
