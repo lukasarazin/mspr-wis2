@@ -13,12 +13,22 @@ $user = getUser($user_id);
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row align-items-center">
                     <a href="/users/show.php?id=<?php echo $user['id']; ?>">
-                        <img class="user-img rounded-circle"
-                             src="<?php echo getAvatarUrl($user['email']); ?>"
-                             alt="Photo de profil"
-                             title="Photo de profil"
-                             loading="lazy"
-                             width="30">
+                        <img class="rounded-circle post-author-img" <?php if ($user['avatar'] !== true): ?>
+                             src="<?php echo getAvatarUrl($user['email']) ?>"
+                             alt="Photo de <?php echo $user['username']; ?>"
+                             title="Photo de <?php echo $user['username']; ?>"
+                             width="30"
+                             height="30"
+                             loading="lazy">
+
+                        <?php else: ?>
+                            <img class="rounded-circle post-author-img" src="<?php echo $authorPost['avatar']; ?>"
+                                 alt="Photo de <?php echo $user['username']; ?>"
+                                 title="Photo de <?php echo $user['username']; ?>"
+                                 width="30"
+                                 height="30"
+                                 loading="lazy">
+                        <?php endif; ?>
                     </a>
 
                     <span class="font-weight-bold text-primary p-2">

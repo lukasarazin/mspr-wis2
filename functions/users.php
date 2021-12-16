@@ -197,11 +197,22 @@ function getSubscribersUser($id)
 }
 
 
-function isFollowed()
+function isFollowed($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE user_id = :id');
-    $stmt->bindParam(':id', $id);
+    $stmt = $dbh->prepare('SELECT subscriber_id FROM follow WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function isLiked($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['post']);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -222,7 +233,7 @@ function storeLike($data)
 function getLikes($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM likes WHERE user_id = :user_id');
+    $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
     $stmt->bindParam(':user_id', $data['user_id']);
     $stmt->execute();
 
@@ -264,6 +275,39 @@ function getLikeAuthor($like)
 function getLike($data)
 {
     $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE post_id = :post_id AND user_id = :user_id LIMIT 1');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->bindParam(':post_id', $data['post_id']);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function unlike($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('DELETE FROM likes WHERE post_id = :post_id AND user_id = :user_id LIMIT 1');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->bindParam(':post_id', $data['post_id']);
+    $stmt->execute();
+
+    return true;
+}
+
+
+function toggleLike($data)
+{
+    if(getLike($data))
+    {
+        return unlike($data);
+    } else {
+        return storeLike($data);
+    }
+}
+
+
+function seeMyLikePost($data) {
+    $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
     $stmt->bindParam(':user_id', $data['user_id']);
     $stmt->execute();
@@ -271,13 +315,3 @@ function getLike($data)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
-function toggleLike($data)
-{
-    if(getLikes($data))
-    {
-        return unfollow($data);
-    } else {
-        return follow($data);
-    }
-}

@@ -1,5 +1,11 @@
 <?php
 
+if ($id = getValue($_GET['id'])) {
+    $user = getUser($id);
+} else {
+    $user = getAuth();
+}
+
 $auth = getAuth();
 $authorComment = getCommentAuthor($comment);
 $timestamp = $comment['published_at'];
@@ -16,12 +22,22 @@ $current_time = time();
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row align-items-center">
                     <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>">
-                        <img class="user-img rounded-circle"
-                             src="<?php echo getAvatarUrl($authorComment['email']); ?>"
-                             alt="Photo de profil"
-                             title="Photo de profil"
-                             loading="lazy"
-                             width="30">
+                        <img class="rounded-circle user-img" <?php if ($user['avatar'] !== true): ?>
+                             src="<?php echo getAvatarUrl($user['email']) ?>"
+                             alt="Photo de <?php echo $user['username']; ?>"
+                             title="Photo de <?php echo $user['username']; ?>"
+                             width="30"
+                             height="30"
+                             loading="lazy">
+
+                        <?php else: ?>
+                            <img class="rounded-circle user-img" src="<?php echo $user['avatar']; ?>"
+                                 alt="Photo de <?php echo $user['username']; ?>"
+                                 title="Photo de <?php echo $user['username']; ?>"
+                                 width="30"
+                                 height="30"
+                                 loading="lazy">
+                        <?php endif; ?>
                     </a>
                     <span>
                         <span class="font-weight-bold text-primary p-2">

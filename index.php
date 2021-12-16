@@ -6,38 +6,51 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 middleware('auth');
 ?>
 
-<main id="main">
+
+    <main id="main">
+
+        <body>
+        <main id="main">
 
 
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
-    $posts = getPosts(); ?>
+            $posts = getPosts();
 
-    <section id="main-hero">
-        <div class="container">
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
-        </div>
-    </section>
+            <section id="main-hero">
+                <div class="container">
 
-    <section id="main-body" class="py-5">
-        <div class="container">
 
-            <div class="title-wrapper mb-5">
-                <h3>VOTRE FEED</h3>
-            </div>
-
-            <div class="wrapper">
-                <div class="posts-wrapper col-lg-4">
-                    <?php foreach ($posts as $post): ?>
-                        <div class="post-type">
-                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
-                        </div>
-                    <?php endforeach; ?>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-</main>
+            <section id="main-body" class="py-5">
+                <div class="container">
 
+                    <div class="title-wrapper mb-5">
+                        <h3>VOTRE FEED</h3>
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="posts-wrapper col-lg-4">
+                            <?php foreach ($posts as $post): ?>
+                                <div class="post-type">
+                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </section>
+
+        </main>
+        </section>
+
+
+    </main>
+    </body>
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>

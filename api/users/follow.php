@@ -11,6 +11,7 @@ if (getValue($_POST)) {
 
     // On prépare les données depuis le formulaire
     $data = [
+        'user' => $auth['id'],
         'subscriber_id' => getValue($_POST['subscriber_id']),
         'user_id' => $auth['id'],
     ];

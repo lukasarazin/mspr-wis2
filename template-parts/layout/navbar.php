@@ -57,12 +57,25 @@ $auth = getAuth();
                                 <a class="nav-link"
                                    href="/users/show.php">
                                     <span class="visually-hidden">Profil</span>
-                                    <img class="user-img rounded-circle" alt="" width="30" height="30"
-                                            src="<?php echo $user['avatar']?>"
-                                            alt="Photo de profil"
-                                            title="Photo de profil"
-                                            loading="lazy"
-                                            width="25"></a>
+                                    <img class="rounded-circle user-img" <?php if ($auth['avatar'] !== true): ?>
+                                         src="<?php echo getAvatarUrl($auth['email']) ?>"
+                                         alt="Photo de <?php echo $auth['username']; ?>"
+                                         title="Photo de <?php echo $auth['username']; ?>"
+                                         width="30"
+                                         height="30"
+                                         loading="lazy">
+
+                                    <?php else: ?>
+                                        <img class="rounded-circle user-img" src="<?php echo $auth['avatar']; ?>"
+                                             alt="Photo de <?php echo $auth['username']; ?>"
+                                             title="Photo de <?php echo $auth['username']; ?>"
+                                             width="30"
+                                             height="30"
+                                             loading="lazy">
+                                    <?php endif; ?>
+
+                                </a>
+
                             </li>
                             <?php if (isAdmin($auth)): ?>
                                 <li class="nav-item">

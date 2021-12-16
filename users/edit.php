@@ -25,14 +25,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                         <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST"
                               enctype="multipart/form-data">
 
-                            <img class="img-fluid img-profil"
-                                 src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
+                            <img class="img-fluid img-profil" <?php if ($user['avatar'] !== true): ?>
+                                 src="<?php echo getAvatarUrl($user['email']) ?>"
                                  alt="Photo de <?php echo $user['username']; ?>"
-                                 title="Photo de profil"
-                                 width="200"
-                                 height="200"
+                                 title="Photo de <?php echo $user['username']; ?>"
+                                 width="400"
+                                 height="400"
                                  loading="lazy">
 
+                            <?php else: ?>
+                                <img class="img-fluid img-profil" src="<?php echo $user['avatar']; ?>"
+                                     alt="Photo de <?php echo $user['username']; ?>"
+                                     title="Photo de <?php echo $user['username']; ?>"
+                                     width="400"
+                                     height="400"
+                                     loading="lazy">
+                            <?php endif; ?>
                             <div class="mb-3">
                                 <label for="avatar" class="form-label"></label>
                                 <input class="form-control" id="avatar" type="file" accept=".png,.jpg,.jpeg"

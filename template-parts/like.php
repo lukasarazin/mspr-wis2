@@ -26,12 +26,22 @@ $current_time = time();
 
         <div class="profil-img">
             <a href="/users/show.php?id=<?php echo $user['id']; ?>">
-                <img class="user-img rounded-circle"
-                     src="<?php echo getAvatarUrl($user['email']); ?>"
-                     alt="Photo de profil"
-                     title="Photo de profil"
-                     loading="lazy"
-                     width="30">
+                <img class="rounded-circle user-img" <?php if ($user['avatar'] !== true): ?>
+                     src="<?php echo getAvatarUrl($user['email']) ?>"
+                     alt="Photo de <?php echo $user['username']; ?>"
+                     title="Photo de <?php echo $user['username']; ?>"
+                     width="30"
+                     height="30"
+                     loading="lazy">
+
+                <?php else: ?>
+                    <img class="rounded-circle user-img" src="<?php echo $user['avatar']; ?>"
+                         alt="Photo de <?php echo $user['username']; ?>"
+                         title="Photo de <?php echo $user['username']; ?>"
+                         width="30"
+                         height="30"
+                         loading="lazy">
+                <?php endif; ?>
             </a>
         </div>
 

@@ -26,13 +26,23 @@ $countlikes = count($likes);
     <div class="post-header">
 
         <a class="post-author" href="/users/show.php?id=<?php echo $authorPost['id']; ?>" rel="author">
-            <img class="post-author-img"
-                 src="<?php echo $authorPost['avatar']; ?>"
-                 alt="Photo de profil"
-                 title="Photo de profil"
-                 loading="lazy"
-                 width="30">
 
+            <img class="rounded-circle post-author-img" <?php if ($user['avatar'] !== true): ?>
+                 src="<?php echo getAvatarUrl($user['email']) ?>"
+                 alt="Photo de <?php echo $user['username']; ?>"
+                 title="Photo de <?php echo $user['username']; ?>"
+                 width="30"
+                 height="30"
+                 loading="lazy">
+
+            <?php else: ?>
+                <img class="rounded-circle post-author-img" src="<?php echo $authorPost['avatar']; ?>"
+                     alt="Photo de <?php echo $user['username']; ?>"
+                     title="Photo de <?php echo $user['username']; ?>"
+                     width="30"
+                     height="30"
+                     loading="lazy">
+            <?php endif; ?>
             <span class="post-author-name"><?php echo $authorPost['username'] ?></span>
         </a>
 
@@ -42,7 +52,6 @@ $countlikes = count($likes);
             </a>
         <?php endif; ?>
     </div>
-
 
     <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
     <div class="post-thumbnail">
