@@ -17,7 +17,7 @@ $timeupdate = $post['updated_at'];
 $timePostAgo = createdPostTime($timePost);
 $timePostAgoFromUpdate = upadtedPostTime($timeupdate);
 $current_time = time();
-$likes = getUserLikes($user['id']);
+$likes = getPostLikes($post['id']);
 $countlikes = count($likes);
 ?>
 

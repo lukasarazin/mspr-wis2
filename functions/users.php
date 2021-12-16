@@ -240,6 +240,15 @@ function getUserLikes($id)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getPostLikes($id)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE post_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function getLikeAuthor($like)
 {
@@ -260,4 +269,15 @@ function getLike($data)
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function toggleLike($data)
+{
+    if(getLikes($data))
+    {
+        return unfollow($data);
+    } else {
+        return follow($data);
+    }
 }
