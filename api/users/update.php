@@ -18,6 +18,7 @@ if (getValue($_POST) && $id) {
         'username' => getValue($_POST['username']),
         'first_name' => getValue($_POST['first_name']),
         'last_name' => getValue($_POST['last_name']),
+        'biography'=>getValue($_POST['biography']),
     ];
 
     if (getValue($_FILES['avatar'])):

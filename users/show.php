@@ -42,6 +42,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                          height="80"
                          loading="lazy">
 
+
+
                 </div>
                 <div class="stats-profil">
                     <data value="<?= $count ?>"><?= $count ?></data>
