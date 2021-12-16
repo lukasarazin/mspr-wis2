@@ -7,18 +7,44 @@
   background-color: white;
   color: $dark;
 
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: white;
+  }
 
-
-    @include color-scheme(dark){
-      background-color: $dark;
-     color: $light;
-    }
 }
+
+#main-admin {
+  background-color: white;
+  color: $dark;
+  padding: 10px 30px;
+
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: white;
+  }
+
+  .table {
+    color: white;
+  }
+}
+
+#page-wrapper {
+  background-color: white;
+  color: $dark;
+
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: white;
+  }
+}
+
 #main-user {
 
   .about_me {
-        color: white;
+    color: white;
   }
+
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -27,7 +53,7 @@
   background-color: white;
   color: $dark;
 
-  @include color-scheme(dark){
+  @include color-scheme(dark) {
     background-color: $dark;
     color: $light;
   }

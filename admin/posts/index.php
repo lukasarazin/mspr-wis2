@@ -9,7 +9,7 @@ $posts = getPosts();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/header.php';
 ?>
 
-    <main id="main">
+    <main id="main-admin">
         <div class="container py-5">
             <div class="posts-wrapper">
                 <div class="row g-4">

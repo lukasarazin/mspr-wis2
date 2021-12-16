@@ -7,7 +7,7 @@ $page = ['title' => 'Liste des utilisateurs'];
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/admin/header.php'; ?>
 
-    <main id="main">
+    <main id="main-admin">
 
         <table class="table table-hover table-bordered">
 

@@ -10268,7 +10268,33 @@ textarea.form-control-lg {
 @media (prefers-color-scheme: dark) {
   #main {
     background-color: #212529;
-    color: #f8f9fa;
+    color: white;
+  }
+}
+
+#main-admin {
+  background-color: white;
+  color: #212529;
+  padding: 10px 30px;
+}
+@media (prefers-color-scheme: dark) {
+  #main-admin {
+    background-color: #212529;
+    color: white;
+  }
+}
+#main-admin .table {
+  color: white;
+}
+
+#page-wrapper {
+  background-color: white;
+  color: #212529;
+}
+@media (prefers-color-scheme: dark) {
+  #page-wrapper {
+    background-color: #212529;
+    color: white;
   }
 }
 
