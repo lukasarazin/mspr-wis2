@@ -7,4 +7,4 @@ $id = $_GET['id'];
 
 deletePost($id);
 
-header('Location: /admin/posts');
+header("Location: " . $_SERVER['HTTP_REFERER']);

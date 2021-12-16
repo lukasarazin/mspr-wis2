@@ -11,6 +11,11 @@ if ($id = getValue($_GET['id'])) {
 }
 
 $auth = getAuth();
+$data = [
+    'user' => $auth['id'],
+    'post_id' => getValue($_POST['post_id']),
+    'user_id' => $auth['id'],
+];
 $authorPost = getPostAuthor($post);
 $timePost = $post['created_at'];
 $timeupdate = $post['updated_at'];
@@ -26,15 +31,12 @@ $countlikes = count($likes);
 
         <a class="post-author" href="/users/show.php?id=<?php echo $authorPost['id']; ?>" rel="author">
 
-
-
-
-                <img class="rounded-circle post-author-img" src="<?php echo $authorPost['avatar']; ?>"
-                     alt="Photo de <?php echo $authorPost['username']; ?>"
-                     title="Photo de <?php echo $authorPost['username']; ?>"
-                     width="30"
-                     height="30"
-                     loading="lazy">
+            <img class="rounded-circle post-author-img" src="<?php echo $authorPost['avatar']; ?>"
+                 alt="Photo de <?php echo $authorPost['username']; ?>"
+                 title="Photo de <?php echo $authorPost['username']; ?>"
+                 width="30"
+                 height="30"
+                 loading="lazy">
 
             <span class="post-author-name"><?php echo $authorPost['username'] ?></span>
         </a>
@@ -46,12 +48,12 @@ $countlikes = count($likes);
         <?php endif; ?>
     </div>
 
-    <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
-    <div class="post-thumbnail">
-        <img src="<?php echo $post['thumbnail']; ?>"
-             title="Publication de <?php echo $authorPost['username'] ?>"
-             alt="publication de <?php echo $authorPost['username'] ?>">
-    </div>
+    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
+        <div class="post-thumbnail">
+            <img src="<?php echo $post['thumbnail']; ?>"
+                 title="Publication de <?php echo $authorPost['username'] ?>"
+                 alt="publication de <?php echo $authorPost['username'] ?>">
+        </div>
     <?php endif; ?>
 
     <div class="post-body">
@@ -60,12 +62,26 @@ $countlikes = count($likes);
 
     <div class="post-footer">
         <div class="post-like">
-            <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
-                <span class="visually-hidden">Images aimées</span>
-                <button class="like-button" type="submit">
-                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
-                </button>
-            </form>
+
+            <?php if ($countlikes === 1): ?>
+                <?php if (($auth['id']) !== $post['id']): ?>
+                    <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
+                        <span class="visually-hidden">Images aimées</span>
+                        <button class="like-button" type="submit">
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
+                        </button>
+                    </form>
+                <?php endif; ?>
+            <?php else: ?>
+                <?php if (($auth['id']) !== $post['id']): ?>
+                    <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
+                        <span class="visually-hidden">Images aimées</span>
+                        <button class="like-button" type="submit">
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
+                        </button>
+                    </form>
+                <?php endif; ?>
+            <?php endif; ?>
 
             <data value="<?= $countlikes ?>"><?= $countlikes ?> J'aime</data>
         </div>
