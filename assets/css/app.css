@@ -10039,7 +10039,7 @@ textarea.form-control-lg {
 @media (prefers-color-scheme: dark) {
   #header {
     background-color: #6c757d;
-    color: #f8f9fa;
+    color: white;
   }
 }
 
@@ -10057,6 +10057,30 @@ textarea.form-control-lg {
   margin: 0 auto;
   padding: 0;
   max-width: 100%;
+}
+
+.subscription-content {
+  margin: auto;
+}
+.subscription-content article .sub-wrapper {
+  margin: auto;
+}
+.subscription-content article .sub-wrapper .card {
+  margin: 0;
+  border: 2px solid white;
+  background-color: #6c757d;
+  border-radius: 15px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+.subscription-content article .sub-wrapper .card .user-pseudo a {
+  text-decoration: none;
+  color: white;
+}
+.subscription-content article .sub-wrapper .card:hover {
+  background-color: #43a06a;
+}
+.subscription-content article .sub-wrapper .card:hover .user-pseudo a {
+  color: white;
 }
 
 .post-item {
@@ -10149,75 +10173,77 @@ textarea.form-control-lg {
   border: 0;
 }
 
-#auth-content .connexion {
-  max-width: 450px;
-  margin-top: 2rem;
+#auth-content .container-fluid, #auth-content .container-sm, #auth-content .container-md, #auth-content .container-lg, #auth-content .container-xl, #auth-content .container-xxl {
+  padding-top: 100px;
 }
-#auth-content .card-header {
+#auth-content .container-fluid .connexion, #auth-content .container-sm .connexion, #auth-content .container-md .connexion, #auth-content .container-lg .connexion, #auth-content .container-xl .connexion, #auth-content .container-xxl .connexion {
+  max-width: 450px;
+}
+#auth-content .container-fluid .card-header, #auth-content .container-sm .card-header, #auth-content .container-md .card-header, #auth-content .container-lg .card-header, #auth-content .container-xl .card-header, #auth-content .container-xxl .card-header {
   background-color: #43a06a;
   color: white;
 }
-#auth-content .card-content {
+#auth-content .container-fluid .card-content, #auth-content .container-sm .card-content, #auth-content .container-md .card-content, #auth-content .container-lg .card-content, #auth-content .container-xl .card-content, #auth-content .container-xxl .card-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
 }
-#auth-content .lost-mdp a {
+#auth-content .container-fluid .lost-mdp a, #auth-content .container-sm .lost-mdp a, #auth-content .container-md .lost-mdp a, #auth-content .container-lg .lost-mdp a, #auth-content .container-xl .lost-mdp a, #auth-content .container-xxl .lost-mdp a {
   text-decoration: none;
   font-size: 13px;
 }
-#auth-content .card-body {
+#auth-content .container-fluid .card-body, #auth-content .container-sm .card-body, #auth-content .container-md .card-body, #auth-content .container-lg .card-body, #auth-content .container-xl .card-body, #auth-content .container-xxl .card-body {
   border-radius: 20px 20px 0 0;
   background-color: white;
 }
-#auth-content .card-body #toggle-password .eye-open {
+#auth-content .container-fluid .card-body #toggle-password .eye-open, #auth-content .container-sm .card-body #toggle-password .eye-open, #auth-content .container-md .card-body #toggle-password .eye-open, #auth-content .container-lg .card-body #toggle-password .eye-open, #auth-content .container-xl .card-body #toggle-password .eye-open, #auth-content .container-xxl .card-body #toggle-password .eye-open {
   display: block;
 }
-#auth-content .card-body #toggle-password .eye-close {
+#auth-content .container-fluid .card-body #toggle-password .eye-close, #auth-content .container-sm .card-body #toggle-password .eye-close, #auth-content .container-md .card-body #toggle-password .eye-close, #auth-content .container-lg .card-body #toggle-password .eye-close, #auth-content .container-xl .card-body #toggle-password .eye-close, #auth-content .container-xxl .card-body #toggle-password .eye-close {
   display: none;
 }
-#auth-content .card-body #toggle-password.active .eye-open {
+#auth-content .container-fluid .card-body #toggle-password.active .eye-open, #auth-content .container-sm .card-body #toggle-password.active .eye-open, #auth-content .container-md .card-body #toggle-password.active .eye-open, #auth-content .container-lg .card-body #toggle-password.active .eye-open, #auth-content .container-xl .card-body #toggle-password.active .eye-open, #auth-content .container-xxl .card-body #toggle-password.active .eye-open {
   display: none;
 }
-#auth-content .card-body #toggle-password.active .eye-close {
+#auth-content .container-fluid .card-body #toggle-password.active .eye-close, #auth-content .container-sm .card-body #toggle-password.active .eye-close, #auth-content .container-md .card-body #toggle-password.active .eye-close, #auth-content .container-lg .card-body #toggle-password.active .eye-close, #auth-content .container-xl .card-body #toggle-password.active .eye-close, #auth-content .container-xxl .card-body #toggle-password.active .eye-close {
   display: block;
 }
-#auth-content .card-body #toggle-password-confirm .eye-open {
+#auth-content .container-fluid .card-body #toggle-password-confirm .eye-open, #auth-content .container-sm .card-body #toggle-password-confirm .eye-open, #auth-content .container-md .card-body #toggle-password-confirm .eye-open, #auth-content .container-lg .card-body #toggle-password-confirm .eye-open, #auth-content .container-xl .card-body #toggle-password-confirm .eye-open, #auth-content .container-xxl .card-body #toggle-password-confirm .eye-open {
   display: block;
 }
-#auth-content .card-body #toggle-password-confirm .eye-close {
+#auth-content .container-fluid .card-body #toggle-password-confirm .eye-close, #auth-content .container-sm .card-body #toggle-password-confirm .eye-close, #auth-content .container-md .card-body #toggle-password-confirm .eye-close, #auth-content .container-lg .card-body #toggle-password-confirm .eye-close, #auth-content .container-xl .card-body #toggle-password-confirm .eye-close, #auth-content .container-xxl .card-body #toggle-password-confirm .eye-close {
   display: none;
 }
-#auth-content .card-body #toggle-password-confirm.active .eye-open {
+#auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-md .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-open {
   display: none;
 }
-#auth-content .card-body #toggle-password-confirm.active .eye-close {
+#auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-md .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-close {
   display: block;
 }
-#auth-content .card-body .eye {
+#auth-content .container-fluid .card-body .eye, #auth-content .container-sm .card-body .eye, #auth-content .container-md .card-body .eye, #auth-content .container-lg .card-body .eye, #auth-content .container-xl .card-body .eye, #auth-content .container-xxl .card-body .eye {
   max-width: 25px;
 }
-#auth-content .card-body .btn-log {
+#auth-content .container-fluid .card-body .btn-log, #auth-content .container-sm .card-body .btn-log, #auth-content .container-md .card-body .btn-log, #auth-content .container-lg .card-body .btn-log, #auth-content .container-xl .card-body .btn-log, #auth-content .container-xxl .card-body .btn-log {
   border: solid 2px #43a06a;
   background-color: white;
 }
-#auth-content .card-body .btn-log:hover {
+#auth-content .container-fluid .card-body .btn-log:hover, #auth-content .container-sm .card-body .btn-log:hover, #auth-content .container-md .card-body .btn-log:hover, #auth-content .container-lg .card-body .btn-log:hover, #auth-content .container-xl .card-body .btn-log:hover, #auth-content .container-xxl .card-body .btn-log:hover {
   background-color: #43a06a;
   color: white;
 }
-#auth-content .connexion-footer {
+#auth-content .container-fluid .connexion-footer, #auth-content .container-sm .connexion-footer, #auth-content .container-md .connexion-footer, #auth-content .container-lg .connexion-footer, #auth-content .container-xl .connexion-footer, #auth-content .container-xxl .connexion-footer {
   max-width: 450px;
   margin-top: 1rem;
 }
-#auth-content .connexion-footer .inscription-possibility {
+#auth-content .container-fluid .connexion-footer .inscription-possibility, #auth-content .container-sm .connexion-footer .inscription-possibility, #auth-content .container-md .connexion-footer .inscription-possibility, #auth-content .container-lg .connexion-footer .inscription-possibility, #auth-content .container-xl .connexion-footer .inscription-possibility, #auth-content .container-xxl .connexion-footer .inscription-possibility {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
   border-radius: 0 0 20px 20px;
 }
-#auth-content .connexion-footer .inscription-possibility a {
+#auth-content .container-fluid .connexion-footer .inscription-possibility a, #auth-content .container-sm .connexion-footer .inscription-possibility a, #auth-content .container-md .connexion-footer .inscription-possibility a, #auth-content .container-lg .connexion-footer .inscription-possibility a, #auth-content .container-xl .connexion-footer .inscription-possibility a, #auth-content .container-xxl .connexion-footer .inscription-possibility a {
   text-decoration: none;
   padding: 2px;
   color: black;
@@ -10257,6 +10283,7 @@ textarea.form-control-lg {
 }
 
 #main {
+  min-height: calc(100vh - 66px);
   background-image: url("/assets/img/bg.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10272,10 +10299,27 @@ textarea.form-control-lg {
   }
 }
 
-#main-admin {
+#main-subscriptions {
+  min-height: calc(100vh - 66px);
+  background-image: url("/assets/img/bg.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: "Montserrat" sans-serif;
   background-color: white;
   color: #212529;
-  padding: 10px 30px;
+}
+@media (prefers-color-scheme: dark) {
+  #main-subscriptions {
+    background-color: #212529;
+    color: white;
+  }
+}
+
+#main-admin {
+  min-height: calc(100vh - 66px);
+  background-color: white;
+  color: #212529;
 }
 @media (prefers-color-scheme: dark) {
   #main-admin {
@@ -10283,13 +10327,11 @@ textarea.form-control-lg {
     color: white;
   }
 }
-#main-admin .table {
-  color: white;
-}
 
 #page-wrapper {
   background-color: white;
   color: #212529;
+  padding: 10px;
 }
 @media (prefers-color-scheme: dark) {
   #page-wrapper {
@@ -10297,8 +10339,15 @@ textarea.form-control-lg {
     color: white;
   }
 }
+#page-wrapper #content-wrapper {
+  padding: 20px;
+}
+#page-wrapper .table {
+  color: white;
+}
 
 #main-user {
+  min-height: calc(100vh - 66px);
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10312,6 +10361,23 @@ textarea.form-control-lg {
 }
 @media (prefers-color-scheme: dark) {
   #main-user {
+    background-color: #212529;
+    color: #f8f9fa;
+  }
+}
+
+#main-login {
+  min-height: 110vh;
+  background-image: url("/assets/img/bg-2.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: "Montserrat" sans-serif;
+  background-color: white;
+  color: #212529;
+}
+@media (prefers-color-scheme: dark) {
+  #main-login {
     background-color: #212529;
     color: #f8f9fa;
   }

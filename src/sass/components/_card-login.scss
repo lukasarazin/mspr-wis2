@@ -1,103 +1,107 @@
 #auth-content {
 
-  .connexion {
-    max-width: 450px;
-    margin-top: 2rem;
-  }
+  .container-fluid {
 
-  .card-header {
-    background-color: $primary;
-    color: white;
-  }
+    padding-top: 100px;
 
-  .card-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-  }
-
-  .lost-mdp a {
-    text-decoration: none;
-    font-size: 13px;
-  }
-
-  .card-body {
-    border-radius: 20px 20px 0 0;
-    background-color: white;
-
-    #toggle-password {
-      .eye-open {
-        display: block;
-      }
-
-      .eye-close {
-        display: none;
-      }
-
-      &.active {
-        .eye-open {
-          display: none;
-        }
-
-        .eye-close {
-          display: block;
-        }
-      }
+    .connexion {
+      max-width: 450px;
     }
 
-    #toggle-password-confirm {
-      .eye-open {
-        display: block;
-      }
-
-      .eye-close {
-        display: none;
-      }
-
-      &.active {
-        .eye-open {
-          display: none;
-        }
-
-        .eye-close {
-          display: block;
-        }
-      }
+    .card-header {
+      background-color: $primary;
+      color: white;
     }
 
-    .eye {
-      max-width: 25px;
-    }
-
-    .btn-log {
-      border: solid 2px $primary;;
-      background-color: white;
-
-      &:hover {
-        background-color: $primary;
-        color: white;
-      }
-    }
-
-  }
-
-  .connexion-footer {
-
-    max-width: 450px;
-    margin-top: 1rem;
-
-    .inscription-possibility {
+    .card-content {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
       align-content: center;
-      border-radius: 0 0 20px 20px;
+    }
 
-      a {
-        text-decoration: none;
-        padding: 2px;
-        color: black;
+    .lost-mdp a {
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .card-body {
+      border-radius: 20px 20px 0 0;
+      background-color: white;
+
+      #toggle-password {
+        .eye-open {
+          display: block;
+        }
+
+        .eye-close {
+          display: none;
+        }
+
+        &.active {
+          .eye-open {
+            display: none;
+          }
+
+          .eye-close {
+            display: block;
+          }
+        }
+      }
+
+      #toggle-password-confirm {
+        .eye-open {
+          display: block;
+        }
+
+        .eye-close {
+          display: none;
+        }
+
+        &.active {
+          .eye-open {
+            display: none;
+          }
+
+          .eye-close {
+            display: block;
+          }
+        }
+      }
+
+      .eye {
+        max-width: 25px;
+      }
+
+      .btn-log {
+        border: solid 2px $primary;;
+        background-color: white;
+
+        &:hover {
+          background-color: $primary;
+          color: white;
+        }
+      }
+
+    }
+
+    .connexion-footer {
+
+      max-width: 450px;
+      margin-top: 1rem;
+
+      .inscription-possibility {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        border-radius: 0 0 20px 20px;
+
+        a {
+          text-decoration: none;
+          padding: 2px;
+          color: black;
+        }
       }
     }
   }

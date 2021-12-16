@@ -11,14 +11,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 ?>
 
-<section class="posts-wrapper">
-    <div class="container">
-        <div class="row g-4">
-            <?php foreach ($subscriptions as $subscription): ?>
-                <div class="col-md-6 col-lg-4">
-                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/subscription.php'; ?>
-                </div>
-            <?php endforeach; ?>
+<main id="main-subscriptions">
+    <section id="sub-section" class="posts-wrapper py-5">
+        <div class="container">
+            <div class="row g-4">
+                <?php foreach ($subscriptions as $subscription): ?>
+                    <div class="col-md-6 col-lg-6 subscription-content">
+                        <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/subscription.php'; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
+
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>

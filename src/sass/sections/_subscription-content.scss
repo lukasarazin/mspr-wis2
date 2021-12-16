@@ -1,0 +1,36 @@
+.subscription-content {
+    margin: auto;
+
+    article {
+
+      .sub-wrapper {
+        margin: auto;
+
+        .card {
+          margin: 0;
+          border: 2px solid white;
+          background-color: $secondary;
+          border-radius: 15px;
+          box-shadow: $box-shadow-sm;
+
+          .user-pseudo {
+            a {
+              text-decoration: none;
+              color: white;
+            }
+          }
+
+          &:hover {
+            background-color: $primary;
+
+            .user-pseudo {
+              a {
+                color: white;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }

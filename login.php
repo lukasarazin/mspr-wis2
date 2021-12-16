@@ -6,7 +6,7 @@ require_once 'template-parts/layout/header.php';
 
 middleware('guest');
 ?>
-    <main id="main">
+    <main id="main-login">
 
         <section id="auth-content">
             <div class="container-fluid">
