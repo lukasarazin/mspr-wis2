@@ -63,10 +63,11 @@ function getUsers()
 function storeUser($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('INSERT INTO users (username, email, password) VALUES (:username, :email, :password)');
+    $stmt = $dbh->prepare('INSERT INTO users (username, biography, email, password) VALUES (:username, :biography, :email, :password)');
     $stmt->bindParam(':username', $data['username']);
     $stmt->bindParam(':email', $data['email']);
     $stmt->bindParam(':password', $data['password']);
+    $stmt->bindParam(':biography', $data['biography']);
     $stmt->execute();
 
     return $dbh->lastInsertId();
@@ -186,6 +187,16 @@ function getSubscribersUser($id)
 }
 
 
+function isFollowed()
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 function storeLike($data)
 {
@@ -228,4 +239,15 @@ function getLikeAuthor($like)
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+
+function getLike($data)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

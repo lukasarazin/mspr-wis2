@@ -59,7 +59,7 @@ $countlikes = count($likes);
     <div class="post-body">
 
         <div class="mx-auto">
-                <form action="/api/users/like.php?id=<?php echo $auth['id']; ?>" method="POST">
+                <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
                     <input type="hidden" id="like" name="like"
                            value="<?php echo $user['id']; ?>">
                     <span class="visually-hidden">Images aimées</span>

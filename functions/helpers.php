@@ -62,3 +62,5 @@ function removeImage($path)
         $stmt->bindParam(':id', $id);
         return $stmt->execute();
 }
+
+

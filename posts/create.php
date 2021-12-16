@@ -18,6 +18,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';?>
                 <input class="form-control" id="image" type="file" accept=".png,.jpg,.jpeg" name="image">
             </div>
 
+            <div class="mb-3">
+                <label for="image" class="form-label"></label>
+            </div>
+
             <button type="submit" class="btn btn-outline-success">Publier</button>
 
         </form>

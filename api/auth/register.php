@@ -39,6 +39,7 @@ if (!empty($_POST)) {
     // On nettoie les données
     $data = [
         'username' => getValue($_POST['username']),
+        'biography' => getValue($_POST['biography']),
         'email' => getValue($_POST['email']),
         'password' => $password,
     ];
