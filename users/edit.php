@@ -59,11 +59,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                        value="<?php echo $user['biography']; ?>">
                             </fieldset>
 
-                           <!-- <fieldset class="mb-3">
-                                <legend>Site web</legend>
-                                <input type="url" name="link" id="link"
-                                       value=" //echo $user['first_name']; ?>">
-                            </fieldset> -->
+                            <!-- <fieldset class="mb-3">
+                                 <legend>Site web</legend>
+                                 <input type="url" name="link" id="link"
+                                        value=" //echo $user['first_name']; ?>">
+                             </fieldset> -->
 
                             <fieldset class="mb-3">
                                 <legend>Prénom</legend>
@@ -98,13 +98,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
                             </div>
                         </section>
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
-
 
     </main>
 
