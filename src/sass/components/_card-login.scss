@@ -6,7 +6,8 @@
   }
 
   .card-header {
-    background-color: #d7ffc7;
+    background-color: $primary;
+    color: white;
   }
 
   .card-content {
@@ -70,12 +71,12 @@
     }
 
     .btn-log {
-      border: solid 2px #d7ffc7;;
+      border: solid 2px $primary;;
       background-color: white;
 
       &:hover {
-        background-color: #d7ffc7;
-
+        background-color: $primary;
+        color: white;
       }
     }
 

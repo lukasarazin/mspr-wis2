@@ -23,11 +23,11 @@
     margin: auto;
     text-decoration: none;
     color: black;
-    border: solid 2px lightgreen;
+    border: solid 2px $primary;
     border-radius: 10px;
 
     &:hover {
-      background-color: lightgreen;
+      background-color: $primary;
     }
   }
 }
