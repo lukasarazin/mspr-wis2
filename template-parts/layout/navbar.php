@@ -37,6 +37,15 @@ $auth = getAuth();
                         <?php if (getValue($auth)): ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="/likes.php?id=<?php echo $user['id']; ?>">
+                                    <span class="visually-hidden">Publications de mes abonnés</span>
+                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/subscribers.svg.php'; ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if (getValue($auth)): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/likes.php?id=<?php echo $user['id']; ?>">
                                     <span class="visually-hidden">Images aimées</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
                                 </a>
@@ -61,7 +70,7 @@ $auth = getAuth();
                                 </li>
                             <?php endif; ?>
                             <li class="nav-item">
-                                <a href="/" class="nav-link"
+                                <a href="/" class="nav-link logout"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="/api/auth/logout.php" method="POST"
                                       style="display: none">
