@@ -7,10 +7,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 middleware('guest');
 ?>
 
-    <main id="main">
+    <main id="main-register">
 
         <section id="auth-content">
-            <div class="container">
+            <div class="container-fluid reg-wrapper">
 
                 <?php if (getValue($_GET['error'])): ?>
                     <div id="alert" class="alert alert-danger" role="alert">
@@ -24,7 +24,7 @@ middleware('guest');
                         <h1 class="h2 mb-0">Inscription</h1>
                     </div>
                     <div class="card-body py-4">
-                        <form action="api/auth/register.php" method="POST">
+                        <form action="api/auth/register.php" method="POST" class="register-form">
 
                             <div class="mb-3">
                                 <label class="form-label" for="username">Nom d'utilisateur</label>
@@ -42,10 +42,10 @@ middleware('guest');
                             <div class="mb-3">
                                 <label class="form-label" for="password">Mot de passe</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password" id="password"
+                                    <input type="password" class="form-control" name="password" id="reg-password"
                                            maxlength="255" minlength="6" required>
                                     <button type="button" class="input-group-text btn btn-sm btn-outline-secondary"
-                                            id="toggle-password">
+                                            id="reg-toggle-password">
                                         <img src="assets/img/open.png" class="eye eye-open" alt="oeil-ouvert">
                                         <img src="assets/img/close.png" class="eye eye-close" alt="oeil-fermé">
                                     </button>
@@ -57,10 +57,10 @@ middleware('guest');
                                     passe</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" name="password_confirm"
-                                           id="password_confirm" maxlength="255" minlength="6"
+                                           id="reg-password_confirm" maxlength="255" minlength="6"
                                            required>
                                     <button type="button" class="input-group-text btn btn-sm btn-outline-secondary"
-                                            id="toggle-password-confirm">
+                                            id="reg-toggle-password-confirm">
                                         <img src="assets/img/open.png" class="eye eye-open" alt="oeil-ouvert">
                                         <img src="assets/img/close.png" class="eye eye-close" alt="oeil-fermé">
                                     </button>
@@ -92,8 +92,8 @@ middleware('guest');
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            let input = document.getElementById('password');
-            let button = document.getElementById('toggle-password');
+            let input = document.getElementById('reg-password');
+            let button = document.getElementById('reg-toggle-password');
 
             button.addEventListener('click', function () {
                 button.classList.toggle('active');
@@ -107,8 +107,8 @@ middleware('guest');
         })
 
         document.addEventListener('DOMContentLoaded', function () {
-            let inputConfirm = document.getElementById('password_confirm');
-            let buttonConfirm = document.getElementById('toggle-password-confirm');
+            let inputConfirm = document.getElementById('reg-password_confirm');
+            let buttonConfirm = document.getElementById('reg-toggle-password-confirm');
 
             buttonConfirm.addEventListener('click', function () {
                 buttonConfirm.classList.toggle('active');

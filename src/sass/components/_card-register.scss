@@ -1,0 +1,104 @@
+#main-register {
+
+  #auth-content {
+
+    .reg-wrapper {
+
+      padding-top: 100px;
+
+      .connexion {
+        max-width: 450px;
+      }
+
+      .card-header {
+        background-color: $primary;
+        color: white;
+      }
+
+      .card-body {
+        border-radius: 20px 20px 0 0;
+        background-color: white;
+
+        .register-form {
+          color: black;
+        }
+
+        #reg-toggle-password {
+          .eye-open {
+            display: block;
+          }
+
+          .eye-close {
+            display: none;
+          }
+
+          &.active {
+            .eye-open {
+              display: none;
+            }
+
+            .eye-close {
+              display: block;
+            }
+          }
+        }
+
+        #reg-toggle-password-confirm {
+          .eye-open {
+            display: block;
+          }
+
+          .eye-close {
+            display: none;
+          }
+
+          &.active {
+            .eye-open {
+              display: none;
+            }
+
+            .eye-close {
+              display: block;
+            }
+          }
+        }
+
+        .eye {
+          max-width: 25px;
+        }
+
+        .btn-log {
+          border: solid 2px $primary;;
+          background-color: white;
+
+          &:hover {
+            background-color: $primary;
+            color: white;
+          }
+        }
+
+      }
+
+      .connexion-footer {
+
+        max-width: 450px;
+        margin-top: 1rem;
+
+        .inscription-possibility {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          align-content: center;
+          border-radius: 0 0 20px 20px;
+          color: black;
+
+          a {
+            text-decoration: none;
+            padding: 2px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

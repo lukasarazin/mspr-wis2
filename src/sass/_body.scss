@@ -63,10 +63,7 @@
 }
 
 #main-user {
-
-  .about_me {
-    color: white;
-  }
+  
 
   min-height: calc(100vh - 66px);
   background-image: url("/assets/img/bg-2.png");
@@ -84,6 +81,22 @@
 }
 
 #main-login {
+  min-height: calc(110vh);
+  background-image: url("/assets/img/bg-2.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: $font-site;
+  background-color: white;
+  color: $dark;
+
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: $light;
+  }
+}
+
+#main-register {
   min-height: calc(110vh);
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
