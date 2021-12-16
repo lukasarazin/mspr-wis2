@@ -1,0 +1,33 @@
+#lottie-404 {
+  max-width: 500px;
+  margin: auto;
+
+}
+
+.content-404 {
+
+  h2 {
+    text-align: center;
+    margin: auto;
+  }
+
+}
+
+.btn-404 {
+
+  margin: 30px auto;
+  display: flex;
+
+  .btn-log {
+    padding: 4px;
+    margin: auto;
+    text-decoration: none;
+    color: black;
+    border: solid 2px lightgreen;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: lightgreen;
+    }
+  }
+}

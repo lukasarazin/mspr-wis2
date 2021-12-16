@@ -1,7 +1,5 @@
 import Lottie from "lottie-web";
 
-document.addEventListener('DOMContentLoaded', function () {
-
     let heart = document.getElementById('like');
 
     if (heart) {
@@ -13,9 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-});
 
+    let error = document.getElementById('lottie-404');
 
-
-
-
+    Lottie.loadAnimation({
+        container: error,
+        renderer: 'svg',
+        path: 'assets/lottie/404.json'
+    });
