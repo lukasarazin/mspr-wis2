@@ -2,7 +2,7 @@
 
   .connexion {
     max-width: 450px;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 
   .card-header {
@@ -24,6 +24,50 @@
   .card-body {
     border-radius: 20px 20px 0 0;
     background-color: white;
+
+    #toggle-password {
+      .eye-open {
+        display: block;
+      }
+
+      .eye-close {
+        display: none;
+      }
+
+      &.active {
+        .eye-open {
+          display: none;
+        }
+
+        .eye-close {
+          display: block;
+        }
+      }
+    }
+
+    #toggle-password-confirm {
+      .eye-open {
+        display: block;
+      }
+
+      .eye-close {
+        display: none;
+      }
+
+      &.active {
+        .eye-open {
+          display: none;
+        }
+
+        .eye-close {
+          display: block;
+        }
+      }
+    }
+
+    .eye {
+      max-width: 25px;
+    }
 
     .btn-log {
       border: solid 2px #d7ffc7;;

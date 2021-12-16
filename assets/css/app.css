@@ -10138,7 +10138,7 @@ textarea.form-control-lg {
 
 #auth-content .connexion {
   max-width: 450px;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 #auth-content .card-header {
   background-color: #d7ffc7;
@@ -10156,6 +10156,33 @@ textarea.form-control-lg {
 #auth-content .card-body {
   border-radius: 20px 20px 0 0;
   background-color: white;
+}
+#auth-content .card-body #toggle-password .eye-open {
+  display: block;
+}
+#auth-content .card-body #toggle-password .eye-close {
+  display: none;
+}
+#auth-content .card-body #toggle-password.active .eye-open {
+  display: none;
+}
+#auth-content .card-body #toggle-password.active .eye-close {
+  display: block;
+}
+#auth-content .card-body #toggle-password-confirm .eye-open {
+  display: block;
+}
+#auth-content .card-body #toggle-password-confirm .eye-close {
+  display: none;
+}
+#auth-content .card-body #toggle-password-confirm.active .eye-open {
+  display: none;
+}
+#auth-content .card-body #toggle-password-confirm.active .eye-close {
+  display: block;
+}
+#auth-content .card-body .eye {
+  max-width: 25px;
 }
 #auth-content .card-body .btn-log {
   border: solid 2px #d7ffc7;
@@ -10196,6 +10223,15 @@ textarea.form-control-lg {
 
 .title-wrapper h3, .title-wrapper .h3 {
   text-align: center;
+}
+
+.alert {
+  background-color: #ffb5b0;
+  padding: 20px;
+  margin: 20px auto 0;
+  max-width: 450px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 #main {
