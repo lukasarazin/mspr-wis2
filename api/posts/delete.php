@@ -5,6 +5,6 @@ require $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 middleware('auth');
 $id = $_GET['id'];
 
-deletePost($id);
+destroyPost($id);
 
 header("Location: " . $_SERVER['HTTP_REFERER']);
