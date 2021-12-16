@@ -40,25 +40,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
 
             <div class="profil-header">
-                <img class="rounded-circle" <?php if ($user['avatar'] !== true): ?>
-                     src="<?php echo getAvatarUrl($user['email']) ?>"
-                     alt="Photo de <?php echo $user['username']; ?>"
-                     title="Photo de <?php echo $user['username']; ?>"
-                     width="150"
-                     height="150"
-                     loading="lazy">
 
-                <?php else: ?>
                     <img class="rounded-circle" src="<?php echo $user['avatar']; ?>"
                          alt="Photo de <?php echo $user['username']; ?>"
                          title="Photo de <?php echo $user['username']; ?>"
                          width="150"
                          height="150"
                          loading="lazy">
-                <?php endif; ?>
+
 
                 <div class="about_me">
-                    <h4 class="h4 text-dark"><?php echo $user['username']; ?></h4>
+                    <h4 class="h4"><?php echo $user['username']; ?></h4>
                     <?php if (($auth['id']) === $user['id']): ?>
                         <a href="/users/edit.php?id=<?php echo $user['id']; ?>" class="px-4 pt-3">
                             <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
