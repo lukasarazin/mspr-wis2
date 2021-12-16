@@ -10050,6 +10050,17 @@ textarea.form-control-lg {
   margin: 2rem 0;
 }
 
+.post-update-wrapper .post-update-group {
+  margin-top: 20px;
+}
+.post-update-wrapper .post-update-content textarea {
+  max-width: 600px;
+}
+.post-update-wrapper .post-update-img img {
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
 #main-hero {
   padding: 0;
 }

@@ -4,8 +4,18 @@
     margin-top: 20px;
   }
 
-  .post-update-img {
-    max-width: 500px;
+  .post-update-content {
+
+    textarea {
+      max-width: 600px;
+    }
   }
 
+  .post-update-img {
+
+    img {
+      max-width: 400px;
+      margin-top: 1rem;
+    }
+  }
 }
