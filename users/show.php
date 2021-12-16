@@ -30,21 +30,27 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 <main id="main">
 
     <section class="py-5" id="profil">
-        <div class="container-fluid">
-
-            <div class="profil-hero">
-
-                <div>
-                    <img src="<?php echo $user['avatar']; ?>" alt="" width="40" height="40"
-                         alt="Photo de <?php echo $user['username']; ?>"
-                         title="Photo de profil"
-                         width="80"
-                         height="80"
-                         loading="lazy">
+        <div class="container">
 
 
+            <div class="profil-header">
+                <img class="rounded-circle" src="<?php echo $user['avatar']; ?>" alt="" width="150" height="150"
+                     alt="Photo de <?php echo $user['username']; ?>"
+                     title="Photo de profil"
+                     width="80"
+                     height="80"
+                     loading="lazy">
 
+                <div class="about_me">
+                    <h4 class="h4"><?php echo $user['username']; ?></h4>
+                            <a href="/users/edit.php?id=<?php echo $user['id']; ?>" class="px-4 pt-3">
+                                <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
+                            </a>
                 </div>
+
+                <p class="mt-4 mx-auto"><?php echo $user['biography']; ?></p>
+            </div>
+            <div class="profil-hero">
                 <div class="stats-profil">
                     <data value="<?= $count ?>"><?= $count ?></data>
                     <?php if ($count === 1): ?>
@@ -73,16 +79,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
             </div>
 
-            <div class="container">
-                <div class="about_me d-flex">
-                    <h4 class="h4"><?php echo $user['username']; ?></h4>
-                    <a href="/users/edit.php?id=<?php echo $user['id']; ?>" class="px-4 pt-3">
-                        <img src="/assets/svg/pen.svg" alt="edit" width="20" height="20">
-                    </a>
-                </div>
-            </div>
-
-            <p class="mt-4 mx-auto"><?php echo $user['biography']; ?></p>
 
             <section id="posts_profil">
                 <div class="container">
