@@ -21,19 +21,24 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
             <div class="container">
                 <div class="row">
                     <div class="col-md-2">
-                        <img class="img-fluid img-profil"
-                                             <img src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
-                                               alt="Photo de <?php echo $user['username']; ?>"
-                                               title="Photo de profil"
-                                               width="200"
-                                               height="200"
-                                               loading="lazy">
-                        <div class="mb-3">
-                            <label for="image" class="form-label"></label>
-                            <input class="form-control" id="image" type="file" accept=".png,.jpg,.jpeg" name="image">
-                        </div>
 
-                        <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST">
+                        <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST"
+                              enctype="multipart/form-data">
+
+                            <img class="img-fluid img-profil"
+                                 src="<?php echo $user['avatar']; ?>" alt="" width="400" height="400"
+                                 alt="Photo de <?php echo $user['username']; ?>"
+                                 title="Photo de profil"
+                                 width="200"
+                                 height="200"
+                                 loading="lazy">
+
+                            <div class="mb-3">
+                                <label for="avatar" class="form-label"></label>
+                                <input class="form-control" id="avatar" type="file" accept=".png,.jpg,.jpeg"
+                                       name="avatar">
+                            </div>
+
                             <fieldset class="mb-3">
                                 <legend>Nom d'utilisateur</legend>
                                 <input type="text" name="username" id="username"
@@ -67,6 +72,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                             <button type="submit" class="btn btn-outline-info">Confirmer</button>
 
                         </form>
+
                     </div>
                     <div class="col-md-10">
                         <section>

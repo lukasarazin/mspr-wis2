@@ -50,7 +50,7 @@ $auth = getAuth();
                                     <span class="visually-hidden">Profil</span>
                                     <img
                                             class="user-img rounded-circle"
-                                            src="<?php echo getAvatarUrl($user['email']); ?>"
+                                            src="<?php echo $user['avatar']?>"
                                             alt="Photo de profil"
                                             title="Photo de profil"
                                             loading="lazy"

@@ -49,18 +49,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lottie_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lottie-web */ "./node_modules/lottie-web/build/player/lottie.js");
 /* harmony import */ var lottie_web__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lottie_web__WEBPACK_IMPORTED_MODULE_0__);
 
-document.addEventListener('DOMContentLoaded', function () {
-  var heart = document.getElementById('like');
+var heart = document.getElementById('like');
 
-  if (heart) {
-    heart.addEventListener('click', function () {
-      lottie_web__WEBPACK_IMPORTED_MODULE_0___default().loadAnimation({
-        container: heart,
-        renderer: 'svg',
-        path: 'assets/lottie/heart.json'
-      });
+if (heart) {
+  heart.addEventListener('click', function () {
+    lottie_web__WEBPACK_IMPORTED_MODULE_0___default().loadAnimation({
+      container: heart,
+      renderer: 'svg',
+      path: 'assets/lottie/heart.json'
     });
-  }
+  });
+}
+
+var error = document.getElementById('lottie-404');
+lottie_web__WEBPACK_IMPORTED_MODULE_0___default().loadAnimation({
+  container: error,
+  renderer: 'svg',
+  path: 'assets/lottie/404.json'
 });
 
 /***/ }),

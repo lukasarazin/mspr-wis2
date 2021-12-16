@@ -1,5 +1,10 @@
 #auth-content {
 
+  .connexion {
+    max-width: 450px;
+    margin-top: 5rem;
+  }
+
   .card-header {
     background-color: #d7ffc7;
   }
@@ -17,9 +22,11 @@
   }
 
   .card-body {
+    border-radius: 20px 20px 0 0;
+    background-color: white;
 
     .btn-log {
-      border: solid 2px #d7ffc7;
+      border: solid 2px #d7ffc7;;
       background-color: white;
 
       &:hover {
@@ -32,11 +39,15 @@
 
   .connexion-footer {
 
+    max-width: 450px;
+    margin-top: 1rem;
+
     .inscription-possibility {
       display: flex;
       justify-content: space-evenly;
       align-items: center;
       align-content: center;
+      border-radius: 0 0 20px 20px;
 
       a {
         text-decoration: none;

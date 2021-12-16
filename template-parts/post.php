@@ -19,72 +19,62 @@ $timePostAgoFromUpdate = upadtedPostTime($timeupdate);
 $current_time = time();
 $likes = getUserLikes($user['id']);
 $countlikes = count($likes);
-
-
 ?>
 
 <article class="post-item">
     <div class="post-header">
 
-        <div class="profil-img">
-            <a href="/users/show.php?id=<?php echo $authorPost['id']; ?>">
-                <img class="user-img rounded-circle"
-                     src="<?php echo getAvatarUrl($authorPost['email']); ?>"
-                     alt="Photo de profil"
-                     title="Photo de profil"
-                     loading="lazy"
-                     width="30">
-            </a>
-        </div>
+        <a class="post-author" href="/users/show.php?id=<?php echo $authorPost['id']; ?>" rel="author">
+            <img class="post-author-img"
+                 src="<?php echo $authorPost['avatar']; ?>"
+                 alt="Photo de profil"
+                 title="Photo de profil"
+                 loading="lazy"
+                 width="30">
 
-        <a class="author-name" href="/users/show.php?id=<?php echo $authorPost['id']; ?>"
-           rel="author"><?php echo $authorPost['username'] ?></a>
+            <span class="post-author-name"><?php echo $authorPost['username'] ?></span>
+        </a>
 
         <?php if ($auth['id'] === $authorPost['id'] || isAdmin($auth)): ?>
-
-            <a class="edit-link" href="/posts/edit.php?id=<?php echo $post['id']; ?>">
+            <a class="post-edit-link" href="/posts/edit.php?id=<?php echo $post['id']; ?>">
                 <?php require 'svg/pen.svg.php'; ?>
             </a>
-
         <?php endif; ?>
     </div>
 
-    <div class="post-img">
-        <a href="/posts/show.php?id=<?php echo $post['id'] ?>">
-            <img src="<?php echo $post['thumbnail']; ?>" class="card-img-top" title="Publication de <?php echo $authorPost['username'] ?>"
-                 alt="publication de <?php echo $authorPost['username'] ?>">
-        </a>
+    <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
+    <div class="post-thumbnail">
+        <img src="<?php echo $post['thumbnail']; ?>"
+             title="Publication de <?php echo $authorPost['username'] ?>"
+             alt="publication de <?php echo $authorPost['username'] ?>">
     </div>
+    <?php endif; ?>
 
     <div class="post-body">
+        <p><?php echo $post['body']; ?></p>
 
-        <div class="mx-auto">
-                <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
-                    <input type="hidden" id="like" name="like"
-                           value="<?php echo $user['id']; ?>">
-                    <span class="visually-hidden">Images aimées</span>
-                    <button id="like" class="btn nav-link mb-3"
-                            type="submit">
-                        <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
-                    </button>
+    </div>
 
-                </form>
+    <div class="post-footer">
+        <div class="post-like">
+            <form action="/api/users/like.php?id=<?php echo $auth['id']; ?>" method="POST">
+                <input type="hidden" id="like" name="like" value="<?php echo $user['id']; ?>">
+                <span class="visually-hidden">Images aimées</span>
+                <button class="like-button" type="submit">
+                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
+                </button>
+            </form>
 
-                <data value="<?= $countlikes ?>"><?= $countlikes ?> J'aime</data>
-
-            <p><?php echo $post['body']; ?></p>
-
+            <data value="<?= $countlikes ?>"><?= $countlikes ?> J'aime</data>
         </div>
 
-
-        <div class="time-published">
+        <div class="text-muted">
             <?php if ($post['updated_at'] !== $post['created_at']) : ?>
                 <time><small><?php echo $timePostAgoFromUpdate ?></small></time>
             <?php else: ?>
                 <time><small><?php echo $timePostAgo ?></small></time>
             <?php endif; ?>
         </div>
-        <!-- <small class="card-text">Publié le <time><?php echo $post['created_at'] = date('d M Y'); ?></time></small> -->
     </div>
 
 </article>

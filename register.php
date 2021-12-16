@@ -12,7 +12,7 @@ middleware('guest');
         <section id="auth-content">
             <div class="container">
 
-                <div class="card mx-auto shadow rounded-3" style="max-width: 450px; margin-top: 8rem">
+                <div class="connexion card mx-auto shadow rounded-3">
 
                     <div class="card-header">
                         <h1 class="h2 mb-0">Inscription</h1>
@@ -54,6 +54,12 @@ middleware('guest');
                             </div>
 
                         </form>
+                    </div>
+                </div>
+                <div class="connexion-footer card mx-auto shadow rounded-3">
+                    <div class="inscription-possibility card-body p-4">
+                        <span>Déjà membre ?</span>
+                        <a href="/login.php" class="btn-log rounded-3">Connectez-vous</a>
                     </div>
                 </div>
 

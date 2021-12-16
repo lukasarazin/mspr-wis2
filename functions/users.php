@@ -76,7 +76,7 @@ function storeUser($data)
 function updateUser($id, $data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('UPDATE users SET username = :username, first_name = :first_name, last_name = :last_name, updated_at = NOW() WHERE id = :id');
+    $stmt = $dbh->prepare('UPDATE users SET username = :username, first_name = :first_name, last_name = :last_name, avatar = :avatar, updated_at = NOW() WHERE id = :id');
     $stmt->bindParam(':id', $id);
     $stmt->bindParam(':username', $data['username']);
     $stmt->bindParam(':first_name', $data['first_name']);
