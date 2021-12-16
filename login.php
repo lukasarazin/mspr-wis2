@@ -10,8 +10,6 @@ middleware('guest');
 
         <section id="auth-content">
             <div class="container-fluid">
-                <!-- j'ai tenté de changer l'apparence des messages d'erreurs (qui surviendraient en cas de mauvais mot de passe par exemple)
-                en utilisant celle de Bootstrap, malheureusement, la fonction que j'avais créé n'a pas marché :( -->
                 <div class="connexion card mx-auto shadow rounded-3">
 
                     <div class="card-header">

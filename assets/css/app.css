@@ -10281,6 +10281,9 @@ textarea.form-control-lg {
   background-color: white;
   color: #212529;
 }
+#main-user .about_me {
+  color: white;
+}
 @media (prefers-color-scheme: dark) {
   #main-user {
     background-color: #212529;
