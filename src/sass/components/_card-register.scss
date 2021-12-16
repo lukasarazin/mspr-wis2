@@ -1,8 +1,8 @@
-#main-login {
+#main-register {
 
   #auth-content {
 
-    .container-fluid {
+    .reg-wrapper {
 
       padding-top: 100px;
 
@@ -15,23 +15,15 @@
         color: white;
       }
 
-      .card-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-      }
-
-      .lost-mdp a {
-        text-decoration: none;
-        font-size: 13px;
-      }
-
       .card-body {
         border-radius: 20px 20px 0 0;
         background-color: white;
 
-        #toggle-password {
+        .register-form {
+          color: black;
+        }
+
+        #reg-toggle-password {
           .eye-open {
             display: block;
           }
@@ -51,7 +43,7 @@
           }
         }
 
-        #toggle-password-confirm {
+        #reg-toggle-password-confirm {
           .eye-open {
             display: block;
           }
@@ -98,6 +90,7 @@
           align-items: center;
           align-content: center;
           border-radius: 0 0 20px 20px;
+          color: black;
 
           a {
             text-decoration: none;

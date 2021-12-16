@@ -10173,77 +10173,147 @@ textarea.form-control-lg {
   border: 0;
 }
 
-#auth-content .container-fluid, #auth-content .container-sm, #auth-content .container-md, #auth-content .container-lg, #auth-content .container-xl, #auth-content .container-xxl {
+#main-login #auth-content .container-fluid, #main-login #auth-content .container-sm, #main-login #auth-content .container-md, #main-login #auth-content .container-lg, #main-login #auth-content .container-xl, #main-login #auth-content .container-xxl {
   padding-top: 100px;
 }
-#auth-content .container-fluid .connexion, #auth-content .container-sm .connexion, #auth-content .container-md .connexion, #auth-content .container-lg .connexion, #auth-content .container-xl .connexion, #auth-content .container-xxl .connexion {
+#main-login #auth-content .container-fluid .connexion, #main-login #auth-content .container-sm .connexion, #main-login #auth-content .container-md .connexion, #main-login #auth-content .container-lg .connexion, #main-login #auth-content .container-xl .connexion, #main-login #auth-content .container-xxl .connexion {
   max-width: 450px;
 }
-#auth-content .container-fluid .card-header, #auth-content .container-sm .card-header, #auth-content .container-md .card-header, #auth-content .container-lg .card-header, #auth-content .container-xl .card-header, #auth-content .container-xxl .card-header {
+#main-login #auth-content .container-fluid .card-header, #main-login #auth-content .container-sm .card-header, #main-login #auth-content .container-md .card-header, #main-login #auth-content .container-lg .card-header, #main-login #auth-content .container-xl .card-header, #main-login #auth-content .container-xxl .card-header {
   background-color: #43a06a;
   color: white;
 }
-#auth-content .container-fluid .card-content, #auth-content .container-sm .card-content, #auth-content .container-md .card-content, #auth-content .container-lg .card-content, #auth-content .container-xl .card-content, #auth-content .container-xxl .card-content {
+#main-login #auth-content .container-fluid .card-content, #main-login #auth-content .container-sm .card-content, #main-login #auth-content .container-md .card-content, #main-login #auth-content .container-lg .card-content, #main-login #auth-content .container-xl .card-content, #main-login #auth-content .container-xxl .card-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
 }
-#auth-content .container-fluid .lost-mdp a, #auth-content .container-sm .lost-mdp a, #auth-content .container-md .lost-mdp a, #auth-content .container-lg .lost-mdp a, #auth-content .container-xl .lost-mdp a, #auth-content .container-xxl .lost-mdp a {
+#main-login #auth-content .container-fluid .lost-mdp a, #main-login #auth-content .container-sm .lost-mdp a, #main-login #auth-content .container-md .lost-mdp a, #main-login #auth-content .container-lg .lost-mdp a, #main-login #auth-content .container-xl .lost-mdp a, #main-login #auth-content .container-xxl .lost-mdp a {
   text-decoration: none;
   font-size: 13px;
 }
-#auth-content .container-fluid .card-body, #auth-content .container-sm .card-body, #auth-content .container-md .card-body, #auth-content .container-lg .card-body, #auth-content .container-xl .card-body, #auth-content .container-xxl .card-body {
+#main-login #auth-content .container-fluid .card-body, #main-login #auth-content .container-sm .card-body, #main-login #auth-content .container-md .card-body, #main-login #auth-content .container-lg .card-body, #main-login #auth-content .container-xl .card-body, #main-login #auth-content .container-xxl .card-body {
   border-radius: 20px 20px 0 0;
   background-color: white;
 }
-#auth-content .container-fluid .card-body #toggle-password .eye-open, #auth-content .container-sm .card-body #toggle-password .eye-open, #auth-content .container-md .card-body #toggle-password .eye-open, #auth-content .container-lg .card-body #toggle-password .eye-open, #auth-content .container-xl .card-body #toggle-password .eye-open, #auth-content .container-xxl .card-body #toggle-password .eye-open {
+#main-login #auth-content .container-fluid .card-body #toggle-password .eye-open, #main-login #auth-content .container-sm .card-body #toggle-password .eye-open, #main-login #auth-content .container-md .card-body #toggle-password .eye-open, #main-login #auth-content .container-lg .card-body #toggle-password .eye-open, #main-login #auth-content .container-xl .card-body #toggle-password .eye-open, #main-login #auth-content .container-xxl .card-body #toggle-password .eye-open {
   display: block;
 }
-#auth-content .container-fluid .card-body #toggle-password .eye-close, #auth-content .container-sm .card-body #toggle-password .eye-close, #auth-content .container-md .card-body #toggle-password .eye-close, #auth-content .container-lg .card-body #toggle-password .eye-close, #auth-content .container-xl .card-body #toggle-password .eye-close, #auth-content .container-xxl .card-body #toggle-password .eye-close {
+#main-login #auth-content .container-fluid .card-body #toggle-password .eye-close, #main-login #auth-content .container-sm .card-body #toggle-password .eye-close, #main-login #auth-content .container-md .card-body #toggle-password .eye-close, #main-login #auth-content .container-lg .card-body #toggle-password .eye-close, #main-login #auth-content .container-xl .card-body #toggle-password .eye-close, #main-login #auth-content .container-xxl .card-body #toggle-password .eye-close {
   display: none;
 }
-#auth-content .container-fluid .card-body #toggle-password.active .eye-open, #auth-content .container-sm .card-body #toggle-password.active .eye-open, #auth-content .container-md .card-body #toggle-password.active .eye-open, #auth-content .container-lg .card-body #toggle-password.active .eye-open, #auth-content .container-xl .card-body #toggle-password.active .eye-open, #auth-content .container-xxl .card-body #toggle-password.active .eye-open {
+#main-login #auth-content .container-fluid .card-body #toggle-password.active .eye-open, #main-login #auth-content .container-sm .card-body #toggle-password.active .eye-open, #main-login #auth-content .container-md .card-body #toggle-password.active .eye-open, #main-login #auth-content .container-lg .card-body #toggle-password.active .eye-open, #main-login #auth-content .container-xl .card-body #toggle-password.active .eye-open, #main-login #auth-content .container-xxl .card-body #toggle-password.active .eye-open {
   display: none;
 }
-#auth-content .container-fluid .card-body #toggle-password.active .eye-close, #auth-content .container-sm .card-body #toggle-password.active .eye-close, #auth-content .container-md .card-body #toggle-password.active .eye-close, #auth-content .container-lg .card-body #toggle-password.active .eye-close, #auth-content .container-xl .card-body #toggle-password.active .eye-close, #auth-content .container-xxl .card-body #toggle-password.active .eye-close {
+#main-login #auth-content .container-fluid .card-body #toggle-password.active .eye-close, #main-login #auth-content .container-sm .card-body #toggle-password.active .eye-close, #main-login #auth-content .container-md .card-body #toggle-password.active .eye-close, #main-login #auth-content .container-lg .card-body #toggle-password.active .eye-close, #main-login #auth-content .container-xl .card-body #toggle-password.active .eye-close, #main-login #auth-content .container-xxl .card-body #toggle-password.active .eye-close {
   display: block;
 }
-#auth-content .container-fluid .card-body #toggle-password-confirm .eye-open, #auth-content .container-sm .card-body #toggle-password-confirm .eye-open, #auth-content .container-md .card-body #toggle-password-confirm .eye-open, #auth-content .container-lg .card-body #toggle-password-confirm .eye-open, #auth-content .container-xl .card-body #toggle-password-confirm .eye-open, #auth-content .container-xxl .card-body #toggle-password-confirm .eye-open {
+#main-login #auth-content .container-fluid .card-body #toggle-password-confirm .eye-open, #main-login #auth-content .container-sm .card-body #toggle-password-confirm .eye-open, #main-login #auth-content .container-md .card-body #toggle-password-confirm .eye-open, #main-login #auth-content .container-lg .card-body #toggle-password-confirm .eye-open, #main-login #auth-content .container-xl .card-body #toggle-password-confirm .eye-open, #main-login #auth-content .container-xxl .card-body #toggle-password-confirm .eye-open {
   display: block;
 }
-#auth-content .container-fluid .card-body #toggle-password-confirm .eye-close, #auth-content .container-sm .card-body #toggle-password-confirm .eye-close, #auth-content .container-md .card-body #toggle-password-confirm .eye-close, #auth-content .container-lg .card-body #toggle-password-confirm .eye-close, #auth-content .container-xl .card-body #toggle-password-confirm .eye-close, #auth-content .container-xxl .card-body #toggle-password-confirm .eye-close {
+#main-login #auth-content .container-fluid .card-body #toggle-password-confirm .eye-close, #main-login #auth-content .container-sm .card-body #toggle-password-confirm .eye-close, #main-login #auth-content .container-md .card-body #toggle-password-confirm .eye-close, #main-login #auth-content .container-lg .card-body #toggle-password-confirm .eye-close, #main-login #auth-content .container-xl .card-body #toggle-password-confirm .eye-close, #main-login #auth-content .container-xxl .card-body #toggle-password-confirm .eye-close {
   display: none;
 }
-#auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-md .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-open, #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-open {
+#main-login #auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-open, #main-login #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-open, #main-login #auth-content .container-md .card-body #toggle-password-confirm.active .eye-open, #main-login #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-open, #main-login #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-open, #main-login #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-open {
   display: none;
 }
-#auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-md .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-close, #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-close {
+#main-login #auth-content .container-fluid .card-body #toggle-password-confirm.active .eye-close, #main-login #auth-content .container-sm .card-body #toggle-password-confirm.active .eye-close, #main-login #auth-content .container-md .card-body #toggle-password-confirm.active .eye-close, #main-login #auth-content .container-lg .card-body #toggle-password-confirm.active .eye-close, #main-login #auth-content .container-xl .card-body #toggle-password-confirm.active .eye-close, #main-login #auth-content .container-xxl .card-body #toggle-password-confirm.active .eye-close {
   display: block;
 }
-#auth-content .container-fluid .card-body .eye, #auth-content .container-sm .card-body .eye, #auth-content .container-md .card-body .eye, #auth-content .container-lg .card-body .eye, #auth-content .container-xl .card-body .eye, #auth-content .container-xxl .card-body .eye {
+#main-login #auth-content .container-fluid .card-body .eye, #main-login #auth-content .container-sm .card-body .eye, #main-login #auth-content .container-md .card-body .eye, #main-login #auth-content .container-lg .card-body .eye, #main-login #auth-content .container-xl .card-body .eye, #main-login #auth-content .container-xxl .card-body .eye {
   max-width: 25px;
 }
-#auth-content .container-fluid .card-body .btn-log, #auth-content .container-sm .card-body .btn-log, #auth-content .container-md .card-body .btn-log, #auth-content .container-lg .card-body .btn-log, #auth-content .container-xl .card-body .btn-log, #auth-content .container-xxl .card-body .btn-log {
+#main-login #auth-content .container-fluid .card-body .btn-log, #main-login #auth-content .container-sm .card-body .btn-log, #main-login #auth-content .container-md .card-body .btn-log, #main-login #auth-content .container-lg .card-body .btn-log, #main-login #auth-content .container-xl .card-body .btn-log, #main-login #auth-content .container-xxl .card-body .btn-log {
   border: solid 2px #43a06a;
   background-color: white;
 }
-#auth-content .container-fluid .card-body .btn-log:hover, #auth-content .container-sm .card-body .btn-log:hover, #auth-content .container-md .card-body .btn-log:hover, #auth-content .container-lg .card-body .btn-log:hover, #auth-content .container-xl .card-body .btn-log:hover, #auth-content .container-xxl .card-body .btn-log:hover {
+#main-login #auth-content .container-fluid .card-body .btn-log:hover, #main-login #auth-content .container-sm .card-body .btn-log:hover, #main-login #auth-content .container-md .card-body .btn-log:hover, #main-login #auth-content .container-lg .card-body .btn-log:hover, #main-login #auth-content .container-xl .card-body .btn-log:hover, #main-login #auth-content .container-xxl .card-body .btn-log:hover {
   background-color: #43a06a;
   color: white;
 }
-#auth-content .container-fluid .connexion-footer, #auth-content .container-sm .connexion-footer, #auth-content .container-md .connexion-footer, #auth-content .container-lg .connexion-footer, #auth-content .container-xl .connexion-footer, #auth-content .container-xxl .connexion-footer {
+#main-login #auth-content .container-fluid .connexion-footer, #main-login #auth-content .container-sm .connexion-footer, #main-login #auth-content .container-md .connexion-footer, #main-login #auth-content .container-lg .connexion-footer, #main-login #auth-content .container-xl .connexion-footer, #main-login #auth-content .container-xxl .connexion-footer {
   max-width: 450px;
   margin-top: 1rem;
 }
-#auth-content .container-fluid .connexion-footer .inscription-possibility, #auth-content .container-sm .connexion-footer .inscription-possibility, #auth-content .container-md .connexion-footer .inscription-possibility, #auth-content .container-lg .connexion-footer .inscription-possibility, #auth-content .container-xl .connexion-footer .inscription-possibility, #auth-content .container-xxl .connexion-footer .inscription-possibility {
+#main-login #auth-content .container-fluid .connexion-footer .inscription-possibility, #main-login #auth-content .container-sm .connexion-footer .inscription-possibility, #main-login #auth-content .container-md .connexion-footer .inscription-possibility, #main-login #auth-content .container-lg .connexion-footer .inscription-possibility, #main-login #auth-content .container-xl .connexion-footer .inscription-possibility, #main-login #auth-content .container-xxl .connexion-footer .inscription-possibility {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
   border-radius: 0 0 20px 20px;
 }
-#auth-content .container-fluid .connexion-footer .inscription-possibility a, #auth-content .container-sm .connexion-footer .inscription-possibility a, #auth-content .container-md .connexion-footer .inscription-possibility a, #auth-content .container-lg .connexion-footer .inscription-possibility a, #auth-content .container-xl .connexion-footer .inscription-possibility a, #auth-content .container-xxl .connexion-footer .inscription-possibility a {
+#main-login #auth-content .container-fluid .connexion-footer .inscription-possibility a, #main-login #auth-content .container-sm .connexion-footer .inscription-possibility a, #main-login #auth-content .container-md .connexion-footer .inscription-possibility a, #main-login #auth-content .container-lg .connexion-footer .inscription-possibility a, #main-login #auth-content .container-xl .connexion-footer .inscription-possibility a, #main-login #auth-content .container-xxl .connexion-footer .inscription-possibility a {
+  text-decoration: none;
+  padding: 2px;
+  color: black;
+}
+
+#main-register #auth-content .reg-wrapper {
+  padding-top: 100px;
+}
+#main-register #auth-content .reg-wrapper .connexion {
+  max-width: 450px;
+}
+#main-register #auth-content .reg-wrapper .card-header {
+  background-color: #43a06a;
+  color: white;
+}
+#main-register #auth-content .reg-wrapper .card-body {
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+}
+#main-register #auth-content .reg-wrapper .card-body .register-form {
+  color: black;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password .eye-open {
+  display: block;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password .eye-close {
+  display: none;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password.active .eye-open {
+  display: none;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password.active .eye-close {
+  display: block;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password-confirm .eye-open {
+  display: block;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password-confirm .eye-close {
+  display: none;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password-confirm.active .eye-open {
+  display: none;
+}
+#main-register #auth-content .reg-wrapper .card-body #reg-toggle-password-confirm.active .eye-close {
+  display: block;
+}
+#main-register #auth-content .reg-wrapper .card-body .eye {
+  max-width: 25px;
+}
+#main-register #auth-content .reg-wrapper .card-body .btn-log {
+  border: solid 2px #43a06a;
+  background-color: white;
+}
+#main-register #auth-content .reg-wrapper .card-body .btn-log:hover {
+  background-color: #43a06a;
+  color: white;
+}
+#main-register #auth-content .reg-wrapper .connexion-footer {
+  max-width: 450px;
+  margin-top: 1rem;
+}
+#main-register #auth-content .reg-wrapper .connexion-footer .inscription-possibility {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  border-radius: 0 0 20px 20px;
+  color: black;
+}
+#main-register #auth-content .reg-wrapper .connexion-footer .inscription-possibility a {
   text-decoration: none;
   padding: 2px;
   color: black;
@@ -10276,7 +10346,7 @@ textarea.form-control-lg {
 .alert {
   background-color: #ffb5b0;
   padding: 20px;
-  margin: 20px auto 0;
+  margin: 0 auto 20px;
   max-width: 450px;
   text-align: center;
   border-radius: 5px;
@@ -10378,6 +10448,23 @@ textarea.form-control-lg {
 }
 @media (prefers-color-scheme: dark) {
   #main-login {
+    background-color: #212529;
+    color: #f8f9fa;
+  }
+}
+
+#main-register {
+  min-height: 110vh;
+  background-image: url("/assets/img/bg-2.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: "Montserrat" sans-serif;
+  background-color: white;
+  color: #212529;
+}
+@media (prefers-color-scheme: dark) {
+  #main-register {
     background-color: #212529;
     color: #f8f9fa;
   }

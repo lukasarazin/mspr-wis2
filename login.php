@@ -1,11 +1,12 @@
 <?php
+
 $page = ['title' => 'Connexion'];
 
-require_once 'template-parts/layout/header.php';
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 middleware('guest');
 ?>
+
     <main id="main-login">
 
         <section id="auth-content">
