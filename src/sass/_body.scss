@@ -7,17 +7,24 @@
   background-color: white;
   color: $dark;
 
-  //  @include color-scheme(dark){
-  //    background-color: $dark;
-  //    color: $light;
-  //  }
+
+
+    @include color-scheme(dark){
+      background-color: $dark;
+     color: $light;
+    }
 }
-#main-bis {
-  background-image: url("/assets/img/bg.png");
+#main-user {
+  background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;
   background-size: contain;
   font-family: $font-site;
   background-color: white;
   color: $dark;
+
+  @include color-scheme(dark){
+    background-color: $dark;
+    color: $light;
+  }
 }
