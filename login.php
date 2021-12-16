@@ -11,7 +11,7 @@ middleware('guest');
             <div class="container-fluid">
                 <!-- j'ai tenté de changer l'apparence des messages d'erreurs (qui surviendraient en cas de mauvais mot de passe par exemple)
                 en utilisant celle de Bootstrap, malheureusement, la fonction que j'avais créé n'a pas marché :( -->
-                <div class="connexion card mx-auto shadow rounded-3" style="max-width: 450px; margin-top: 8rem;">
+                <div class="connexion card mx-auto shadow rounded-3">
 
                     <div class="card-header">
                         <h1 class="h2 mb-0">Connexion</h1>
@@ -46,7 +46,7 @@ middleware('guest');
                         </form>
                     </div>
                 </div>
-                <div class="connexion-footer card mx-auto shadow rounded-3" style="max-width: 450px; margin-top: 10px;">
+                <div class="connexion-footer card mx-auto shadow rounded-3">
                     <div class="inscription-possibility card-body p-4">
                         <span>Vous n'avez pas de compte ?</span>
                         <a href="/register.php" class="btn-log rounded-3">Inscrivez-vous</a>

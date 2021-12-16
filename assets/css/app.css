@@ -11364,6 +11364,10 @@ textarea.form-control-lg {
   width: 100%;
 }
 
+#auth-content .connexion {
+  max-width: 450px;
+  margin-top: 5rem;
+}
 #auth-content .card-header {
   background-color: #d7ffc7;
 }
@@ -11377,6 +11381,10 @@ textarea.form-control-lg {
   text-decoration: none;
   font-size: 13px;
 }
+#auth-content .card-body {
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+}
 #auth-content .card-body .btn-log {
   border: solid 2px #d7ffc7;
   background-color: white;
@@ -11384,11 +11392,16 @@ textarea.form-control-lg {
 #auth-content .card-body .btn-log:hover {
   background-color: #d7ffc7;
 }
+#auth-content .connexion-footer {
+  max-width: 450px;
+  margin-top: 1rem;
+}
 #auth-content .connexion-footer .inscription-possibility {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+  border-radius: 0 0 20px 20px;
 }
 #auth-content .connexion-footer .inscription-possibility a {
   text-decoration: none;
