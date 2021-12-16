@@ -48,8 +48,7 @@ $auth = getAuth();
                                 <a class="nav-link"
                                    href="/users/show.php">
                                     <span class="visually-hidden">Profil</span>
-                                    <img
-                                            class="user-img rounded-circle"
+                                    <img class="user-img rounded-circle" alt="" width="30" height="30"
                                             src="<?php echo $user['avatar']?>"
                                             alt="Photo de profil"
                                             title="Photo de profil"

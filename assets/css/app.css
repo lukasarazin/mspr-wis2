@@ -10181,16 +10181,20 @@ textarea.form-control-lg {
   color: black;
 }
 
-.profil-hero {
+#profil .profil-header {
+  display: block;
+  text-align: center;
+}
+#profil .profil-hero {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
 }
-.profil-hero .stats-profil {
+#profil .profil-hero .stats-profil {
   text-align: center;
 }
-.profil-hero .stats-profil strong {
+#profil .profil-hero .stats-profil strong {
   font-size: 25px;
 }
 
@@ -10200,11 +10204,12 @@ textarea.form-control-lg {
 
 #main {
   background-image: url("/assets/img/bg.png");
-  background-color: white;
   background-position: center;
   background-repeat: repeat-y;
   background-size: contain;
   font-family: "Montserrat" sans-serif;
+  background-color: white;
+  color: #212529;
 }
 
 #lottie-404 {
