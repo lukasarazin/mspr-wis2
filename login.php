@@ -3,6 +3,7 @@ $page = ['title' => 'Connexion'];
 
 require_once 'template-parts/layout/header.php';
 
+
 middleware('guest');
 ?>
     <main id="main">
