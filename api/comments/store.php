@@ -20,6 +20,6 @@ if (getValue($_POST)) {
     $commentId = storeComment($data);
 
     // On redirige l'utilisateur sur la page de l'article
-    header("Location: /posts");
+    header("Location: " . $_SERVER['HTTP_REFERER']);
     exit;
 }

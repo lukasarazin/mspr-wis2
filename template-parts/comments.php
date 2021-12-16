@@ -22,18 +22,18 @@ $current_time = time();
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row align-items-center">
                     <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>">
-                        <img class="rounded-circle user-img" <?php if ($user['avatar'] !== true): ?>
-                             src="<?php echo getAvatarUrl($user['email']) ?>"
-                             alt="Photo de <?php echo $user['username']; ?>"
-                             title="Photo de <?php echo $user['username']; ?>"
+                        <img class="rounded-circle user-img" <?php if ($authorComment['avatar'] !== true): ?>
+                             src="<?php echo getAvatarUrl($authorComment['email']) ?>"
+                             alt="Photo de <?php echo $authorComment['username']; ?>"
+                             title="Photo de <?php echo $authorComment['username']; ?>"
                              width="30"
                              height="30"
                              loading="lazy">
 
                         <?php else: ?>
-                            <img class="rounded-circle user-img" src="<?php echo $user['avatar']; ?>"
-                                 alt="Photo de <?php echo $user['username']; ?>"
-                                 title="Photo de <?php echo $user['username']; ?>"
+                            <img class="rounded-circle user-img" src="<?php echo $authorComment['avatar']; ?>"
+                                 alt="Photo de <?php echo $authorComment['username']; ?>"
+                                 title="Photo de <?php echo $authorComment['username']; ?>"
                                  width="30"
                                  height="30"
                                  loading="lazy">
@@ -77,13 +77,6 @@ $current_time = time();
             </div>
         </div>
     </div>
-    <hr>
-    <div>
-        <a href="#" class="like"><i class="fa fa-thumbs-up" style="color: black;"></i></a>
-        <sup class="me-2"> 123 <!-- $comment->like_count --> </sup>
-        <a href="#" class="dislike"><i class="fa fa-thumbs-down"
-                                       style="color: black; --bs-table-hover-color: blue;"></i></a>
-        <sup> 15 <!-- $comment->dislike_count --> </sup>
-    </div>
+
 </div>
 
