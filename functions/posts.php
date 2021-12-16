@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/database.php';
 function getPosts()
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM posts WHERE deleted_at IS NULL ');
+    $stmt = $dbh->prepare('SELECT * FROM posts WHERE deleted_at IS NULL ORDER BY id DESC');
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

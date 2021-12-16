@@ -8,7 +8,6 @@ middleware('auth');
 
     <main id="main">
 
-
         <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
         $posts = getPosts(); ?>
@@ -33,11 +32,11 @@ middleware('auth');
                                 <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
                             </div>
                         <?php endforeach; ?>
+
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>

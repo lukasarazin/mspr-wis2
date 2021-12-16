@@ -73,6 +73,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                     <data value="<?= $count ?>"><?= $count ?></data>
                     <?php if ($count === 1): ?>
                         <p>Publication</p>
+                    <?php elseif ($count === 0): ?>
+                        <p>Publication</p>
                     <?php else: ?>
                         <p>Publications</p>
                     <?php endif; ?>
@@ -80,6 +82,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                 <div class="stats-profil">
                     <data value="<?= $countfollowers ?>"><?= $countfollowers ?></data>
                     <?php if ($countfollowers === 1): ?>
+                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné</a>
+                    <?php elseif ($countfollowers === 0): ?>
                         <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné</a>
                     <?php else: ?>
                         <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonnés</a>
@@ -89,6 +93,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                 <div class="stats-profil">
                     <data value="<?= $countfollowing ?>"><?= $countfollowing ?></data>
                     <?php if ($countfollowing === 1): ?>
+                        <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnement</a>
+                    <?php elseif ($countfollowing === 0): ?>
                         <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnement</a>
                     <?php else: ?>
                         <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnements</a>

@@ -21,7 +21,6 @@ $likes = getPostLikes($post['id']);
 $countlikes = count($likes);
 ?>
 
-<a href=""></a>
 <article class="post-item">
     <div class="post-header">
 

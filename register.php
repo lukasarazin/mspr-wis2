@@ -118,7 +118,6 @@ middleware('guest');
                     inputConfirm.type = 'password'
                 }
             });
-
         })
     </script>
 
