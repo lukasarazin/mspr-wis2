@@ -15,7 +15,7 @@ $posts = getUserPosts($user['id']);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
-    <main id="main">
+    <main id="main-user">
 
         <section class="profil py-5" id="profil">
             <div class="container">
