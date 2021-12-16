@@ -10212,6 +10212,9 @@ textarea.form-control-lg {
   display: block;
   text-align: center;
 }
+#profil .profil-header .about_me {
+  margin-top: 1rem;
+}
 #profil .profil-hero {
   display: flex;
   justify-content: space-evenly;
@@ -10239,6 +10242,16 @@ textarea.form-control-lg {
 }
 
 #main {
+  background-image: url("/assets/img/bg.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: "Montserrat" sans-serif;
+  background-color: white;
+  color: #212529;
+}
+
+#main-bis {
   background-image: url("/assets/img/bg.png");
   background-position: center;
   background-repeat: repeat-y;

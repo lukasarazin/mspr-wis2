@@ -60,6 +60,9 @@ function removeImage($path)
     $filePath = $_SERVER['DOCUMENT_ROOT'] . $path;
     if(file_exists($filePath)):
         unlink($filePath);
+
+
+
     endif;
 
     return true;
