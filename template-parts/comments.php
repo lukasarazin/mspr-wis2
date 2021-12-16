@@ -18,7 +18,7 @@ $current_time = time();
 <div class="d-flex justify-content-center row">
 
     <div class="col-lg-8">
-        <div class="card mt-5 p-3">
+        <div class="card mt-5 p-3" style="color: black">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="user d-flex flex-row align-items-center">
                     <a href="/users/show.php?id=<?php echo $authorComment['id']; ?>">
