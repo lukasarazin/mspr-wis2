@@ -15,6 +15,23 @@
 
 }
 
+#main-post-edit {
+  min-height: calc(100vh - 66px);
+  padding-top: 30px;
+  background-image: url("/assets/img/bg.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: $font-site;
+  background-color: white;
+  color: $dark;
+
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: white;
+  }
+}
+
 #main-subscriptions {
   min-height: calc(100vh - 66px);
   background-image: url("/assets/img/bg.png");

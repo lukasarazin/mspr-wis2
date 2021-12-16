@@ -2,7 +2,7 @@
 
 $post = getPost($_GET['id']);
 
-$page = ['title' => "Modifier l'article"];
+$page = ['title' => "Modifier le post"];
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
@@ -10,24 +10,26 @@ middleware('auth');
 
 ?>
 
-    <form action="/api/posts/delete.php?id=<?php echo $post['id']; ?>" method="POST" class="mt-2 float-end">
-        <button type="submit" class="btn btn-outline-danger">Supprimer</button>
-    </form>
+    <main id="main-post-edit">
 
-    <main id="main">
+        <div class="form-wrapper post-update-wrapper mx-auto" style="max-width: 800px;">
 
-        <div class="form-wrapper mt-5 mx-auto" style="max-width: 800px;">
+            <form action="/api/posts/delete.php?id=<?php echo $post['id']; ?>" method="POST" class="mt-2 float-end">
+                <button type="submit" class="btn btn-outline-danger">Supprimer</button>
+            </form>
 
             <form action="/api/posts/update.php?id=<?php echo $post['id']; ?>" method="POST">
 
 
-                <div class="form-group mb-3">
-                    <label for="body" class="form-label">Contenu</label>
-                    <textarea rows="15" id="body" name="body"
-                              class="form-control"><?php echo $post['body']; ?></textarea>
+                <div class="form-group post-update-label mb-3">
+                    <label for="body" class="form-label">Que voulez-vous dire ?</label>
+                </div>
+                <div class="post-update-group">
+                    <textarea rows="5" id="body" name="body"
+                              class="form-control mt-5 post-update-content"><?php echo $post['body']; ?></textarea>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 post-update-img">
                     <img src="<?php echo $post['thumbnail']; ?>" alt="">
                 </div>
 

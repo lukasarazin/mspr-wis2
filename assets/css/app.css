@@ -10369,6 +10369,24 @@ textarea.form-control-lg {
   }
 }
 
+#main-post-edit {
+  min-height: calc(100vh - 66px);
+  padding-top: 30px;
+  background-image: url("/assets/img/bg.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: "Montserrat" sans-serif;
+  background-color: white;
+  color: #212529;
+}
+@media (prefers-color-scheme: dark) {
+  #main-post-edit {
+    background-color: #212529;
+    color: white;
+  }
+}
+
 #main-subscriptions {
   min-height: calc(100vh - 66px);
   background-image: url("/assets/img/bg.png");
