@@ -1,82 +1,95 @@
 .post-item {
   position: relative;
-  background-color: #d7ffc7;
-  border-radius: 15px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  background-color: $primary;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
 
   .post-header {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    background-color: #d7ffc7;
-    border-radius: 15px 15px 0 0;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 
-    .profil-img {
-      z-index: 2;
-    }
-
-    a.author-name {
-      z-index: 3;
-      text-decoration: none;
-      color: inherit;
-      font-weight: bold;
-    }
-
-    a.edit-link {
-      z-index: 4;
+    .post-author {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       align-content: center;
-      width: 1.5rem;
-      height: 1.5rem;
+      align-items: center;
+      color: inherit;
+      text-decoration: none;
+
+      .post-author-img {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 50em;
+        margin-right: 1rem;
+      }
+    }
+
+    .post-edit-link {
+      color: inherit;
+      text-decoration: none;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      background-color: transparent;
+      border-radius: 50rem;
+      transition: $transition-base;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .2);
+        transition: $transition-base;
+      }
 
       svg {
         display: block;
         width: 1rem;
-        height: auto;
-        color: black;
+        height: 1rem;
       }
     }
   }
 
-  .post-img {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-
+  .post-thumbnail {
     img {
+      display: block;
       width: 100%;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center center;
     }
   }
 
   .post-body {
     padding: 1rem;
-
-    .time-published {
-      font-size: 13px;
-      color: inherit;
-    }
-
-    p {
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+    font-size: 1.125rem;
   }
 
   .post-footer {
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 
-    .btn {
-      width: 100%;
+    .post-like {
+      max-width: 150px;
+      text-align: center;
+      display: flex;
+      align-content: center;
+      align-items: center;
+
+      .like-button {
+        background-color: transparent;
+        border: 0;
+      }
     }
   }
 }
