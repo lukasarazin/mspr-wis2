@@ -10,6 +10,8 @@ $auth = getAuth();
 
 if (getValue($_POST) && $id) {
 
+    $imagePath = uploadImage($_FILES['avatar']);
+
     // On prépare les données depuis le formulaire
     $data = [
         'avatar' => getValue($auth['avatar']),
@@ -18,12 +20,16 @@ if (getValue($_POST) && $id) {
         'last_name' => getValue($_POST['last_name']),
     ];
 
-    if (getValue($_FILES['image'])):
-        // Supprimer la photo dans le dossier uploads
-        removeImage($auth['avatar']);
+    if (getValue($_FILES['avatar'])):
 
-        // Ajouter dans le dossier uploads la nouvelle image
-        $imagePath = uploadImage($_FILES['image']);
+
+        // Supprimer la photo dans le dossier uploads
+        if (getValue($auth['avatar'])):
+            removeImage($auth['avatar']);
+        endif;
+
+        // Ajouter dans le dossier uploads le nouvel avatar
+        $imagePath = uploadImage($_FILES['avatar']);
 
         // Modifier 'avatar' dans $data
         $data['avatar'] = $imagePath;

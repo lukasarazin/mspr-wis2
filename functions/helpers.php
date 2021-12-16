@@ -46,7 +46,7 @@ function middleware($name)
 
 function uploadImage($image)
 {
-    $filename = $image['name'] . '-' . uniqid();
+    $filename = $image['name'];
     $tmp_name = $image['tmp_name'];
     $path = $_SERVER['DOCUMENT_ROOT'] . '/uploads/' . $filename;
 
@@ -57,8 +57,10 @@ function uploadImage($image)
 
 function removeImage($path)
 {
-        $dbh = connectDB();
-        $stmt = $dbh->prepare('DELETE avatar FROM users WHERE id = :id LIMIT 1');
-        $stmt->bindParam(':id', $id);
-        return $stmt->execute();
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . $path;
+    if(file_exists($filePath)):
+        unlink($filePath);
+    endif;
+
+    return true;
 }
