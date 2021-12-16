@@ -10092,6 +10092,7 @@ textarea.form-control-lg {
      object-position: center center;
   border-radius: 50em;
   margin-right: 1rem;
+  z-index: 10;
 }
 .post-item .post-header .post-edit-link {
   color: inherit;

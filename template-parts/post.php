@@ -21,6 +21,7 @@ $likes = getPostLikes($post['id']);
 $countlikes = count($likes);
 ?>
 
+<a href=""></a>
 <article class="post-item">
     <div class="post-header">
 
@@ -42,6 +43,7 @@ $countlikes = count($likes);
         <?php endif; ?>
     </div>
 
+
     <?php if(file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
     <div class="post-thumbnail">
         <img src="<?php echo $post['thumbnail']; ?>"
@@ -52,13 +54,11 @@ $countlikes = count($likes);
 
     <div class="post-body">
         <p><?php echo $post['body']; ?></p>
-
     </div>
 
     <div class="post-footer">
         <div class="post-like">
-            <form action="/api/users/like.php?id=<?php echo $auth['id']; ?>" method="POST">
-                <input type="hidden" id="like" name="like" value="<?php echo $user['id']; ?>">
+            <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
                 <span class="visually-hidden">Images aimées</span>
                 <button class="like-button" type="submit">
                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
