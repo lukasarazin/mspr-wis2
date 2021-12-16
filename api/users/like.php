@@ -16,5 +16,5 @@ $auth = getAuth();
     storeLike($data);
 
     // On redirige l'utilisateur sur la page de l'article
-    // header("Location: " . $_SERVER['HTTP_REFERER']);
-    // exit;
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;

@@ -135,11 +135,21 @@ function getSubscriptions($data)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function toggleFollow($data)
+{
+    if(getSubscriptions($data))
+    {
+        return unfollow($data);
+    } else {
+        return follow($data);
+    }
+}
+
 function getFollowers($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM follow WHERE user_id = :user_id');
-    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt = $dbh->prepare('SELECT * FROM follow WHERE subscriber_id = :subscriber_id');
+    $stmt->bindParam(':subscriber_id', $data['user_id']);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

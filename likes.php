@@ -15,7 +15,6 @@ $auth = getAuth();
 $data = ['user_id' => $auth['id']];
 $likes = getLikes($data);
 
-
 var_dump($likes);
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 

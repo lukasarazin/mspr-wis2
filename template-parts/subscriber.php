@@ -2,7 +2,7 @@
 
 $auth = getAuth();
 $authorSubscribe = getSubscribeAuthor($subscription);
-$user_id = $subscription['user_id'];
+$user_id = $subscription['subscriber_id'];
 $user = getUser($user_id);
 
 ?>
@@ -25,6 +25,6 @@ $user = getUser($user_id);
                             <a href="/users/show.php?id=<?php echo $authorSubscribe['id']; ?>"
                                rel="author"><?php echo $user['username']; ?>
                             </a>
-                        </span>
+                    </span>
                 </div>
 </article>

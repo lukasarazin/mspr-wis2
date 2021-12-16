@@ -15,7 +15,7 @@ if (getValue($_POST)) {
         'user_id' => $auth['id'],
     ];
 
-    follow($data);
+    toggleFollow($data);
 
     // On redirige l'utilisateur sur la page de l'article
     header("Location: " . $_SERVER['HTTP_REFERER']);
