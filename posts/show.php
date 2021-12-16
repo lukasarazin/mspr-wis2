@@ -19,7 +19,7 @@ middleware('auth');
 
     <main id="main">
 
-        <section class="py-5">
+        <section class="py-3">
             <div class="container">
 
                 <span>Publié le <time><?php echo $post['created_at'] = date('d M Y'); ?></time> par
@@ -45,11 +45,6 @@ middleware('auth');
 
             </div>
 
-            <div style="text-align: center">
-                <form action="/api/likes/store.php?id=<?= $post['id']; ?>" method="POST">
-                    <button type="submit" class="btn btn-success like-button">LIKE</button>
-                </form>
-            </div>
         </section>
 
     </main>

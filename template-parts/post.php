@@ -28,17 +28,17 @@ $countlikes = count($likes);
         <a class="post-author" href="/users/show.php?id=<?php echo $authorPost['id']; ?>" rel="author">
 
             <img class="rounded-circle post-author-img" <?php if ($user['avatar'] !== true): ?>
-                 src="<?php echo getAvatarUrl($user['email']) ?>"
-                 alt="Photo de <?php echo $user['username']; ?>"
-                 title="Photo de <?php echo $user['username']; ?>"
+                 src="<?php echo getAvatarUrl($authorPost['email']) ?>"
+                 alt="Photo de <?php echo $authorPost['username']; ?>"
+                 title="Photo de <?php echo $authorPost['username']; ?>"
                  width="30"
                  height="30"
                  loading="lazy">
 
             <?php else: ?>
                 <img class="rounded-circle post-author-img" src="<?php echo $authorPost['avatar']; ?>"
-                     alt="Photo de <?php echo $user['username']; ?>"
-                     title="Photo de <?php echo $user['username']; ?>"
+                     alt="Photo de <?php echo $authorPost['username']; ?>"
+                     title="Photo de <?php echo $authorPost['username']; ?>"
                      width="30"
                      height="30"
                      loading="lazy">
