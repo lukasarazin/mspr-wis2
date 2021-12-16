@@ -11427,6 +11427,10 @@ textarea.form-control-lg {
 }
 
 body {
-  background-color: #f8f9fa;
+  background-image: url("/assets/img/bg.png");
+  background-color: red;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
   font-family: "Montserrat" sans-serif;
 }

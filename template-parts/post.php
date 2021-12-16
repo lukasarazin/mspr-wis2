@@ -29,7 +29,7 @@ $countlikes = count($likes);
         <div class="profil-img">
             <a href="/users/show.php?id=<?php echo $authorPost['id']; ?>">
                 <img class="user-img rounded-circle"
-                     src="<?php echo getAvatarUrl($authorPost['email']); ?>"
+                     src="<?php echo $authorPost['avatar']; ?>"
                      alt="Photo de profil"
                      title="Photo de profil"
                      loading="lazy"

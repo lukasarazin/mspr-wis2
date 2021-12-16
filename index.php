@@ -7,6 +7,8 @@ middleware('auth');
 ?>
 
 <main id="main">
+<body>
+
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 
@@ -38,7 +40,7 @@ middleware('auth');
             </div>
         </div>
     </section>
-
+</body>
 </main>
 
 <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>
