@@ -1,0 +1,43 @@
+#main-user {
+
+  .card {
+    color: black;
+
+    .card-header {
+      background-color: $primary;
+      color: white;
+      width: 100%;
+      text-align: center;
+    }
+
+    .user-edit-form {
+
+      max-width: 100%;
+
+      .img-profil {
+        max-height: 250px;
+        width: auto;
+        max-width: 100%;
+        box-shadow: $box-shadow-sm;
+      }
+
+      input {
+        max-width: 75%;
+      }
+
+    }
+
+    .btn-log {
+      border: solid 2px $primary;;
+      background-color: white;
+
+      &:hover {
+        background-color: $primary;
+        color: white;
+      }
+
+    }
+
+  }
+
+}

@@ -20,11 +20,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
         <section class="profil py-5" id="profil">
             <div class="container post-show">
-                    <div class="card align-items-center m-5 shadow rounded-3">
-
-                        <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST"
+                <div class="card align-items-center m-5 shadow rounded-3">
+                    <div class="card-header">
+                        <h2>Modifiez votre profil</h2>
+                    </div>
+                    <div class="card-body p-2">
+                        <form class="user-edit-form" action="/api/users/update.php?id=<?php echo $user['id']; ?>"
+                              method="POST"
                               enctype="multipart/form-data">
-
 
                             <img class="img-profil mt-5" src="<?php echo $user['avatar']; ?>"
                                  alt="Photo de <?php echo $user['username']; ?>"
@@ -70,10 +73,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                        id="last_name"
                                        value="<?php echo $user['last_name']; ?>">
                             </div>
-
-                            <button type="submit" class="btn btn-outline-info mb-5">Confirmer</button>
-
                         </form>
+                    </div>
+
+                    <button type="submit" class="btn-log mb-5 rounded-3">Confirmer</button>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
 
 
     </main>
