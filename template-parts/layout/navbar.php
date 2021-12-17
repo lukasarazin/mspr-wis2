@@ -36,7 +36,7 @@ $auth = getAuth();
 
                         <?php if (getValue($auth)): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="/likes.php?id=<?php echo $user['id']; ?>">
+                                <a class="nav-link" href="/likes.php?id=<?php echo $auth['id']; ?>">
                                     <span class="visually-hidden">Publications de mes abonnés</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/subscribers.svg.php'; ?>
                                 </a>
@@ -45,20 +45,21 @@ $auth = getAuth();
 
                         <?php if (getValue($auth)): ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="/likes.php?id=<?php echo $user['id']; ?>">
+                                <a class="nav-link" href="/likes.php?id=<?php echo $auth['id']; ?>">
                                     <span class="visually-hidden">Images aimées</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
                                 </a>
                             </li>
                         <?php endif; ?>
-
-                        <?php if (($auth['id']) === $user['id']): ?>
+                        <?php if (getValue($user['id'])): ?>
+                            <?php if (($auth['id']) === $user['id']): ?>
                                 <li class="nav-item">
-                                <a href="/posts/create.php" class="btn">
+                                    <a href="/posts/create.php" class="btn">
 
-                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/more.svg.php'; ?>
-                                </a>
+                                        <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/more.svg.php'; ?>
+                                    </a>
                                 </li>
+                            <?php endif; ?>
                         <?php endif; ?>
 
                         <?php if (getValue($auth)): ?>
@@ -67,12 +68,12 @@ $auth = getAuth();
                                    href="/users/show.php">
                                     <span class="visually-hidden">Profil</span>
 
-                                        <img class="rounded-circle user-img" src="<?php echo $auth['avatar']; ?>"
-                                             alt="Photo de <?php echo $auth['username']; ?>"
-                                             title="Photo de <?php echo $auth['username']; ?>"
-                                             width="30"
-                                             height="30"
-                                             loading="lazy">
+                                    <img class="rounded-circle user-img" src="<?php echo $auth['avatar']; ?>"
+                                         alt="Photo de <?php echo $auth['username']; ?>"
+                                         title="Photo de <?php echo $auth['username']; ?>"
+                                         width="30"
+                                         height="30"
+                                         loading="lazy">
                                 </a>
 
                             </li>
