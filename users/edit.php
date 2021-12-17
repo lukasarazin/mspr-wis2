@@ -19,22 +19,24 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
     <main id="main-user">
 
         <section class="profil py-5" id="profil">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-
-                        <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST"
+            <div class="container post-show">
+                <div class="card align-items-center m-5 shadow rounded-3">
+                    <div class="card-header">
+                        <h2>Modifiez votre profil</h2>
+                    </div>
+                    <div class="card-body p-2">
+                        <form class="user-edit-form" action="/api/users/update.php?id=<?php echo $user['id']; ?>"
+                              method="POST"
                               enctype="multipart/form-data">
 
-
-                            <img class="img-fluid img-profil" src="<?php echo $user['avatar']; ?>"
+                            <img class="img-profil mt-5" src="<?php echo $user['avatar']; ?>"
                                  alt="Photo de <?php echo $user['username']; ?>"
                                  title="Photo de <?php echo $user['username']; ?>"
                                  width="400"
                                  height="400"
                                  loading="lazy">
 
-                            <div class="mb-3">
+                            <div class="mb-5">
                                 <label for="avatar" class="form-label"></label>
                                 <input class="form-control" id="avatar" type="file" accept=".png,.jpg,.jpeg"
                                        name="avatar">
@@ -71,28 +73,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                        id="last_name"
                                        value="<?php echo $user['last_name']; ?>">
                             </div>
-
-                            <button type="submit" class="btn btn-outline-info">Confirmer</button>
-
                         </form>
-
                     </div>
-                    <div class="col-md-10">
-                        <section>
-                            <div class="container">
 
-                                <h2 class="h2">Liste des publications</h2>
+                    <button type="submit" class="btn-log mb-5 rounded-3">Confirmer</button>
 
-                                <div class="row g-4">
-                                    <?php foreach ($posts as $post): ?>
-                                        <div class="col-md-6 col-lg-4">
-                                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/post.php'; ?>
-                                        </div>
-                                    <?php endforeach; ?>
-                                </div>
+                </div>
 
-                            </div>
-                        </section>
+
+
+            </div>
+
+        </section>
+
 
     </main>
 

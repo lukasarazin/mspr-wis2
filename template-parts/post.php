@@ -104,6 +104,5 @@ $countcomments = count($comments);
                 <time><small><?php echo $timePostAgo ?></small></time>
             <?php endif; ?>
         </div>
-    </div>
 
 </article>
