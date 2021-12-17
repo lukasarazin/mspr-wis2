@@ -1,0 +1,27 @@
+.search-results-container {
+  padding: 1rem 20%;
+
+  .search-result-card {
+
+    background-color: $secondary;
+    color: white;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: $primary;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+  }
+
+}
