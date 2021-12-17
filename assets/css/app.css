@@ -10476,8 +10476,30 @@ textarea.form-control-lg {
   color: white;
 }
 
+.search-results-container {
+  padding: 1rem 20%;
+}
+.search-results-container .search-result-card {
+  background-color: #6c757d;
+  color: white;
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
+}
+.search-results-container .search-result-card:hover {
+  background-color: #43a06a;
+}
+.search-results-container .search-result-card a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
 #main {
-  min-height: calc(100vh - 66px);
+  min-height: 100vh;
   padding-top: 70px;
   background-image: url("/assets/img/bg.png");
   background-position: center;
