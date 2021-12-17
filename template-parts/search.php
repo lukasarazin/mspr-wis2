@@ -17,8 +17,9 @@ require_once '../template-parts/layout/header.php';
 
                 <span scope="col" style="color: lightgrey">Résultats </span>
 
-                <div class="mt-5 d-flex">
+
                     <?php foreach ($users as $user): ?>
+                <div class="mt-5 d-flex">
                         <img class="rounded-circle mx-3" src="<?php echo $user['avatar']; ?>"
                              alt="Photo de <?php echo $user['username']; ?>"
                              title="Photo de <?php echo $user['username']; ?>"
@@ -34,8 +35,9 @@ require_once '../template-parts/layout/header.php';
                                 <?php echo $user['email']; ?>
                             </div>
                         </div>
+                        </div>
                     <?php endforeach ?>
-                </div>
+
 
             </div>
         </section>
