@@ -21,14 +21,7 @@ if (getValue($_POST) && $id) {
         'biography' => getValue($_POST['biography']),
     ];
 
-    if (getValue($_FILES['avatar'])):
-
-        //Si aucune image ajouter garder l'avatar précedent
-        // if (getValue($auth['avatar']=null));
-        // ne pas
-        // removeImage($auth['avatar']);
-        //  endif;
-
+    if (getValue($_FILES['avatar']['tmp_name'])):
 
         // Supprimer la photo dans le dossier uploads
         if (getValue($auth['avatar'])):
@@ -37,7 +30,6 @@ if (getValue($_POST) && $id) {
 
         // Ajouter dans le dossier uploads le nouvel avatar
         $imagePath = uploadImage($_FILES['avatar']);
-
 
         // Modifier 'avatar' dans $data
         $data['avatar'] = $imagePath;

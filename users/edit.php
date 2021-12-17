@@ -7,6 +7,7 @@ middleware('auth');
 
 if ($id = getValue($_GET['id'])) {
     $user = getUser($id);
+    //$userAvatar = getUserAvatar($id);
 } else {
     $user = getAuth();
 }
@@ -25,57 +26,51 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                         <form action="/api/users/update.php?id=<?php echo $user['id']; ?>" method="POST"
                               enctype="multipart/form-data">
 
-                            <img class="img-fluid img-profil" <?php if ($user['avatar'] !== true): ?>
-                                 src="<?php echo getAvatarUrl($user['email']) ?>"
+
+                            <img class="img-fluid img-profil" src="<?php echo $user['avatar']; ?>"
                                  alt="Photo de <?php echo $user['username']; ?>"
                                  title="Photo de <?php echo $user['username']; ?>"
                                  width="400"
                                  height="400"
                                  loading="lazy">
 
-                            <?php else: ?>
-                                <img class="img-fluid img-profil" src="<?php echo $user['avatar']; ?>"
-                                     alt="Photo de <?php echo $user['username']; ?>"
-                                     title="Photo de <?php echo $user['username']; ?>"
-                                     width="400"
-                                     height="400"
-                                     loading="lazy">
-                            <?php endif; ?>
                             <div class="mb-3">
                                 <label for="avatar" class="form-label"></label>
                                 <input class="form-control" id="avatar" type="file" accept=".png,.jpg,.jpeg"
                                        name="avatar">
                             </div>
 
-                            <fieldset class="mb-3">
-                                <legend>Nom d'utilisateur</legend>
-                                <input type="text" name="username" id="username"
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nom d'utilisateur</label>
+                                <input class="form-control" type="text" name="username" id="username"
                                        value="<?php echo $user['username']; ?>">
-                            </fieldset>
+                            </div>
 
-                            <fieldset class="mb-3">
-                                <legend>Résumé de votre profil</legend>
-                                <input type="text" name="biography" id="biography"
+                            <div class="mb-3">
+                                <label for="biography" class="form-label">Résumé de votre profil</label>
+                                <input class="form-control" type="text" name="biography" id="biography"
                                        value="<?php echo $user['biography']; ?>">
-                            </fieldset>
+                            </div>
 
-                            <!-- <fieldset class="mb-3">
-                                 <legend>Site web</legend>
-                                 <input type="url" name="link" id="link"
+                            <!-- <div class="mb-3">
+                                 <label>Site web</label>
+                                 <input class="form-control" type="url" name="link" id="link"
                                         value=" //echo $user['first_name']; ?>">
-                             </fieldset> -->
+                             </div> -->
 
-                            <fieldset class="mb-3">
-                                <legend>Prénom</legend>
-                                <input type="text" placeholder="Prénom" name="first_name" id="first_name"
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label">Prénom</label>
+                                <input class="form-control" type="text" placeholder="Prénom" name="first_name"
+                                       id="first_name"
                                        value="<?php echo $user['first_name']; ?>">
-                            </fieldset>
+                            </div>
 
-                            <fieldset class="mb-3">
-                                <legend>Nom</legend>
-                                <input type="text" placeholder="Nom" name="last_name" id="last_name"
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Nom</label>
+                                <input class="form-control" type="text" placeholder="Nom" name="last_name"
+                                       id="last_name"
                                        value="<?php echo $user['last_name']; ?>">
-                            </fieldset>
+                            </div>
 
                             <button type="submit" class="btn btn-outline-info">Confirmer</button>
 

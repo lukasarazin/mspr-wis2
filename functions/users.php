@@ -30,6 +30,16 @@ function getUser($id)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+//function getUserAvatar($id)
+//{
+//    $dbh = connectDB();
+//    $stmt = $dbh->prepare('SELECT avatar FROM users WHERE id = :id LIMIT 1');
+//    $stmt->bindParam(':id', $id);
+//    $stmt->execute();
+//
+//    return $stmt->fetch(PDO::FETCH_ASSOC);
+//}
+
 function getUserByEmail($email)
 {
     $dbh = connectDB();
@@ -63,11 +73,12 @@ function getUsers()
 function storeUser($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('INSERT INTO users (username, biography, email, password) VALUES (:username, :biography, :email, :password)');
+    $stmt = $dbh->prepare('INSERT INTO users (username, biography, avatar,email, password) VALUES (:username, :biography, :avatar, :email, :password)');
     $stmt->bindParam(':username', $data['username']);
     $stmt->bindParam(':email', $data['email']);
     $stmt->bindParam(':password', $data['password']);
     $stmt->bindParam(':biography', $data['biography']);
+    $stmt->bindParam(':avatar', $data['avatar']);
     $stmt->execute();
 
     return $dbh->lastInsertId();
