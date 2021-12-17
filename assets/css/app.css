@@ -10043,6 +10043,12 @@ textarea.form-control-lg {
   }
 }
 
+#navbarNav .nav-item:hover {
+  color: #43a06a;
+  stroke: #43a06a;
+  fill: #43a06a;
+}
+
 .wrapper .posts-wrapper {
   margin: auto;
 }

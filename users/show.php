@@ -60,7 +60,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
                 <p class="mt-4 mx-auto"><?php echo $user['biography']; ?></p>
             </div>
-            <div class="profil-hero">
+            <div class="profil-hero mb-5">
                 <div class="stats-profil">
                     <data value="<?= $count ?>"><?= $count ?></data>
                     <?php if ($count === 1): ?>
@@ -133,13 +133,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                     <div class="create-subscribers">
                         <?php // require_once $_SERVER['DOCUMENT_ROOT'] . '/subscribers/create.php' ?>
                     </div>
-
-                    <?php if (($auth['id']) === $user['id']): ?>
-                        <div class="profil-header action-wrapper mb-5 d-flex justify-content-end align-items-center align-content-center">
-                            <a href="/posts/create.php" class="btn btn-outline-primary">Ajouter une
-                                publication</a>
-                        </div>
-                    <?php endif; ?>
 
                     <div class="row g-4">
                         <?php foreach ($posts as $post): ?>

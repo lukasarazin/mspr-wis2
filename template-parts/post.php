@@ -23,7 +23,9 @@ $timePostAgo = createdPostTime($timePost);
 $timePostAgoFromUpdate = upadtedPostTime($timeupdate);
 $current_time = time();
 $likes = getPostLikes($post['id']);
+$comments = getPostComments($post['id']);
 $countlikes = count($likes);
+$countcomments = count($comments);
 ?>
 
 <article class="post-item">
@@ -50,9 +52,11 @@ $countlikes = count($likes);
 
     <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
         <div class="post-thumbnail">
+            <a href="/posts/show.php?id=<?php echo $post['id']; ?>">
             <img src="<?php echo $post['thumbnail']; ?>"
                  title="Publication de <?php echo $authorPost['username'] ?>"
                  alt="publication de <?php echo $authorPost['username'] ?>">
+            </a>
         </div>
     <?php endif; ?>
 
@@ -63,16 +67,7 @@ $countlikes = count($likes);
     <div class="post-footer">
         <div class="post-like">
 
-            <?php if ($countlikes === 1): ?>
-                <?php if (($auth['id']) !== $post['id']): ?>
-                    <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
-                        <span class="visually-hidden">Images aimées</span>
-                        <button class="like-button" type="submit">
-                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
-                        </button>
-                    </form>
-                <?php endif; ?>
-            <?php else: ?>
+            <?php if ($countlikes === 0): ?>
                 <?php if (($auth['id']) !== $post['id']): ?>
                     <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
                         <span class="visually-hidden">Images aimées</span>
@@ -81,10 +76,22 @@ $countlikes = count($likes);
                         </button>
                     </form>
                 <?php endif; ?>
+            <?php else: ?>
+                <?php if (($auth['id']) !== $post['id']): ?>
+                    <form action="/api/users/like.php?id=<?php echo $post['id']; ?>" method="POST">
+                        <span class="visually-hidden">Images aimées</span>
+                        <button class="like-button" type="submit">
+                            <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart-post.svg.php'; ?>
+                        </button>
+                    </form>
+                <?php endif; ?>
             <?php endif; ?>
 
             <data value="<?= $countlikes ?>"><?= $countlikes ?> J'aime</data>
+
         </div>
+
+        <a href="/posts/show.php?id=<?php echo $post['id'] ?>" style="text-decoration: none;"><data value="<?= $countcomments ?>"><?= $countcomments ?> commentaires</data></a>
 
         <div class="text-muted">
             <?php if ($post['updated_at'] !== $post['created_at']) : ?>

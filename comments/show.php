@@ -13,8 +13,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 ?>
 
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
 <section>
     <div class="container mt-5">
 

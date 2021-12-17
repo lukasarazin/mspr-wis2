@@ -6,3 +6,12 @@
   color: white;
 }
 }
+
+#navbarNav {
+
+  .nav-item:hover {
+    color: $primary;
+    stroke: $primary;
+    fill: $primary;
+  }
+}

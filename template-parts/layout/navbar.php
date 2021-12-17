@@ -52,6 +52,15 @@ $auth = getAuth();
                             </li>
                         <?php endif; ?>
 
+                        <?php if (($auth['id']) === $user['id']): ?>
+                                <li class="nav-item">
+                                <a href="/posts/create.php" class="btn">
+
+                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/more.svg.php'; ?>
+                                </a>
+                                </li>
+                        <?php endif; ?>
+
                         <?php if (getValue($auth)): ?>
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -64,8 +73,6 @@ $auth = getAuth();
                                              width="30"
                                              height="30"
                                              loading="lazy">
-                                    
-
                                 </a>
 
                             </li>

@@ -1,6 +1,5 @@
 <?php
 
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/posts.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/helpers.php';
@@ -34,7 +33,7 @@ middleware('auth');
                      title="Pulication de <?php echo $author['username']; ?>"/>
 
                 <hr>
-
+                <div id="com-ancre"></div>
                 <div class="comments-wrapper">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
                 </div>
