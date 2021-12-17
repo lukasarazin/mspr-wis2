@@ -26,7 +26,7 @@ $auth = getAuth();
                     <ul class="navbar-nav ms-auto">
 
                         <?php if (getValue($auth)): ?>
-                            <li class="nav-item">
+                            <li class="nav-item mx-1">
                                 <a class="nav-link" href="/">
                                     <span class="visually-hidden">Accueil</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/home.svg.php'; ?>
@@ -35,7 +35,16 @@ $auth = getAuth();
                         <?php endif; ?>
 
                         <?php if (getValue($auth)): ?>
-                            <li class="nav-item">
+                            <li class="nav-item mx-1">
+                                <a class="nav-link" href="/search.php">
+                                    <span class="visually-hidden">Accueil</span>
+                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/search.svg.php'; ?>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if (getValue($auth)): ?>
+                            <li class="nav-item mx-1">
                                 <a class="nav-link" href="/likes.php?id=<?php echo $auth['id']; ?>">
                                     <span class="visually-hidden">Publications de mes abonnés</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/subscribers.svg.php'; ?>
@@ -44,7 +53,7 @@ $auth = getAuth();
                         <?php endif; ?>
 
                         <?php if (getValue($auth)): ?>
-                            <li class="nav-item">
+                            <li class="nav-item mx-1">
                                 <a class="nav-link" href="/likes.php?id=<?php echo $auth['id']; ?>">
                                     <span class="visually-hidden">Images aimées</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/heart.svg.php'; ?>
@@ -53,7 +62,7 @@ $auth = getAuth();
                         <?php endif; ?>
                         <?php if (getValue($user['id'])): ?>
                             <?php if (($auth['id']) === $user['id']): ?>
-                                <li class="nav-item">
+                                <li class="nav-item mx-1">
                                     <a href="/posts/create.php" class="btn">
 
                                         <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/more.svg.php'; ?>
@@ -63,7 +72,7 @@ $auth = getAuth();
                         <?php endif; ?>
 
                         <?php if (getValue($auth)): ?>
-                            <li class="nav-item">
+                            <li class="nav-item mx-1">
                                 <a class="nav-link"
                                    href="/users/show.php">
                                     <span class="visually-hidden">Profil</span>
@@ -78,11 +87,11 @@ $auth = getAuth();
 
                             </li>
                             <?php if (isAdmin($auth)): ?>
-                                <li class="nav-item">
+                                <li class="nav-item mx-1">
                                     <a class="nav-link" href="/admin">Admin</a>
                                 </li>
                             <?php endif; ?>
-                            <li class="nav-item">
+                            <li class="nav-item mx-1">
                                 <a href="/" class="nav-link logout"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="/api/auth/logout.php" method="POST"

@@ -273,16 +273,25 @@ function getPostLikes($id)
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getLikesPost($id)
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE post_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getLikeAuthor($like)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM likes WHERE id = :post_id LIMIT 1');
-    $stmt->bindParam(':post_id', $like['post_id']);
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE id = :user_id LIMIT 1');
+    $stmt->bindParam(':user_id', $like['user_id']);
     $stmt->execute();
 
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
-
 
 function getLike($data)
 {
@@ -318,7 +327,7 @@ function toggleLike($data)
 }
 
 
-function seeMyLikePost($data) {
+function LikePostAuthor($data) {
     $dbh = connectDB();
     $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
     $stmt->bindParam(':user_id', $data['user_id']);
@@ -327,3 +336,23 @@ function seeMyLikePost($data) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function storeLikesPost($data) {
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT post_id FROM likes WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function searchUsers($keyword)
+{
+    $keyword = "%$keyword%";
+
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE search-username- LIKE :keyword');
+    $stmt->bindParam(':keyword', $keyword);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

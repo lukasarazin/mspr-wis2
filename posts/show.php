@@ -29,9 +29,10 @@ middleware('auth');
 
                 <p><?php echo $post['body']; ?></p>
 
+                <div class="img-visible">
                 <img src="<?php echo $post['thumbnail']; ?>" alt="" width="400" height="400"
                      title="Pulication de <?php echo $author['username']; ?>"/>
-
+            </div>
                 <hr>
                 <div id="com-ancre"></div>
                 <div class="comments-wrapper">

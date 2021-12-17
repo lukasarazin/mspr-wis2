@@ -14,10 +14,11 @@ if ($id = getValue($_GET['id'])) {
 $posts = getUserPosts($user['id']);
 $post = getPost($_GET['id']);
 $authorPost = getPostAuthor($post);
+$authorLike = getLikeAuthor($user);
 $auth = getAuth();
 $data = ['user_id' => $auth['id']];
 $getlikes = getLikes($data);
-$likes = seeMyLikePost($data);
+$likes = storeLikesPost($data);
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
@@ -27,11 +28,33 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
     <div class="container">
         <div class="row g-4">
 
-            <?php foreach ($likes as $like): ?>
-                <?php var_dump($like); ?>
-            <?php endforeach; ?>
+            <h2 class="h2">Mes publications aimées !</h2>
 
+            <?php foreach ($likes
 
-        </div>
-    </div>
+            as $like): ?>
+
+            <div class="like-post py-5">
+                <div class="card-body">
+                    <?php $storeLikesPost = getPost($like['post_id']); ?>
+
+                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $storeLikesPost['thumbnail'])): ?>
+
+                    <div class="post-thumbnail">
+                        <a href="/posts/show.php?id=<?php echo $storeLikesPost['id']; ?>">
+                            <img src="<?php echo $storeLikesPost['thumbnail']; ?>"
+                                 width="300" height="300"
+                            >
+                        </a>
+
+                        <?php endif; ?>
+
+                        <div class="post-body">
+                            <p><?php echo $storeLikesPost['body']; ?></p>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+
+            </div>
 </article>

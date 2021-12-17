@@ -16,6 +16,7 @@ $data = [
     'post_id' => getValue($_POST['post_id']),
     'user_id' => $auth['id'],
 ];
+$posts = getUserPosts($user['id']);
 $authorPost = getPostAuthor($post);
 $timePost = $post['created_at'];
 $timeupdate = $post['updated_at'];
@@ -53,9 +54,10 @@ $countcomments = count($comments);
     <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $post['thumbnail'])): ?>
         <div class="post-thumbnail">
             <a href="/posts/show.php?id=<?php echo $post['id']; ?>">
-            <img src="<?php echo $post['thumbnail']; ?>"
-                 title="Publication de <?php echo $authorPost['username'] ?>"
-                 alt="publication de <?php echo $authorPost['username'] ?>">
+                <img src="<?php echo $post['thumbnail']; ?>"
+                     width="400" height="400"
+                     title="Publication de <?php echo $authorPost['username'] ?>"
+                     alt="publication de <?php echo $authorPost['username'] ?>">
             </a>
         </div>
     <?php endif; ?>
@@ -91,7 +93,9 @@ $countcomments = count($comments);
 
         </div>
 
-        <a href="/posts/show.php?id=<?php echo $post['id'] ?>" style="text-decoration: none;"><data value="<?= $countcomments ?>"><?= $countcomments ?> commentaires</data></a>
+        <a href="/posts/show.php?id=<?php echo $post['id'] ?>" style="text-decoration: none;">
+            <data value="<?= $countcomments ?>"><?= $countcomments ?> commentaires</data>
+        </a>
 
         <div class="text-muted">
             <?php if ($post['updated_at'] !== $post['created_at']) : ?>

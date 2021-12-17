@@ -2,10 +2,11 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';?>
 
-
 <main id="main">
+<div class="container">
+    <div class="form-wrapper py-5 mx-auto" style="max-width: 800px;">
+        <h2 class="h2 mb-5">Ajouter une publication</h2>
 
-    <div class="form-wrapper mt-5 mx-auto" style="max-width: 800px;">
         <form action="/api/posts/store.php" method="POST" enctype="multipart/form-data">
 
             <div class="form-group mb-3">
@@ -26,7 +27,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';?>
 
         </form>
     </div>
-
+</div>
 </main>
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>tinymce.init({selector: '#body', plugins: ['autoresize']});</script>

@@ -10053,6 +10053,10 @@ textarea.form-control-lg {
   margin: 2rem 0;
 }
 
+.img-visible img {
+  border-radius: 20px;
+}
+
 #admin-header {
   background-color: black;
   z-index: 200;
