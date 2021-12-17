@@ -79,13 +79,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
 
                 <div class="stats-profil">
                     <data value="<?= $countfollowing ?>"><?= $countfollowing ?></data>
-                    <?php if ($countfollowing === 1): ?>
-                        <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnement</a>
-                    <?php elseif ($countfollowing === 0): ?>
-                        <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnement</a>
-                    <?php else: ?>
-                        <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonnements</a>
-                    <?php endif; ?>
+                    <a href="/subscriptions.php?id=<?php echo $user['id']; ?>">Abonné<?php $countfollowers > 1 ? 's' : null; ?></a>
                 </div>
 
             </div>

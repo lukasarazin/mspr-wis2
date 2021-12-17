@@ -2,7 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $page = ['title' => "Search"];
-$keyword = $_GET['search'];
+$keyword = getValue($_GET['search']) ? $_GET['search'] : null;
 $users = searchUsers($keyword);
 $searchusers = getUsers();
 
