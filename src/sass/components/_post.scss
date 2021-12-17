@@ -8,7 +8,7 @@
     padding: 1rem;
     display: flex;
     background-color: $primary;
-    color: white;
+    color: $white;
     justify-content: space-between;
     align-items: center;
     align-content: center;
@@ -70,17 +70,29 @@
   }
 
   .post-body {
+    background-color: $white;
     padding: 1rem;
     font-size: 1.125rem;
+
+    @include color-scheme(dark) {
+      background-color: $dark;
+      color: $white;
+    }
   }
 
   .post-footer {
+    background-color: $white;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+
+    @include color-scheme(dark) {
+      background-color: $dark;
+      color: $white;
+    }
 
     .post-like {
       max-width: 150px;

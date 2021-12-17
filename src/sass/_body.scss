@@ -6,12 +6,13 @@
   background-repeat: repeat-y;
   background-size: contain;
   font-family: $font-site;
-  background-color: white;
+  background-color: $white;
   color: $dark;
+
 
   @include color-scheme(dark) {
     background-color: $dark;
-    color: white;
+    color: $white;
   }
 
 }
@@ -24,12 +25,12 @@
   background-repeat: repeat-y;
   background-size: contain;
   font-family: $font-site;
-  background-color: white;
+  background-color: $white;
   color: $dark;
 
   @include color-scheme(dark) {
     background-color: $dark;
-    color: white;
+    color: $white;
   }
 }
 
@@ -41,7 +42,7 @@
   background-repeat: repeat-y;
   background-size: contain;
   font-family: $font-site;
-  background-color: white;
+  background-color: $white;
   color: $dark;
 
   @include color-scheme(dark) {
@@ -52,23 +53,23 @@
 
 #main-admin {
   min-height: calc(100vh - 66px);
-  background-color: white;
+  background-color: $white;
   color: $dark;
 
   @include color-scheme(dark) {
     background-color: $dark;
-    color: white;
+    color: $white;
   }
 }
 
 #page-wrapper {
-  background-color: white;
+  background-color: $white;
   color: $dark;
   padding: 70px;
 
   @include color-scheme(dark) {
     background-color: $dark;
-    color: white;
+    color: $white;
   }
 
   #content-wrapper {
@@ -76,7 +77,7 @@
   }
 
 .table {
-  color: white;
+  color: $white;
 }
 
 }
