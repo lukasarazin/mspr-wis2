@@ -212,8 +212,9 @@ function getSubscribersUser($id)
 function isFollowed($data)
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT subscriber_id FROM follow WHERE user_id = :user_id');
+    $stmt = $dbh->prepare('SELECT subscriber_id FROM follow WHERE user_id = :user_id AND subscriber_id = :subscriber_id');
     $stmt->bindParam(':user_id', $data['user']);
+    $stmt->bindParam(':subscriber_id', $data['subscriber_id']);
     $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -350,7 +351,7 @@ function searchUsers($keyword)
     $keyword = "%$keyword%";
 
     $dbh = connectDB();
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE search-username- LIKE :keyword');
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE lower(username) LIKE :keyword');
     $stmt->bindParam(':keyword', $keyword);
     $stmt->execute();
 

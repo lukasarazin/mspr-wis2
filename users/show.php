@@ -15,9 +15,10 @@ if ($id = getValue($_GET['id'])) {
 
 $post = getPost($_GET['id']);
 $auth = getAuth();
+$subscriber_id = getValue($_GET['id']) ? $_GET['id'] : $auth['id'];
 $data = [
     'user' => $auth['id'],
-    'subscriber_id' => getValue($_POST['subscriber_id']),
+    'subscriber_id' => $subscriber_id,
     'user_id' => $auth['id'],
 ];
 $authorPost = getPostAuthor($post);
@@ -73,13 +74,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                 </div>
                 <div class="stats-profil">
                     <data value="<?= $countfollowers ?>"><?= $countfollowers ?></data>
-                    <?php if ($countfollowers === 1): ?>
-                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné</a>
-                    <?php elseif ($countfollowers === 0): ?>
-                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné</a>
-                    <?php else: ?>
-                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonnés</a>
-                    <?php endif; ?>
+                        <a href="/subscribers.php?id=<?php echo $user['id']; ?>">Abonné<?php $countfollowers > 1 ? 's' : null; ?></a>
                 </div>
 
                 <div class="stats-profil">
