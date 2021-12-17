@@ -58,7 +58,7 @@ middleware('guest');
                 <div class="connexion-footer card mx-auto shadow rounded-3">
                     <div class="inscription-possibility card-body p-4">
                         <span>Vous n'avez pas de compte ?</span>
-                        <a href="/register.php" class="btn-log rounded-3">Inscrivez-vous</a>
+                        <a href="/register.php" class="btn btn-outline-primary rounded-3" ">Inscrivez-vous</a>
                     </div>
                 </div>
 

@@ -10316,11 +10316,12 @@ textarea.form-control-lg {
 }
 #main-login #auth-content .container-fluid .card-body .btn-log, #main-login #auth-content .container-sm .card-body .btn-log, #main-login #auth-content .container-md .card-body .btn-log, #main-login #auth-content .container-lg .card-body .btn-log, #main-login #auth-content .container-xl .card-body .btn-log, #main-login #auth-content .container-xxl .card-body .btn-log {
   border: solid 2px #43a06a;
-  background-color: white;
+  background-color: #43a06a;
+  color: white !important;
 }
 #main-login #auth-content .container-fluid .card-body .btn-log:hover, #main-login #auth-content .container-sm .card-body .btn-log:hover, #main-login #auth-content .container-md .card-body .btn-log:hover, #main-login #auth-content .container-lg .card-body .btn-log:hover, #main-login #auth-content .container-xl .card-body .btn-log:hover, #main-login #auth-content .container-xxl .card-body .btn-log:hover {
-  background-color: #43a06a;
-  color: white;
+  background-color: #fcfcfc;
+  color: black;
 }
 #main-login #auth-content .container-fluid .connexion-footer, #main-login #auth-content .container-sm .connexion-footer, #main-login #auth-content .container-md .connexion-footer, #main-login #auth-content .container-lg .connexion-footer, #main-login #auth-content .container-xl .connexion-footer, #main-login #auth-content .container-xxl .connexion-footer {
   max-width: 450px;
