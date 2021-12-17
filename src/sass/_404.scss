@@ -22,12 +22,13 @@
     padding: 10px;
     margin: 0 auto 50px;
     text-decoration: none;
-    color: $dark;
+    color: $primary;
     border: solid 2px $primary;
     border-radius: 10px;
 
     &:hover {
       background-color: $primary;
+      color: white;
     }
   }
 }
