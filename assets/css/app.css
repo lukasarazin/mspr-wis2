@@ -10484,6 +10484,7 @@ textarea.form-control-lg {
   background-color: #6c757d;
   color: white;
   width: 50%;
+  margin: 1rem;
   padding: 10px;
   display: flex;
   align-items: center;

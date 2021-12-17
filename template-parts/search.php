@@ -17,7 +17,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
                 <span scope="col" style="color: lightgrey">Résultats </span>
 
-                <?php foreach ($users as $user): ?>
                     <div class="mt-5 d-flex">
                     <?php foreach ($users as $user): ?>
                         <div class="search-result-card">
@@ -38,7 +37,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
                         </div>
                         </div>
                     <?php endforeach ?>
-                <?php endforeach ?>
 
 
             </div>
