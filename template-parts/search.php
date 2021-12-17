@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '../functions/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/functions/users.php';
 
 $page = ['title' => "Accueil"];
 $keyword = $_GET['search'];
