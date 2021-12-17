@@ -19,7 +19,7 @@ middleware('auth');
     <main id="main">
 
         <section class="py-3">
-            <div class="container post-show">
+            <div class="container-fluid post-show">
 
                 <span>Publié le <time><?php echo $post['created_at'] = date('d M Y'); ?></time> par
                     <a href="/users/show.php?id=<?php echo $author['id']; ?>"
