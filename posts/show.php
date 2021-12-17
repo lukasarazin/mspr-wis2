@@ -18,28 +18,36 @@ middleware('auth');
 
     <main id="main">
 
-        <section class="py-3">
-            <div class="container-fluid post-show">
+        <section class="post-item w-50 mx-auto mt-5 mb-5">
+            <div class="container">
 
-                <span>Publié le <time><?php echo $post['created_at'] = date('d M Y'); ?></time> par
+                    <div class="body-header-2 mt-2">
+                       <span>Publié le <time><?php echo $post['created_at'] = date('d M Y'); ?></time> par
                     <a href="/users/show.php?id=<?php echo $author['id']; ?>"
                        rel="author"><?php echo $author['username']; ?>
                     </a>
                 </span>
+                    </div>
 
-                <p><?php echo $post['body']; ?></p>
+                <div class="post-header-2 mt-3">
 
-                <div class="img-visible">
-                <img src="<?php echo $post['thumbnail']; ?>" alt="" width="400" height="400"
+                    <p><?php echo $post['body']; ?></p>
+
+                </div>
+
+                <div class="post-thumbnail-2">
+                <img src="<?php echo $post['thumbnail']; ?>" alt="" max-width="400" height="400"
                      title="Pulication de <?php echo $author['username']; ?>"/>
-            </div>
+                </div>
+
                 <hr>
+
                 <div id="com-ancre"></div>
                 <div class="comments-wrapper">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/show.php' ?>
                 </div>
 
-                <div class="create-comment">
+                <div class="create-comment mb-5">
                     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/comments/create.php' ?>
                 </div>
 

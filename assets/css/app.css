@@ -10148,6 +10148,13 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
+.post-item .post-header-2 {
+  padding: 1rem;
+  background-color: #43a06a;
+  color: #FCFCFC;
+  align-items: center;
+  align-content: center;
+}
 .post-item .post-header {
   padding: 1rem;
   display: flex;
@@ -10200,6 +10207,15 @@ textarea.form-control-lg {
   height: 1rem;
 }
 .post-item .post-thumbnail img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.post-item .post-thumbnail-2 img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
