@@ -10035,6 +10035,9 @@ textarea.form-control-lg {
 }
 #header {
   background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
 }
 @media (prefers-color-scheme: dark) {
   #header {
@@ -10054,6 +10057,17 @@ textarea.form-control-lg {
 }
 .wrapper .posts-wrapper .post-type {
   margin: 2rem 0;
+}
+
+#admin-header {
+  background-color: black;
+  z-index: 200;
+}
+@media (prefers-color-scheme: dark) {
+  #admin-header {
+    background-color: #6c757d;
+    color: white;
+  }
 }
 
 #main-hero {
@@ -10200,6 +10214,7 @@ textarea.form-control-lg {
 }
 #main-login #auth-content .container-fluid .connexion, #main-login #auth-content .container-sm .connexion, #main-login #auth-content .container-md .connexion, #main-login #auth-content .container-lg .connexion, #main-login #auth-content .container-xl .connexion, #main-login #auth-content .container-xxl .connexion {
   max-width: 450px;
+  color: black;
 }
 #main-login #auth-content .container-fluid .card-header, #main-login #auth-content .container-sm .card-header, #main-login #auth-content .container-md .card-header, #main-login #auth-content .container-lg .card-header, #main-login #auth-content .container-xl .card-header, #main-login #auth-content .container-xxl .card-header {
   background-color: #43a06a;
@@ -10264,6 +10279,7 @@ textarea.form-control-lg {
   align-items: center;
   align-content: center;
   border-radius: 0 0 20px 20px;
+  color: black;
 }
 #main-login #auth-content .container-fluid .connexion-footer .inscription-possibility a, #main-login #auth-content .container-sm .connexion-footer .inscription-possibility a, #main-login #auth-content .container-md .connexion-footer .inscription-possibility a, #main-login #auth-content .container-lg .connexion-footer .inscription-possibility a, #main-login #auth-content .container-xl .connexion-footer .inscription-possibility a, #main-login #auth-content .container-xxl .connexion-footer .inscription-possibility a {
   text-decoration: none;
@@ -10376,6 +10392,7 @@ textarea.form-control-lg {
 
 #main {
   min-height: calc(100vh - 66px);
+  padding-top: 70px;
   background-image: url("/assets/img/bg.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10393,7 +10410,7 @@ textarea.form-control-lg {
 
 #main-post-edit {
   min-height: calc(100vh - 66px);
-  padding: 30px 0;
+  padding: 70px 0;
   background-image: url("/assets/img/bg.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10411,6 +10428,7 @@ textarea.form-control-lg {
 
 #main-subscriptions {
   min-height: calc(100vh - 66px);
+  padding-top: 70px;
   background-image: url("/assets/img/bg.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10441,7 +10459,7 @@ textarea.form-control-lg {
 #page-wrapper {
   background-color: white;
   color: #212529;
-  padding: 10px;
+  padding: 70px;
 }
 @media (prefers-color-scheme: dark) {
   #page-wrapper {
@@ -10458,6 +10476,7 @@ textarea.form-control-lg {
 
 #main-user {
   min-height: calc(100vh - 66px);
+  padding-top: 70px;
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;
@@ -10492,6 +10511,7 @@ textarea.form-control-lg {
 
 #main-register {
   min-height: 110vh;
+  padding-top: 70px;
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;

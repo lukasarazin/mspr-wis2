@@ -1,7 +1,5 @@
-#header {
+#admin-header {
   background-color: black;
-  position: fixed;
-  width: 100%;
   z-index: 200;
 
   @include color-scheme(dark) {
