@@ -73,10 +73,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php'; ?>
                                        id="last_name"
                                        value="<?php echo $user['last_name']; ?>">
                             </div>
+
+                            <button type="submit" class="btn-log mb-5 rounded-3">Confirmer</button>
+                            
                         </form>
                     </div>
-
-                    <button type="submit" class="btn-log mb-5 rounded-3">Confirmer</button>
 
                 </div>
 
