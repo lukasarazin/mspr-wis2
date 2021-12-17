@@ -14,15 +14,11 @@ middleware('auth');
 
         <div class="form-wrapper post-update-wrapper mx-auto" style="max-width: 800px;">
 
-            <form action="/api/posts/delete.php?id=<?php echo $post['id']; ?>" method="POST" class="mt-2 float-end">
-                <button type="submit" class="btn btn-outline-danger">Supprimer</button>
-            </form>
-
             <form action="/api/posts/update.php?id=<?php echo $post['id']; ?>" method="POST">
 
 
                 <div class="form-group post-update-label mb-3">
-                    <label for="body" class="form-label">Que voulez-vous dire ?</label>
+                    <label for="body" class="form-label mt-3">Que voulez-vous dire ?</label>
                 </div>
                 <div class="post-update-group">
                     <textarea rows="5" id="body" name="body"
@@ -32,11 +28,14 @@ middleware('auth');
                 <div class="mb-3 post-update-img">
                     <img src="<?php echo $post['thumbnail']; ?>" alt="">
                 </div>
-
-                <button type="submit" class="btn btn-outline-success">Mettre à jour</button>
-
+                <div class="flex-post d-flex">
+                    <button type="submit" class="btn btn-success">Mettre à jour</button>
             </form>
 
+            <form action="/api/posts/delete.php?id=<?php echo $post['id']; ?>" method="POST">
+                <button type="submit" class="btn btn-outline-danger mx-2">Supprimer</button>
+            </form>
+        </div>
         </div>
 
 
