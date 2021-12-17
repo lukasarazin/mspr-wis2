@@ -12,28 +12,30 @@ require_once '../template-parts/layout/header.php';
     <main id="main">
         <section id="search-users">
             <div class="container mt-5">
-.
+                .
                 <h1>Recherche pour : <?php echo $_GET['search'] ?></h1>
 
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col" style="color: white;">Résultats </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($users as $user): ?>
-                        <tr>
-                            <td>
-                                <a style="color: white" href="/users/show.php?id=<?php echo $user['id'] ?>">
-                                    @<?php echo $user['username'] ?>
-                                </a>
-                            </td>
-                        </tr>
-                    <?php endforeach ?>
-                    </tbody>
-                </table>
+                <span scope="col" style="color: lightgrey">Résultats </span>
 
+                <div class="mt-5 d-flex">
+                    <?php foreach ($users as $user): ?>
+                        <img class="rounded-circle mx-3" src="<?php echo $user['avatar']; ?>"
+                             alt="Photo de <?php echo $user['username']; ?>"
+                             title="Photo de <?php echo $user['username']; ?>"
+                             width="65"
+                             height="65"
+                             loading="lazy">
+                        <div>
+                            <a style="color: white; text-decoration: none; font-size: 25px;"
+                               href="/users/show.php?id=<?php echo $user['id'] ?>">
+                                @<?php echo $user['username'] ?>
+                            </a>
+                            <div>
+                                <?php echo $user['email']; ?>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
 
             </div>
         </section>
