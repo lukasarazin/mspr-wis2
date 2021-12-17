@@ -24,37 +24,42 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
 ?>
 
-<article class="posts-wrapper">
-    <div class="container">
-        <div class="row g-4">
+    <main id="main-likes">
 
-            <h2 class="h2">Mes publications aimées !</h2>
+        <article class="posts-wrapper container">
 
-            <?php foreach ($likes
 
-            as $like): ?>
 
-            <div class="like-post py-5">
-                <div class="card-body">
-                    <?php $storeLikesPost = getPost($like['post_id']); ?>
+                    <h2 class="h2">Mes publications aimées !</h2>
 
-                    <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $storeLikesPost['thumbnail'])): ?>
+                    <?php foreach ($likes as $like): ?>
 
-                    <div class="post-thumbnail">
-                        <a href="/posts/show.php?id=<?php echo $storeLikesPost['id']; ?>">
-                            <img src="<?php echo $storeLikesPost['thumbnail']; ?>"
-                                 width="300" height="300"
-                            >
-                        </a>
+                        <div class="like-post">
+                            <div class="card-body">
+                                <?php $storeLikesPost = getPost($like['post_id']); ?>
 
-                        <?php endif; ?>
+                                <?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $storeLikesPost['thumbnail'])): ?>
 
-                        <div class="post-body">
-                            <p><?php echo $storeLikesPost['body']; ?></p>
+                                <div class="post-thumbnail">
+                                    <a href="/posts/show.php?id=<?php echo $storeLikesPost['id']; ?>">
+                                        <img src="<?php echo $storeLikesPost['thumbnail']; ?>"
+                                             width="300" height="300"
+                                        >
+                                    </a>
+
+                                    <?php endif; ?>
+
+                                    <div class="post-body">
+                                        <p><?php echo $storeLikesPost['body']; ?></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
 
-            </div>
-</article>
+                    <?php endforeach; ?>
+
+        </article>
+
+    </main>
+
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/footer.php'; ?>

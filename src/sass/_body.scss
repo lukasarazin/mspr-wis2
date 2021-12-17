@@ -17,6 +17,23 @@
 
 }
 
+#main-likes {
+  min-height: calc(100vh);
+  padding: 70px 20%;
+  background-image: url("/assets/img/bg.png");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: $font-site;
+  background-color: $white;
+  color: $dark;
+
+  @include color-scheme(dark) {
+    background-color: $dark;
+    color: $white;
+  }
+}
+
 #main-post-edit {
   min-height: calc(100vh - 66px);
   padding: 70px 0;
