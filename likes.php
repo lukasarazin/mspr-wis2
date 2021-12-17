@@ -28,8 +28,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/template-parts/layout/header.php';
 
         <article class="posts-wrapper container">
 
-
-
                     <h2 class="h2">Mes publications aimées !</h2>
 
                     <?php foreach ($likes as $like): ?>

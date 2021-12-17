@@ -346,6 +346,15 @@ function storeLikesPost($data) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function storeSubscribePost($data) {
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT post_id FROM follow WHERE user_id = :user_id');
+    $stmt->bindParam(':user_id', $data['user_id']);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function searchUsers($keyword)
 {
     $keyword = "%$keyword%";

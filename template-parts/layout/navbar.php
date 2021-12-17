@@ -37,17 +37,8 @@ $auth = getAuth();
                         <?php if (getValue($auth)): ?>
                             <li class="nav-item mx-1">
                                 <a class="nav-link" href="/search.php">
-                                    <span class="visually-hidden">Accueil</span>
+                                    <span class="visually-hidden">Recherche utilisateurs</span>
                                     <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/search.svg.php'; ?>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (getValue($auth)): ?>
-                            <li class="nav-item mx-1">
-                                <a class="nav-link" href="/likes.php?id=<?php echo $auth['id']; ?>">
-                                    <span class="visually-hidden">Publications de mes abonnés</span>
-                                    <?php require $_SERVER['DOCUMENT_ROOT'] . '/template-parts/svg/subscribers.svg.php'; ?>
                                 </a>
                             </li>
                         <?php endif; ?>
