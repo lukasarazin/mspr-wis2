@@ -10324,6 +10324,9 @@ textarea.form-control-lg {
   color: black;
 }
 
+#main-register #auth-content .container-fluid, #main-register #auth-content .container-sm, #main-register #auth-content .container-md, #main-register #auth-content .container-lg, #main-register #auth-content .container-xl, #main-register #auth-content .container-xxl {
+  margin-top: 0;
+}
 #main-register #auth-content .reg-wrapper {
   padding-top: 100px;
 }
@@ -10596,7 +10599,7 @@ textarea.form-control-lg {
 
 #main-register {
   min-height: 110vh;
-  padding-top: 70px;
+  padding-top: 0px;
   background-image: url("/assets/img/bg-2.png");
   background-position: center;
   background-repeat: repeat-y;
