@@ -10531,7 +10531,7 @@ textarea.form-control-lg {
 }
 
 #main-subscriptions {
-  min-height: calc(100vh - 66px);
+  min-height: 100vh;
   padding-top: 70px;
   background-image: url("/assets/img/bg.png");
   background-position: center;
@@ -10649,10 +10649,11 @@ textarea.form-control-lg {
   padding: 10px;
   margin: 0 auto 50px;
   text-decoration: none;
-  color: #212529;
+  color: #43a06a;
   border: solid 2px #43a06a;
   border-radius: 10px;
 }
 .btn-404 .btn-log:hover {
   background-color: #43a06a;
+  color: white;
 }
